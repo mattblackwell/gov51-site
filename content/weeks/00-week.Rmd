@@ -1,0 +1,28 @@
+---
+title: "Week 0: Introduction"
+linktitle: "0: Introduction"
+date: 2020-08-07
+menu:
+  weeks:
+    parent: Weeks
+    weight: 1
+type: docs
+---
+
+## Reading
+
+- Sections 1.1-1.4 of Quantitative Social Science. 
+
+## Topic 1: Introduction to Causality
+
+<iframe width="835" height="505" src="https://www.youtube.com/embed/ORbzn0EzGs8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+### Materials
+
+- [Slides](#)
+- [Code](#)
+
+## Topic 2: Randomized Experiments
+
+<iframe width="835" height="505" src="https://www.youtube.com/embed/ORbzn0EzGs8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

@@ -1,0 +1,22 @@
+# Theme metadata
+name: "Cousteau"
+
+# Is theme light or dark?
+light: true
+
+# Primary
+primary: "#3498db"
+
+# Links
+link: "#3498db"
+link_hover: "#E74C3C"
+
+# Menu
+menu_primary: "#fff"
+menu_text: "#3498db"
+menu_text_active: "#E74C3C"
+menu_title: "#2c3e50"
+
+# Home sections
+home_section_odd: "rgb(255, 255, 255)"
+home_section_even: "rgb(247, 247, 247)"

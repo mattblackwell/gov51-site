@@ -1,0 +1,11 @@
+---
+title: Class details
+menu:
+  weeks:
+    parent: Class details
+    weight: 1
+type: docs
+weight: 1
+---
+
+We will post the relevant materials for each week here.

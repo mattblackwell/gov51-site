@@ -1,0 +1,13 @@
+main:
+  - name: Syllabus
+    url: /syllabus/
+    weight: 1
+  - name: Schedule
+    url: /schedule/
+    weight: 2
+  - name: Classes
+    url: /weeks/
+    weight: 4
+  - name: Canvas
+    url: https://canvas.harvard.edu/courses/74805
+    weight: 6
