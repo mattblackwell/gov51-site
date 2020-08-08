@@ -12,6 +12,7 @@ lessons:
     date: "September 7th"
     reading: "QSS 2.1-2.4"
     assignment: ""
+    week: "01-rand-exp"
 
   - title: "Causality: Observational Studies"
     weeknum: 2

@@ -1,0 +1,5 @@
+*_cache/
+static/rmarkdown-libs/
+public/
+static/**/*.zip
+content/**/*.html
