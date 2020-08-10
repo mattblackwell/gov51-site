@@ -8,6 +8,3 @@ main:
   - name: Classes
     url: /weeks/
     weight: 4
-  - name: Canvas
-    url: https://canvas.harvard.edu/courses/74805
-    weight: 6
