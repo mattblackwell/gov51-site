@@ -7,11 +7,20 @@ output:
       toc: TRUE
 ---
 
-# General Information
+## Description
 
 How can we measure racial discrimination in job hiring? What is the best way to predict election outcomes? What factors drive the onset of civil wars? Is it possible to determine what members of Congress are more or less liberal given their voting record? These are just a few of the numerous question that social scientists are tackling with quantitative data. Beyond academia, companies and non-profits have invested heavily in data science techniques to learn about their users, platforms, and programs. Data scientists at these institutions are essentially applied social scientists and employ many of the same techniques you will learn in this course. 
 
 What will you learn in this course? Our goal is to give you the ability to understand, explain, and perform social science research, with a special focus on data analysis and causal reasoning. You will be able to read and understand the methodology of most academic articles in the social sciences, but more importantly you will have a foot in the door of the data science world. The ability to collect and analyze data in a sophisticated manner is becoming a crucial skill set for the modern job market across industries. Finally, you will obtain data literacy that will help you be a critical consumer of evidence for the rest of your life. 
+
+## Expectations
+
+In this course, you will be expected to
+
+- complete four problem sets,
+- complete twelve weekly tutorials,
+- take two exams,
+- write one final  data analysis project.
 
 ## Course objectives
 
@@ -19,14 +28,10 @@ In this course, you will learn to:
 
 - Evaluate claims about causality
 - Summarize and visualize data
-- 
+- Be able to use linear regression to analyze data
+- Understand uncertainty in data analysis and how to quantify it
 
-## Who should take this course?
-
-Gov 51 is open to all students interested in data, data analysis, data science, and the social sciences. We will often focus on applications politics and political science, but we will take detours into other disciplines as well. This course satisfies the Methods requirement for the Government department and the "Quantitative Reasoning with Data" requirement in the Harvard College Curriculum. 
-
-No matter your background, you should be prepared to engage the class material on a regular, almost daily basis  even beyond the time dedicated to assignments and exam review. Furthermore, you should feel comfortable with engaging in real-life data analysis using statistical software. We will guide you through that process, but it may be unfamiliar and therefore challenging. You should especially take this course if you plan to use quantitative data at all in a senior thesis.
-
+We will also attempt to inspire a passion for data analysis and create a community among the students to deepen their learning. 
 
 ## Prerequisites
 
@@ -34,10 +39,33 @@ Most students will take Gov 51 after Gov 50 (formerly Gov 1005: Data), so that c
 
 We will assume a basic familiarity with high-school algebra and a working knowledge of computers. If you are unfamiliar with downloading and installing software programs on your Mac or PC, you may want to allocate additional time to make sure those aspects of the course go smoothly. Previous experience with statistical methods and computing (Stata, R, SAS, SPSS) is helpful, but not required. You can always get in touch with the teaching staff for additional help on these issues. 
 
+No matter your background, you should be prepared to engage the class material on a regular, almost daily basis  even beyond the time dedicated to assignments and exam review. Furthermore, you should feel comfortable with engaging in real-life data analysis using statistical software. We will guide you through that process, but it may be unfamiliar and therefore challenging. You should especially take this course if you plan to use quantitative data at all in a senior thesis.
 
-# Course Details
 
-## Video lectures
+## Credit
+
+This course satisfies the Methods requirement for the Government department and the "Quantitative Reasoning with Data" requirement in the Harvard College Curriculum. It also counts toward completion of the Government department data science track. 
+
+
+
+## Grading
+
+You (the student) and I (the instructor) should care the most about what you *learn*, not what numerical/letter summary of that learning you get at the end of the semester. So I would love to not have grades at all, but unfortunately we humans are very good at procrastinating on our good intentions when there is no incentive not to. Thus, we have grades to help solve this commitment problem and to encourage you to put effort into learning the course material. 
+
+Here are how each portion of course contributes to the overall grade:
+
+| Category  | Percent of Final Grade  |
+|:--|:--|
+| R Tutorials   | 10%  |
+| Four Problem Sets  | 40%   |
+| Midterm Exams  | 30%  |
+| Final Project  | 20%  |
+
+
+**Bump-up policy**: We reserve the right to "bump up" the grades of students who have made valuable contributions to the course in the lecture, sections, study halls, or discussion/Slack. This also applies to students who show tremendous progress and growth over the semester. 
+
+
+## Video Lectures
 
 Each week we will release 2-4 short (10-20 min) videos to watch at the beginning of the week. These videos will cover core material for the week and help augment the reading for better understanding. We expect that all students will watch these videos ahead of the first lecture and post any questions they may have about the lectures to Canvas for students and course staff to answer. The purpose of these videos is to make sure that all students are on the same page when we meet together as a group.
 
@@ -48,70 +76,79 @@ We will encourage and facilitate students watching these videos in **watch parti
 We will hold live class meetings over Zoom once per week to perform an in-class activity related to the material in that week. In these sessions, a member of the course staff will usually walk through a data example and you will be expected to follow along. The exact number and timing of these live class meetings will be determined by enrollment, but we will make efforts to have live sessions for any time zone. 
 
 ## Sections
+
 Every student will be assigned to a small-group section of the course which will meet in over Zoom. These sections will focus on  reviewing material from class that is useful for the homeworks and exams. These section meetings are *crucial* for your understanding of the material in this course.
- 
 
-## Grading
+## Tutorials
 
-| Category  | Percent of Final Grade  |
-|:--|:--|
-| R Tutorials   | 15%  |
-| Four Problem Sets  | 40%   |
-| Midterm Exam  | 10%  |
-| Final Group Project  | 20%  |
-| Participation  | 15%  |
-
-
-- Four problem sets (40% of final grade)
-- R tutorials (15% of final grade)
-- Take-home midterm exam (10% of final grade)
-- Final group project (20% of final grade)
-- Participation  (15% of final grade).
-
-## R Tutorials
-
-We will assign short weekly R tutorials you will complete in RStudio. These will be interactive and guided lessons through computing topics covered that week, and they will be graded based on completion. 
-
-
-## Reading
-
-The reading for the course will be available online through the Perusall app. You will be able to rent or purchase the required Imai book on that platform and we will post any additional readings there as well. Perusall will allow you to annotate the reading when you are confused, have a question, or want to make a comment. You will also see the annotations of other students and can respond to their questions. All of this will allow us to better tailor lectures and sections to where students are having difficultly. Annotations will count toward the participation grade.
+We will assign short weekly tutorials to assess your knowledge of the material covered in the reading and video lectures that week. You will complete these in RStudio. While you are expected to complete them on time, they will be graded based on completion not on how correct the answers are. They will be due Mondays at 11:59pm ET. 
 
 
 ## Problem Sets
 
-Only reading about data science is about as instructive as reading a lot about hammers or watching someone else wield a hammer. You need to get your hands on a hammer or two. Thus, in this course, you will have 4 homeworks to complete throughout the semester that will give you an opportunity to apply the statistical techniques you are learning. They will usually be focused on data analysis in general and will often involve a real dataset.
+Only reading about data science is about as instructive as reading a lot about hammers or watching someone else wield a hammer. You need to get your hands on a hammer or two. Thus, in this course, you will have 4 problem sets to complete throughout the semester that will give you an opportunity to apply the statistical techniques you are learning. They will usually be focused on data analysis in general and will often involve a real dataset.
 
 We encourage students to rely on peer working groups as they work on these homeworks, but each student will submit their own work individually. We will facilitate the formation of homework peer groups.
 
+
+The schedule for the problem sets will be:
+
+| Problem Set | Topic | Release Date | Due Date  |
+|:-|:--|:--|:--|
+| Problem Set 1 | Randomized Experiments | Thu, Sep 10th 12:00pm ET | Wed, Sep 16th 11:59pm ET |
+| Problem Set 2 | Summarizing Data | Thu, Sep 24th 12:00pm ET | Wed, Sep 30th 11:59pm ET |
+| Problem Set 3 | Regression | Thu, Oct 22nd 12:00pm ET | Wed, Oct 28th 11:59pm ET |
+| Problem Set 4 | Regression with Uncertainty | Thu, Nov 19th 12:00pm ET | Wed, Nov 25th 11:59pm ET |
+
+
 **Grace policy**: When calculating the final homework portion of the overall grade, we will drop the lowest of the four scores and use the remaining scores. Thus, if you have an emergency that forces you to miss one homework, your grade will not be severely affected. 
 
-## Midterm
+## Exams
 
-There will be a take-home midterm exam around the seventh week of term. This exam will be similar to a homework in format and in the sense that it will be open book and open internet, but you will not be allowed to collaborate with other students. You will be given several days to complete the exam. We will provide more information about the exam as it approaches. 
+There will be two take-home exams during the course. This exam will be similar to a homework in format and in the sense that it will be open book and open internet, but you will not be allowed to collaborate with other students or be able to communicate with any humans about the exam. You will be given several days to complete the exam. We will provide more information about the exam as it approaches. 
 
-## Final Group Project
-The final project for the course will be a data analysis project that students taking the course for undergraduate credit will complete in groups of up to 4 students. Students will find a dataset of interest, state an interesting research question about that data, and answering this question using that data.  **The final group project report will be due Wednesday, December 9th at 11:59pm ET.** We encourage students to work in groups, though some students may choose to work individually if they want to make their project align with their thesis. More details will be announced as the semester continues. 
+| Exam   | Release Date            | Due Date                 |
+|:-------|:------------------------|:-------------------------|
+| Exam 1 | Thu, Oct 8th 12:00pm ET | Wed, Oct 14th 11:59pm ET |
+| Exam 2 | Tue, Dec 1st 12:00pm ET | Mon, Dec 7th 11:59pm ET |
+ 
 
-## Participation
-Part of the grade will be awarded for class participation both live meetings, on Canvas, and on Perusall. This includes asking substantive questions about the course material, answering other students' questions about the material, or providing additional resources about the topics covered in class from other sources (like YouTube). Full credit will be subject to review of the quality of the posts, but students should expect to provide 1--2 substantive posts, comments, or questions per week to receive full credit. Of course, we know that sometimes students won't have the bandwidth in a particular week, so we will allow for 1--2 weeks without substantive participation. 
 
-Why are we requiring this level of participation? One of the key ways that online courses differ from residential courses is in the lack of opportunities for engagement with course staff and especially other students. Because this is such an important way to learn, we want to provide motivation for students to engage in the course. 
+## Final Project
+
+The final project for the course will be a data analysis project where students will find a dataset of interest, state an interesting research question about that data, and answering this question using that data. Students may work individually, or can work in groups of up to 3 students. 
+
+| Milestone      | Due Date                 |
+|:---------------|:-------------------------|
+| Proposal       | Wed, Oct 14th 11:59pm ET |
+| Draft Analyses | Wed, Nov 11th 11:59pm ET |
+| Final Report   | Mon, Dec 14th 11:59pm ET |
+
+
+## Flow of the Course
+
+The course will follow a basic flow each week, with small differences if a tutorial or problem set is due or not. 
+
+- Monday: Watch the week's lecture videos; submit tutorial (if due).
+- Tuesday: Live class meetings. 
+- Wednesday: Submit problem set or exam (if due). 
+- Thursday: Problem set posted.
+
+
+## Discussion
+
+We will be using Slack and a few other tools to be determined to discuss topics in the course. More details on this to come. 
+
 
 
 ## Regrading Policy
 
-
-
 If you feel there has been an error in the grading of one your assignment, you may request (in writing) a regrade of the assignment. A member of the teaching staff will regrade the entire assignment, not just the part you are disputing. Therefore, your regrade might increase or decrease the overall grade on the assignment. 
 
 
-## Collaboration Policy
-We encourage students to work together on the homework assignments, but you must write your own solutions (this includes computer code), and you must write the names of your collaborators on your assignment. I also strongly suggest that you make a solo effort at all the problems before consulting others. The midterms will be very difficult if you have no experience working on your own. **There is no collaboration allowed on the midterm exams.**
+## Academic Honesty
+We encourage students to work together on the homework assignments, but you must write your own solutions (this includes computer code), and you must write the names of your collaborators on your assignment. I also strongly suggest that you make a solo effort at all the problems before consulting others. The midterms will be very difficult if you have no experience working on your own. **There is no collaboration allowed on the  exams.**
 
-
-## Course Canvas Site \& Discussion Board
-We will be using Canvas to host the course website this year. You can find the site at the following URL: [https://canvas.harvard.edu/courses/74805](). On Canvas you will find a Discussion Board for class-related discussion. The quicker you begin asking questions on Canvas, the quicker you’ll benefit from the collective knowledge of your classmates and instructors. This is an ideal forum for posting questions regarding the course material and/or computing. I encourage students to reply to each other’s questions, and a student’s respectful and constructive participation on Canvas will count toward his/her class participation grade. 
 
 ## Office Hours and Availability
 My office hours are Wednesdays 10am-12pm  ET. If you have questions about the course material, computational issues, or other course-related issues please do not hesitate to set up an appointment with either any of us.
@@ -119,19 +156,16 @@ My office hours are Wednesdays 10am-12pm  ET. If you have questions about the co
 If you have a general question, you can also post it on Canvas. This is almost always the fastest way to get an answer. However, you can also email me directly at [mblackwell@gov.harvard.edu](mailto:mblackwell@gov.harvard.edu). If the question is of general interest, I will forward the question and my answer to the class. Make sure to tell me explicitly in your email if you would like to stay anonymous.
 
 
-## Required Books
+##  Books
 The following textbook is **required** for this course: 
 
 - Imai, Kosuke *Quantitative Social Science: An Introduction*. Princeton University Press.
 
-You should purchase this book through Perusall, which you can access through the Canvas site. There you have the option to purchase the e-book for 50 dollars or rent the book for 180 days for 25 dollars. 
-
-## Optional Books
-
+The following books are optional, but may be helpful to build you understanding of the material:
 
 - Diez, David M., Christopher D. Barr, and Mine Cetinkaya-Rundel. 2015. *OpenIntro Statistics*. 3rd edition. [https://www.openintro.org/]()
 - Freedman, David, Pisani, Robert, and Purves, Roger. 2007. *Statistics*. W.W. Norton & Company. 4th edition.
-
+- Gonick, Larry, and Woollcott Smith. 1993. *The Cartoon Guide to Statistics*. HarperPerinnial. 
 
 
 ## Computing

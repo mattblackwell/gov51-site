@@ -1,0 +1,32 @@
+  
+{{- define "main" -}}
+
+<article class="article">
+
+<div class="article-container pt-3">
+  <h1>{{ .Title }}</h1>
+
+  {{ with .Params.subtitle }}
+  <p class="page-subtitle">{{ . | markdownify | emojify }}</p>
+  {{end}}
+
+    {{ if isset .Params "due_date" }}
+  <div class="due-date p-2 mb-3 bg-primary text-white">
+    Due by <strong>11:59pm</strong> on {{ dateFormat "Monday, January 2, 2006" .Params.due_date }}
+  </div>
+  {{ end }}
+</div>
+
+  <div class="article-container">
+
+  
+
+
+    <div class="article-style">
+      {{ .Content }}
+    </div>
+  </div>
+</article>
+
+{{- end -}}
+

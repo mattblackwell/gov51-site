@@ -1,0 +1,80 @@
+---
+title: "Problem Set 1: Effect of Demographic Change on Exclusionary Attitudes"
+due_date: 2020-09-16
+author: "Gov 51"
+date: 2020-09-02
+---
+
+
+A professor in the Government department here at Harvard, [Ryan Enos][], conducted a randomized field experiment assessing the extent to which individuals living in suburban communities around Boston, Massachusetts, and their views were affected by exposure to demographic change.
+
+> This exercise is based on: Enos, R. D. 2014. “[Causal Effect of  Intergroup Contact on Exclusionary Attitudes.](http://dx.doi.org/10.1073/pnas.1317670111)” *Proceedings of the National Academy of Sciences* 111(10): 3699–3704.
+
+Subjects in the experiment were individuals riding on the commuter rail line and overwhelmingly white. Every morning, multiple trains pass through various stations in suburban communities that were used for this study. For pairs of trains leaving the same station at roughly the same time, one was randomly assigned to receive the treatment and one was designated as a control. By doing so all the benefits of randomization apply for this dataset.
+
+The treatment in this experiment was the presence of two native Spanish-speaking 'confederates' (a term used in experiments to indicate that these individuals worked for the researcher, unbeknownst to the subjects) on the platform each morning prior to the train's arrival. The presence of these confederates, who would appear as Hispanic foreigners to the subjects, was intended to simulate the kind of demographic change anticipated for the United States in coming years. For those individuals in the control group, no such confederates were present on the platform. The treatment was administered for 10 days. Participants were asked questions related to immigration policy both before the experiment started and after the experiment had ended. The names and descriptions of variables in the data set `boston.csv` are:
+
+ -------------------- ----------------------------------------------------------
+ Name                 Description
+ -------------------- ----------------------------------------------------------
+ `age`                Age of individual at time of experiment 
+
+ `male`               Sex of individual, male (1) or female (0) 
+
+ `income`             Income group in dollars (not exact income) 
+
+ `white`              Indicator variable for whether individual 
+                      identifies as white (1) or not (0) 
+                      
+ `college`            Indicator variable for whether individual 
+                      attended college (1) or not (0) 
+
+ `usborn`             Indicator variable for whether individual is 
+                      born in the US (1) or not (0) 
+
+ `treatment`          Indicator variable for whether an individual 
+                      was treated (1) or not (0) 
+
+ `ideology`           Self-placement on ideology spectrum from Very Liberal (1) 
+                      through Moderate (3) to Very Conservative (5) 
+
+ `numberim.pre`       Policy opinion on question about increasing the number 
+                      immigrants allowed in the country from Increased (1) to Decreased (5)
+
+ `numberim.post`      Same question as above, asked later
+
+ `remain.pre`         Policy opinion on question about allowing the children of 
+                      undocumented immigrants to remain in the country from 
+                      Allow (1) to Not Allow (5) 
+
+ `remain.post`        Same question as above, asked later
+
+ `english.pre`        Policy opinion on question about passing a law establishing 
+                      English as the official language from Not Favor (1) to Favor (5) 
+
+ `english.post`       Same question as above, asked later
+ 
+ ------------------------------------------------------------------------------
+ 
+## Question 1 (5 points)
+
+The benefit of randomly assigning individuals to the treatment or control groups is that the two groups should be similar, on average, in terms of their covariates. This is referred to as 'covariate balance.' Show that the treatment and control groups are balanced with respect to the income variable (`income`) by using the `summary()` function to compare its distribution between those in the treatment group and those in the control group. Also, compare the proportion of males (`male`) in the treatment and control groups. Interpret these two numbers.
+
+## Question 2 (5 points)
+      
+Individuals in the experiment were asked a series of questions both at the beginning and the end of the experiment. One such question was "Do you think the number of immigrants from Mexico who are permitted to come to the United States to live should be increased, left the same, or decreased?" The response to this question prior to the experiment is in the variable `numberim.pre`. The response to this question after the experiment is in the variable `numberim.post`. In both cases the variable is coded on a 1 -- 5 scale. Responses with values of 1 are inclusionary ('pro-immigration') and responses with values of 5 are exclusionary ('anti-immigration'). Compute the average treatment effect on the change in attitudes about immigration. That is, how does the mean change in attitudes about immigration policy for those in the control group compare to those in the treatment group. Interpret the result. 
+
+## Question 3 (5 points)
+
+Does having attended college influence the effect of being exposed to 'outsiders' on exclusionary attitudes? Another way to ask the same question is this: is there evidence of a differential impact of treatment, conditional on attending college versus not attending college? Calculate the necessary quantities to answer this question and interpret the results. Consider the average treatment effect for those who attended college and then those who did not. 
+
+## Question 4 (10 points)
+
+Repeat the same analysis as in the previous question but this time with respect to age and ideology. For age, create a new variable that groups the ages into four bins: 25 and under, 26-40, 41-60, and 61 and over. Use this variable to compute the average treatment effect within each of the resulting four groups. For ideology, compute the average treatment effect within each value of the `ideology` variable. [**Hint: use `tapply()` for these tasks.**] What patterns do you observe? Give a brief substantive interpretation of the results.
+    
+## Submission
+
+Post the compiled output to Canvas. 
+
+
+[Ryan Enos]: http://ryandenos.com/

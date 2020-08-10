@@ -11,7 +11,7 @@ lessons:
     weeknum: 1
     date: "September 7th"
     reading: "QSS 2.1-2.4"
-    assignment: ""
+    assignment: "01-problem-set"
     week: "01-rand-exp"
 
   - title: "Causality: Observational Studies"
@@ -36,4 +36,52 @@ lessons:
     weeknum: 5
     date: "October 5th"
     reading: "QSS 4.1-4.2.3"
+    assignment: ""
+
+  - title: "Prediction: More Regression"
+    weeknum: 6
+    date: "October 12th"
+    reading: "QSS 4.2.4-4.2.6"
+    assignment: ""
+
+  - title: "Prediction: Interactions & Nonlinearities"
+    weeknum: 7
+    date: "October 19th"
+    reading: "QSS 4.3"
+    assignment: ""
+
+  - title: "Probability: Basics"
+    weeknum: 8
+    date: "October 26th"
+    reading: "QSS 6.1-6.2"
+    assignment: ""
+
+  - title: "Probability: Random Variables"
+    weeknum: 9
+    date: "November 2nd"
+    reading: "QSS 6.3"
+    assignment: ""
+
+  - title: "Inference: Large Samples"
+    weeknum: 10
+    date: "November 9th"
+    reading: "QSS 6.4"
+    assignment: ""
+
+  - title: "Inference: Estimation"
+    weeknum: 11
+    date: "November 16th"
+    reading: "QSS 7.1"
+    assignment: ""
+
+  - title: "Inference: Hypothesis Testing"
+    weeknum: 12
+    date: "November 23rd"
+    reading: "QSS 7.2"
+    assignment: ""
+
+  - title: "Inference: Hypothesis Testing"
+    weeknum: 13
+    date: "November 30th"
+    reading: "QSS 7.3"
     assignment: ""
