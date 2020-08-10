@@ -19,8 +19,11 @@ type: docs
 
 ### Materials
 
-- [Slides](#)
-- [Code](#)
+- [Slides](/slides/02-causality/01-potential-outcomes.pdf)
 
 ## Topic 2: Randomized Experiments
 
+
+### Materials
+
+- [Slides](/slides/02-causality/02-rand-exp.pdf)
