@@ -1,0 +1,71 @@
+---
+title: "Problem Set 0: Getting Started with R and R Studio"
+author: "Gov 51"
+date: 2020-09-02
+---
+
+## Installing R and RStudio
+
+In this problem set, we're going to get R, RStudio, and R Markdown set up on your computer. To get started, follow these steps: 
+
+1. Download and install the most recent version of [R][]. There are versions available for the Windows, Mac, and Linux operating systems. On a Windows machine, you will want to install using the `R-x.y.z-win.exe` file where `x.y.z` is a version number. On a Mac, you will want to install using the `R-x.y.z.pkg` file that is notarized and signed. 
+2. With R installed, download and install [RStudio][]. RStudio is a type of "integrated development environment" or IDE designed for R. It makes working with R considerably easier and is available for most platforms. It is also free. 
+3. Install the packages we will use throughout the semester. To do this, either type or copy and paste the following lines of code into the "Console" in RStudio (lower left panel by default). Note that the symbols next to `my_package` are a less than sign `<` followed by a minus sign `-` with no space between them. 
+
+```{r, eval = FALSE}
+my_packages <- c("tidyverse", "usethis", "devtools", "learnr")
+install.packages(my_packages, repos = "http://cran.rstudio.com")
+remotes::install_github("kosukeimai/qss-package", build_vignettes = TRUE)
+```
+
+
+## Installing and configuring git
+
+Git is a version control program that helps organize the process of writing and maintaining code. It allows you to maintain a history of edits to your code without having to resort to a set of files like:
+
+```
+my_code.R
+my_code_v1.R
+my_code_v2_FINAL.R
+```
+
+There's a lot to git and it will be harder to use in the beginning, but in the long term there are huge benefits of it. First, when you use git, you are much less likely to encounter a devastating data failure. All of your (committed) changes to your project are preserved, even when you make new changes or you revert old changes. 
+
+Git is also a very useful way for people to collaborate. There is a huge community built up around it. And once your projects are publicly available on Github (a website for hosting git repositories), there are a host of ways that folks can collaborate with you. 
+
+### Install git
+
+You might already have git installed on your computer, especially if you have a Mac. To check, in RStudio, click on the Terminal tab in the bottom-left panel (next to the Console tab). Type `git --version` at the command prompt. If you get a response with a version number, great you are all set. If you get any kind of error message, you learn how to install git on your machine [here][happygit]. 
+
+### Setup a GitHub account
+
+Next, you can setup a [GitHub][] account. You can think of GitHub as similar to Dropbox or Google Drive for your git projects ("repositories") where everything is public by default. Since you might use this account to interact with potential employers in the future, you should probably pick a professional username. 
+
+Once you have a GitHub account, you can configure your local git program to interact with your account gracefully. Run the following two lines of code in the Terminal replacing `"John Harvard"` with your name and `"john@harvard.edu"` with your email address used to sign up for GitHub. 
+
+```
+git config --global user.name "John Harvard"
+git config --global user.mail "john@harvard.edu"
+```
+
+### Creating your first repo (repository)
+
+Once you are logged into Github and at its homepage, you can now create a new repo (shorthand for "repository"). These repositories are like folders in Dropbox except a bit more structured. Create one by clicking on the green "New" button in the top-left of the screen next to "Repositories." It should look like this:
+
+<div class="bordered-image"><img src="/images/github-create-new.png" alt="Create a new repo" width=400></img></div>
+
+Now a new screen should pop up requesting some information for the new repo. Give this new Repository the name `gov51-problem-set0` and set it to be a private repository. You can give it an informative description and check the "Initialize this repository with a README" checkbox. This latter option will add a README to the repository where you can add more information that will display nicely in the repository's homepage. Your setup should look something like this:
+
+
+<div class="bordered-image"><img src="/images/github-create-options.png" alt="New Repo Options" width=600></img></div>
+
+
+
+
+
+
+
+[R]: https://cloud.r-project.org/
+[RStudio]:https://rstudio.com/
+[happygit]: https://happygitwithr.com/install-git.html
+[Github]: https://github.com/join
