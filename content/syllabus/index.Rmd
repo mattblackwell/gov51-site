@@ -1,5 +1,5 @@
 ---
-title: Syllabus for Gov 51: Data Analysis and Politics
+title: "Syllabus for Gov 51: Data Analysis and Politics"
 slug: syllabus
 citeproc: true
 output:
