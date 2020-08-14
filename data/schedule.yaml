@@ -80,7 +80,7 @@ lessons:
     reading: "QSS 7.2"
     assignment: ""
 
-  - title: "Inference: Hypothesis Testing"
+  - title: "Inference: Uncertainty in Regression"
     weeknum: 13
     date: "November 30th"
     reading: "QSS 7.3"
