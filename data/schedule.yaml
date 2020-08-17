@@ -56,10 +56,10 @@ lessons:
     reading: "QSS 6.1-6.2"
     assignment: ""
 
-  - title: "Probability: Random Variables"
+  - title: "Probability: Random Variables & Large Samples"
     weeknum: 9
     date: "November 2nd"
-    reading: "QSS 6.3"
+    reading: "QSS 6.3-6.4"
     assignment: ""
 
   - title: "Inference: Large Samples"
@@ -69,19 +69,25 @@ lessons:
     assignment: ""
 
   - title: "Inference: Estimation"
-    weeknum: 11
-    date: "November 16th"
+    weeknum: 10
+    date: "November 9th"
     reading: "QSS 7.1"
     assignment: ""
 
   - title: "Inference: Hypothesis Testing"
-    weeknum: 12
-    date: "November 23rd"
+    weeknum: 11
+    date: "November 16th"
     reading: "QSS 7.2"
     assignment: ""
 
   - title: "Inference: Uncertainty in Regression"
+    weeknum: 12
+    date: "November 23th"
+    reading: "QSS 7.3"
+    assignment: ""
+
+  - title: "Review and Wrap-up"
     weeknum: 13
     date: "November 30th"
-    reading: "QSS 7.3"
+    reading: " "
     assignment: ""

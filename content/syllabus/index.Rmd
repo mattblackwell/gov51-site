@@ -18,9 +18,9 @@ What will you learn in this course? Our goal is to give you the ability to under
 In this course, you will be expected to
 
 - complete four problem sets,
-- complete twelve weekly tutorials,
-- take two exams,
-- write one final  data analysis project.
+- complete ten weekly tutorials,
+- take two take-home, open-book exams, and
+- write one final data analysis project.
 
 ## Course objectives
 
@@ -30,6 +30,7 @@ In this course, you will learn to:
 - Summarize and visualize data
 - Be able to use linear regression to analyze data
 - Understand uncertainty in data analysis and how to quantify it
+- Use professional tools for data analysis such as R, RStudio, git, and GitHub
 
 We will also attempt to inspire a passion for data analysis and create a community among the students to deepen their learning. 
 
@@ -37,7 +38,7 @@ We will also attempt to inspire a passion for data analysis and create a communi
 
 Most students will take Gov 51 after Gov 50 (formerly Gov 1005: Data), so that class will provide sufficient background material. Students with previous statistics exposure (via AP Statistics or similar) or a solid background in high-school level math should also be prepared for the course. 
 
-We will assume a basic familiarity with high-school algebra and a working knowledge of computers. If you are unfamiliar with downloading and installing software programs on your Mac or PC, you may want to allocate additional time to make sure those aspects of the course go smoothly. Previous experience with statistical methods and computing (Stata, R, SAS, SPSS) is helpful, but not required. You can always get in touch with the teaching staff for additional help on these issues. 
+We will assume a basic familiarity with high-school algebra and a working knowledge of computers. If you are unfamiliar with downloading and installing software programs on your Mac or PC, you may want to allocate additional time to make sure those aspects of the course go smoothly. In particular, we have developed a [Problem Set 0][ps0] to guide you through installing R, RStudio, and git to give you a sense of the tools we will be using. Previous experience with statistical methods and computing (Stata, R, SAS, SPSS) is helpful, but not required. You can always get in touch with the teaching staff for additional help on these issues. 
 
 No matter your background, you should be prepared to engage the class material on a regular, almost daily basis  even beyond the time dedicated to assignments and exam review. Furthermore, you should feel comfortable with engaging in real-life data analysis using statistical software. We will guide you through that process, but it may be unfamiliar and therefore challenging. You should especially take this course if you plan to use quantitative data at all in a senior thesis.
 
@@ -62,6 +63,9 @@ Here are how each portion of course contributes to the overall grade:
 | Final Project  | 20%  |
 
 
+We will use [Gradescope](https://www.gradescope.com/courses/158258) for submission of the various assignments throughout the semester. Once enrollment is finished, Gradescope will automatically connect through Canvas. 
+
+
 **Bump-up policy**: We reserve the right to "bump up" the grades of students who have made valuable contributions to the course in the lecture, sections, study halls, or discussion/Slack. This also applies to students who show tremendous progress and growth over the semester. 
 
 
@@ -73,7 +77,7 @@ We will encourage and facilitate students watching these videos in **watch parti
 
 ## Live class meetings
 
-We will hold live class meetings over Zoom once per week to perform an in-class activity related to the material in that week. In these sessions, a member of the course staff will usually walk through a data example and you will be expected to follow along. The exact number and timing of these live class meetings will be determined by enrollment, but we will make efforts to have live sessions for any time zone. 
+We will hold live class meetings over Zoom once per week to perform an in-class activity related to the material in that week. In these sessions, a member of the course staff will usually walk through a data example and you will be expected to follow along. These meetings will take place once a week Tuesdays at 1:30pm ET. Depending on enrollment, we may add an additional live meeting to accommodate students in other time zones. 
 
 ## Sections
 
@@ -82,6 +86,8 @@ Every student will be assigned to a small-group section of the course which will
 ## Tutorials
 
 We will assign short weekly tutorials to assess your knowledge of the material covered in the reading and video lectures that week. You will complete these in RStudio. While you are expected to complete them on time, they will be graded based on completion not on how correct the answers are. They will be due Mondays at 11:59pm ET. 
+
+At the beginning of the term, these tutorials will focus on getting up to speed in R and over the course of the term, they will focus more on the theoretical aspects of data analysis. 
 
 
 ## Problem Sets
@@ -98,7 +104,7 @@ The schedule for the problem sets will be:
 | Problem Set 1 | Randomized Experiments | Thu, Sep 10th 12:00pm ET | Wed, Sep 16th 11:59pm ET |
 | Problem Set 2 | Summarizing Data | Thu, Sep 24th 12:00pm ET | Wed, Sep 30th 11:59pm ET |
 | Problem Set 3 | Regression | Thu, Oct 22nd 12:00pm ET | Wed, Oct 28th 11:59pm ET |
-| Problem Set 4 | Regression with Uncertainty | Thu, Nov 19th 12:00pm ET | Wed, Nov 25th 11:59pm ET |
+| Problem Set 4 | Inference | Thu, Nov 19th 12:00pm ET | Wed, Nov 25th 11:59pm ET |
 
 
 **Grace policy**: When calculating the final homework portion of the overall grade, we will drop the lowest of the four scores and use the remaining scores. Thus, if you have an emergency that forces you to miss one homework, your grade will not be severely affected. 
@@ -109,8 +115,8 @@ There will be two take-home exams during the course. This exam will be similar t
 
 | Exam   | Release Date            | Due Date                 |
 |:-------|:------------------------|:-------------------------|
-| Exam 1 | Thu, Oct 8th 12:00pm ET | Wed, Oct 14th 11:59pm ET |
-| Exam 2 | Tue, Dec 1st 12:00pm ET | Mon, Dec 7th 11:59pm ET |
+| Exam 1 | Thu, Oct 8th 5:00pm ET | Wed, Oct 14th 11:59pm ET |
+| Exam 2 | Tue, Dec 1st 5:00pm ET | Mon, Dec 7th 11:59pm ET |
  
 
 
@@ -132,12 +138,13 @@ The course will follow a basic flow each week, with small differences if a tutor
 - Monday: Watch the week's lecture videos; submit tutorial (if due).
 - Tuesday: Live class meetings. 
 - Wednesday: Submit problem set or exam (if due). 
-- Thursday: Problem set posted.
+- Thursday: Problem set posted; sections meet.
+- Friday: Sections meet. 
 
 
 ## Discussion
 
-We will be using Slack and a few other tools to be determined to discuss topics in the course. More details on this to come. 
+We will be using the [Ed platform](https://us.edstem.org/courses/2296/discussion/) for discussions on course material. There is a [users guide](https://us.edstem.org/quickstart/ed-discussion.pdf) to help orient yourself to the platform. We will enroll you into the platform toward the start of the semester. 
 
 
 
@@ -145,9 +152,6 @@ We will be using Slack and a few other tools to be determined to discuss topics 
 
 If you feel there has been an error in the grading of one your assignment, you may request (in writing) a regrade of the assignment. A member of the teaching staff will regrade the entire assignment, not just the part you are disputing. Therefore, your regrade might increase or decrease the overall grade on the assignment. 
 
-
-## Academic Honesty
-We encourage students to work together on the homework assignments, but you must write your own solutions (this includes computer code), and you must write the names of your collaborators on your assignment. I also strongly suggest that you make a solo effort at all the problems before consulting others. The midterms will be very difficult if you have no experience working on your own. **There is no collaboration allowed on the  exams.**
 
 
 ## Office Hours and Availability
@@ -171,4 +175,23 @@ The following books are optional, but may be helpful to build you understanding 
 ## Computing
 
 We'll use R in this class to conduct data analysis. R is free,  open source, and available on all
-major platforms (including Solaris, so no excuses). [RStudio](http://www.rstudio.com) (also free) is a graphical interface to R that is widely used to work with the R language. You can find a virtually endless set of resources for R and RStudio on the internet. For beginners, there are several web-based tutorials. In these, you will be able to learn the basic syntax of R. We'll post more R resources on Canvas. 
+major platforms (including Solaris, so no excuses). [RStudio](http://www.rstudio.com) (also free) is a graphical interface to R that is widely used to work with the R language. You can find a virtually endless set of resources for R and RStudio on the internet. For beginners, there are several web-based tutorials. In these, you will be able to learn the basic syntax of R. We'll post more R resources on the course website. We will also use git and Github to manage our projects. 
+
+You can get setup with all of these tools by completing [Problem Set 0][ps0]. 
+
+## Mental Health
+
+College is a stressful time in one's life and mixing it with a global pandemic, remote learning, and dislocation makes this one of the most fraught semester any of us have probably faced. We acknowledge that nothing is quite normal and that there may be times when you feel overwhelmed by this course or by life more generally. Please feel free to reach out to any of the course staff if you want to talk about any issues you are having with the course or anything else. We will always try to help and we are committed to being extra accommodating this semester on course policy issues. Please just get in touch. 
+
+Of course, there are other resources at Harvard if you need them. A few are listed below:
+
+* [Counseling and Mental Health Services](https://camhs.huhs.harvard.edu/)
+* [Room 13](https://www.hcs.harvard.edu/~room13/)
+
+## Academic Honesty
+
+The work that you do in both the problem sets should be your own work. You may seek help from others so long as this does not result in someone else completing your work for you. When asking for help, you may show others your code to help diagnose a bug or highlight a potential issue, but you should not view their (working) code. You should cite any discussions you have with other students in your problem set and note if they helped you with your code. You should never copy and paste code from another student or elsewhere (e.g., websites, former students). 
+
+I also strongly suggest that you make a solo effort at all the problems before consulting others. The exams will be very difficult if you have no experience working on your own. **There is no collaboration allowed on the exams.**
+
+[ps0]: /assignments/00-r-intro/

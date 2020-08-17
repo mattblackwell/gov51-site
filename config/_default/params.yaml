@@ -74,7 +74,7 @@ privacy_pack: false
 # Enable visitors to edit pages?
 #   `repo` defines the repository URL. `editable` defines which page types can be edited.
 edit_page:
-  repo_url: 'https://github.com/kjhealy/socviz880.co'
+  repo_url: 'https://github.com/mattblackwell/gov51-site'
   content_dir: ''
   repo_branch: master
   editable:
@@ -107,7 +107,7 @@ course:
   time: "Virtual"
   location: "Virtual"
   dates: "September 2nd - December 9th"
-  github: "kjhealy/socviz880.co"
+  github: "mattblackwell/gov51-site"
   copyrightYear: "2020"
 
 university: 

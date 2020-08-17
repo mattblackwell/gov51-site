@@ -8,3 +8,9 @@ main:
   - name: Classes
     url: /weeks/
     weight: 4
+  - name: Ed
+    url: https://us.edstem.org/courses/2296/discussion/
+    weight: 5
+  - name: Gradescope
+    url: https://www.gradescope.com/courses/158258
+    weight: 6
