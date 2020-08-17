@@ -62,12 +62,6 @@ lessons:
     reading: "QSS 6.3-6.4"
     assignment: ""
 
-  - title: "Inference: Large Samples"
-    weeknum: 10
-    date: "November 9th"
-    reading: "QSS 6.4"
-    assignment: ""
-
   - title: "Inference: Estimation"
     weeknum: 10
     date: "November 9th"
