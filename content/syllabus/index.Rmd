@@ -7,6 +7,27 @@ output:
       toc: TRUE
 ---
 
+
+## Head Instructor
+
+Prof. Matthew Blackwell  
+[mblackwell@gov.harvard.edu](mailto:mblackwell@gov.harvard.edu)  
+[https://www.mattblackwell.org]()  
+Office Hours: Thursdays, 10am-noon
+
+## Teaching Fellows
+
+Mafalda Pratas Fernandes  
+[pratasfernandes@g.harvard.edu](mailto:pratasfernandes@g.harvard.edu)  
+Office Hours: TBD
+
+
+Soichiro Yamauchi  
+[syamauchi@g.harvard.edu](mailto:syamauchi@g.harvard.edu)  
+[https://soichiroy.github.io/]()  
+Office Hours: TBD
+
+
 ## Description
 
 How can we measure racial discrimination in job hiring? What is the best way to predict election outcomes? What factors drive the onset of civil wars? Is it possible to determine what members of Congress are more or less liberal given their voting record? These are just a few of the numerous question that social scientists are tackling with quantitative data. Beyond academia, companies and non-profits have invested heavily in data science techniques to learn about their users, platforms, and programs. Data scientists at these institutions are essentially applied social scientists and employ many of the same techniques you will learn in this course. 

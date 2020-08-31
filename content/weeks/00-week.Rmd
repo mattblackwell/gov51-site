@@ -9,17 +9,19 @@ menu:
 type: docs
 ---
 
+
+
 ## Reading
 
+- Make sure to read the [syllabus](/syllabus/).
 - Sections 1.1-1.4 of Quantitative Social Science. 
 
-## Topic 1: Introduction to Causality
+## Tutorials
+
+- Before getting started with the course, please complete [Problem Set 0][ps0] which will guide you through installing the relevant tools for the course. 
+- Install the `qsslearnr` package that contains the tutorials, following [these instructions][tut]. 
+- Complete "QSS Tutorial 0: Introduction to R" and upload the PDF report you produce at the end of the tutorial to Gradescope (see link at the top of this page). 
 
 
-### Materials
-
-- [Slides](#)
-- [Code](#)
-
-## Topic 2: Randomized Experiments
-
+[ps0]: /assignments/00-r-intro/
+[tut]: /assignments/tutorials/

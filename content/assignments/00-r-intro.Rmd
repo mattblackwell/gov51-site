@@ -10,7 +10,7 @@ In this problem set, we're going to get R, RStudio, and R Markdown set up on you
 
 1. Download and install the most recent version of [R][]. There are versions available for the Windows, Mac, and Linux operating systems. On a Windows machine, you will want to install using the `R-x.y.z-win.exe` file where `x.y.z` is a version number. On a Mac, you will want to install using the `R-x.y.z.pkg` file that is notarized and signed. 
 2. With R installed, download and install [RStudio][]. RStudio is a type of "integrated development environment" or IDE designed for R. It makes working with R considerably easier and is available for most platforms. It is also free. 
-3. Install the packages we will use throughout the semester. To do this, either type or copy and paste the following lines of code into the "Console" in RStudio (lower left panel by default). Note that the symbols next to `my_package` are a less than sign `<` followed by a minus sign `-` with no space between them. 
+3. Install the packages we will use throughout the semester. To do this, either type or copy and paste each of the following lines of code into the "Console" in RStudio (lower left panel by default). Make sure you do this separately for each line. If you are asked if you want to install any packages from source, type "no". Note that the symbols next to `my_package` are a less than sign `<` followed by a minus sign `-` with no space between them. 
 
 ```{r, eval = FALSE}
 my_packages <- c("tidyverse", "usethis", "devtools", "learnr")
@@ -64,7 +64,7 @@ Once you create your repo, you are ready to connect it to RStudio on your local 
 
 <div class="bordered-image"><img src="/images/github-clone.png" alt="Cloning the repo" width=800></img></div>
 
-Now, switch to RStudio. Go to the menu bar and hit "File > New Project". You can then choose what type of project to start. Since we're importing from Github, we'll use the "Version Control" option (it's the bottom of the list). In the next menu, choose "Git". Now, you can paste the URL in the "Repository URL" box and hit "Create Project". And now you'll have your project ready to go in RStudio. 
+Now, switch to RStudio. Go to the menu bar and hit "File > New Project". You can then choose what type of project to start. Since we're importing from Github, we'll use the "Version Control" option (it's the bottom of the list). In the next menu, choose "Git". Now, you can paste the URL in the "Repository URL" box. Choose a set of local directories to place this project and hit "Create Project". And now you'll have your project ready to go in RStudio. 
 
 ## Working with a project in RStudio
 
