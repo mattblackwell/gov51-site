@@ -2,7 +2,7 @@
 
 ## Matthew Blackwell
 
-This repository is a Hugo/Blogdown site that makes [gov51.mattblackwell.org](https://gov51.mattblackwell.org), a course I am teaching at Harvard University in Fall 2020. 
+This repository is a Hugo/Blogdown site that makes [gov51.mattblackwell.org](http://gov51.mattblackwell.org), a course I am teaching at Harvard University in Fall 2020. 
 
 
 
