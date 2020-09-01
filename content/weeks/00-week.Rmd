@@ -15,6 +15,7 @@ type: docs
 
 - Make sure to read the [syllabus](/syllabus/).
 - Sections 1.1-1.4 of Quantitative Social Science. 
+- Read Chapter 2 of [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/) up to section 2.6 to get a feel for R Markdown files that we'll use for problem sets. If you have never used markdown before, section 2.5 will be especially useful.  
 
 ## Tutorials
 

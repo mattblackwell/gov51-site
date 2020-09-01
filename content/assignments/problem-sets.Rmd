@@ -1,0 +1,42 @@
+---
+title: "Problem Sets and Exams"
+date: 2020-09-01
+---
+
+For both problem sets and exams, you will end up producing two types of documents:
+
+1. An `.Rmd` file (or "RMarkdown file" when spoken) that is a plain-text file that contains the text of your write-up and the code used to do all of the calculations for the assignment. You don't apply markup directly like in Word or Google docs, but by using various text shortcuts, like in Slack. 
+2. An output `.pdf` file that contains the compiled version of the Rmd file. Usually, you might call this the write-up and it will be nicely formatted and ready for non-technical folks to read. In other classes, you might write these in Microsoft Word or Google Docs. In this class, this will be the output of compiling (or knitting, in the R lingo) the `.Rmd` file. 
+
+
+You will submit **both** of these files to Gradescope when you submit your assignments. 
+
+## Tips on R Markdown settings
+
+For this course, we will always produce PDF output from R Markdown. To do, we simply need to have the following lines at the top of the `.Rmd` file:
+
+```{yaml}
+---
+Title: "My Report"
+Author: "John Harvard"
+output: pdf_document
+---
+```
+
+One downside of this is that the default settings produce PDFs that are not very attractive. You can use a slightly more attractive output with two different output formats. You can install the `tufte` and `tint` packages using the following code:
+
+```{r, eval = FALSE}
+install.packages(c("tufte", "tint"), repos = "http://cran.rstudio.com")
+```
+
+Then you can use one of the two following output formats: `output: tufte::tufte_handout` and `output: tint::tintPdf`. You would replace the `output: pdf_document` with one of those two lines. The former gives you a serif font and is a bit more stuffy but maybe a bit easier to read. The latter is all sans-serif and looks a bit more modern. If you have any errors with these packages, always try falling back to `pdf_document`. 
+
+
+## Writing good code
+
+You'll be writing code to do the analyses in this class. Code, like any language, provides many different ways of saying the same thing. One good practice of coding is to have what's called good coding style. This refers to how you format the code that you so that it is (a) easy for you and others to read, and (b) less prone to making mistakes. Here are some general guidelines for writing R code and Rmd file.
+
+- When writing R code and unless we tell you otherwise, follow the [tidyverse style guide](https://style.tidyverse.org/). For this class, the relevant parts of this document are the first couple of chapters. If you are ever uncertain about how to name something or how to write some code, see this document and it will likely help you quite a bit. 
+- Make sure the code chunks in the Rmd file have blank lines above and below them. If you don't have this, it can sometimes cause problems with compilation. 
+- Try to keep your lines of code shorter than 80 characters since this makes reading code **much** easier. Usually this means writing some function arguments on a different line. See the style guide (section 2.5) for more on this. 
+- Include comments in your code and format them nicely as in [section 3.4](https://style.tidyverse.org/functions.html#comments-1) of the style guide. These comments should explain why you wrote the code you wrote and any notes you had about how you came to this solution. This might include, say, other approaches you tried but didn't work or approaches you might want to try if you ever revisit this. Look at our code and examples to get a sense of how to use comments. In RStudio, you can nicely format a comment by hitting Control-Shift-\\. 
