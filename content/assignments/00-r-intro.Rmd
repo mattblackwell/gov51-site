@@ -13,9 +13,16 @@ In this problem set, we're going to get R, RStudio, and R Markdown set up on you
 3. Install the packages we will use throughout the semester. To do this, either type or copy and paste each of the following lines of code into the "Console" in RStudio (lower left panel by default). Make sure you do this separately for each line. If you are asked if you want to install any packages from source, type "no". Note that the symbols next to `my_package` are a less than sign `<` followed by a minus sign `-` with no space between them. 
 
 ```{r, eval = FALSE}
-my_packages <- c("tidyverse", "usethis", "devtools", "learnr")
+my_packages <- c("tidyverse", "usethis", "devtools", "learnr", "tinytex")
 install.packages(my_packages, repos = "http://cran.rstudio.com")
 remotes::install_github("kosukeimai/qss-package", build_vignettes = TRUE)
+```
+
+4. For some things in the course, we'll need produce PDFs from R and that requires something called LaTeX. If you've never heard of that, it's completely fine and you should just run the following two lines of R code:
+
+```{r, eval = FALSE}
+install.packages('tinytex')
+tinytex::install_tinytex()  # install TinyTeX
 ```
 
 
