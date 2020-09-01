@@ -8,7 +8,7 @@ weight: 10
 title: "Data Analysis and Politics"
 
 # Hero image (optional). Enter filename of an image in the `static/img/` folder.
-# hero_media: dataviz_hires.png
+hero_media: gov51-shield.png
 
 design:
   background:

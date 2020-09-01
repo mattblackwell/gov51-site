@@ -41,3 +41,7 @@ tinytex::install_tinytex()  # install TinyTeX
 ### What if I don't see a Tutorial tab in RStudio?
 
 Make sure that you have RStudio version 1.3 or higher installed on your computer. On a Mac, you can check the version by going to the top left of the menu bar (next to the Apple logo) and clicking on "RStudio" then "About RStudio". On a Windows PC, you can find the same item under File > About. 
+
+### What if my submission report misses some of my attempts?
+
+The submission report isn't perfect and will sometimes say you didn't attempt a question when you actually did. We do not grade strictly on this and are mostly looking for a confirmation that you made a good-faith effort to complete the tutorial. 
