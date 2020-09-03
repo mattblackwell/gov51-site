@@ -2,6 +2,8 @@
 title: "Problem Set 0: Bias in Self-reported Turnout"
 ---
 
+You can find instructions for obtaining and submitting problem sets [here](/assignments/problem-sets/).
+
 For Gov 51 students, you can find the GitHub Classroom link to download the template repository [here](https://canvas.harvard.edu/courses/74805/pages/github-classroom-links).
 
 For Gov E-1005 students, you can find the GitHub Classroom link to download the template repository [here](https://canvas.harvard.edu/courses/79867/pages/github-classroom-links).
@@ -58,11 +60,10 @@ Create two new variables in the data set:
   voting age population or VAP. Note that for this data set, we must
   add the total number of eligible overseas voters since the `VAP`
   variable does not include these individuals in the count.
-  - `turnout$VEtr`: the turnout rate (as a percentage) based on the
+  - `turnout$VEPtr`: the turnout rate (as a percentage) based on the
   voting eligible population or VEP.
 
- Create a table using `knitr::kable()` with columns for year, both
-  types of turnout rates as columns. What difference do you observe?
+ Create a table using the line of code `knitr::kable(turnout[,c("year", "VAPtr", "VEPtr")])`. What difference do you observe between the different measures of turnout?
   
 ## Question 3
 
@@ -71,11 +72,4 @@ Compute the difference between the ANES and VAP estimates of turnout
   turnout. Save these as new columns in the data called
   `turnout$diffVAP` and `turnout$diffVEP`. How big are each of these
   differences on average? What is the range of the differences?
-
-
-
-## Question 4
-
-Create two vectors of the ANES-VEP difference in turnout rates that contain presidential election years (1980, 1984, ...) and midterm election years  (1982, 1986, ...) separately. Call these vectors `pres_diffVEP` and `mid_diffVEP`. Note that the data set excludes the year 2006. How does the average bias of the ANES vary across election types, if at all?
-
 
