@@ -1,5 +1,5 @@
 ---
-title: "Problem Set 0: Getting Started with R, R Studio, Git, and Github"
+title: "Getting Started with R, R Studio, Git, and Github"
 author: "Gov 51"
 date: 2020-09-02
 ---

@@ -5,7 +5,7 @@ lessons:
     date: "September 2nd"
     week: "00-week"
     reading: "QSS 1.1-1.4"
-    assignment: ""
+    assignment: "ps0-turnout"
 
   - title: "Causality: Randomized Experiments"
     weeknum: 1

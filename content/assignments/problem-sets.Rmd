@@ -9,28 +9,87 @@ For both problem sets and exams, you will end up producing two types of document
 2. An output `.pdf` file that contains the compiled version of the Rmd file. Usually, you might call this the write-up and it will be nicely formatted and ready for non-technical folks to read. In other classes, you might write these in Microsoft Word or Google Docs. In this class, this will be the output of compiling (or knitting, in the R lingo) the `.Rmd` file. 
 
 
-You will submit **both** of these files to Gradescope when you submit your assignments. 
+## Problem set workflow
 
-## Tips on R Markdown settings
+The text of the problem sets will be posted here on the course website. We will distribute templates and data for the problem sets via Github. To get started, follow these steps:
 
-For this course, we will always produce PDF output from R Markdown. To do, we simply need to have the following lines at the top of the `.Rmd` file:
+1. Follow the link at the top of the problem set on the course website
+   a Canvas page that has all of the Github Classroom links for each
+   assignment.
+2. Click on the Github Classroom link for the assignment in question.
+   You'll be presented with a page that asks you to accept the
+   assignment. Click "Accept this assignment".
+3. Go to this new problem set repository on GitHub. Click on the green
+   "Code" button toward the top right of the page. When you click
+   that, a popup will appear and you can copy the URL (you can click
+   the little clipboard icon to copy this automatically).
 
-```{yaml}
----
-Title: "My Report"
-Author: "John Harvard"
-output: pdf_document
----
-```
+<div class="bordered-image"><img src="/images/github-clone.png" alt="Cloning the repo" width=800></img></div>
 
-One downside of this is that the default settings produce PDFs that are not very attractive. You can use a slightly more attractive output with two different output formats. You can install the `tufte` and `tint` packages using the following code:
+4. Now, switch to RStudio. Go to the menu bar and hit "File > New
+   Project". You can then choose what type of project to start. Since
+   we're importing from Github, we'll use the "Version Control" option
+   (it's the bottom of the list). In the next menu, choose "Git". Now,
+   you can paste the URL in the "Repository URL" box. Choose a set of
+   local directories to place this project and hit "Create Project".
+   Because this is a **private** repository, you will be prompted to
+   enter your GitHub username and password. Go ahead and do this.
 
-```{r, eval = FALSE}
-install.packages(c("tufte", "tint"), repos = "http://cran.rstudio.com")
-```
+5. As you make changes to your file, make sure to commit those
+   changes. Every commit is a point that you can always go back to if
+   your code stops working for some reason. So doing this often will
+   make sure that you have access to that great feature of git. At an
+   absolute minimum, you should do this every time you complete a
+   question, though you may want to do it more often than that.
+   Committing often means you also don't have to constantly create new
+   versions of the same file because you're afraid of making some
+   change. Also, make sure to use informative commit messages so you
+   know what's changing.
 
-Then you can use one of the two following output formats: `output: tufte::tufte_handout` and `output: tint::tintPdf`. You would replace the `output: pdf_document` with one of those two lines. The former gives you a serif font and is a bit more stuffy but maybe a bit easier to read. The latter is all sans-serif and looks a bit more modern. If you have any errors with these packages, always try falling back to `pdf_document`. 
+6. At some point, you'll want to push your changes back to GitHub so
+   the teaching staff can see your work (if you need help) or so that
+   you can submit to Gradescope.
 
+
+## Submitting your assignments 
+
+### Step 1: Download your GitHub repo as a zip file
+
+<div class="bordered-image"><img src="/images/github-zip.png" alt="Downloading your repo as a zip file" width=800></img></div>
+
+Once you are think you have completed the assignment, make sure to push your commits to GitHub and then go to the repository website and download the repo as a `.zip` file under the green "Code" button. It's important to use the default name for the zip file, so you may have to delete an older zip file if you have already downloaded it to the same location. In general, it will have the structure `problem-set-X-username-main.zip` where `X` is the problem set number and `username` is your GitHub username. 
+
+### Step 2: Submit the zip file to Gradescope
+
+On Gradescope, you'll find two entries for each assignment. One will be labelled "Zip File" and the other "PDF". Click on the Zip File entry and drag/select your zip into the box. Click "Upload."
+
+<div class="bordered-image"><img src="/images/gradescope-upload.png" alt="Uploading your zip file to Gradescope" width=800></img></div>
+
+### Step 3: Check autograder  output
+
+When you submit the zip file, Gradescope will run a series of tests on your code to see if it runs and to check that you have completed the coding tasks asked of you in the assignment. You'll see a list of test results and an overall score.
+
+<div class="bordered-image"><img src="/images/gradescope-upload.png" alt="Uploading your zip file to Gradescope" width=800></img></div>
+
+Check the messages on any questions you got wrong for hints about how to fix them. You may then re-upload the zip file again once you have fixed the code. You should repeat this process as many times as needed before you get a perfect score. 
+
+### Step 4: Upload PDF
+
+Once you have uploaded the final zip file, you can go to the other Gradescope assignment labelled "Problem Set X: PDF". There, you will be prompted to upload your final PDF report. You'll be asked to indicate on which page each answer is. Label the PDF with where those answers are (being sure to mark two different pages if an answer continues on two pages).
+
+
+## Checklist
+
+1. Accept GitHub Classroom invite.
+2. Use RStudio to "Clone with HTTPS" this repo to your computer. 
+3. Make progress editing the `.Rmd` file. 
+   - As you do, commit and push to GitHub regularly. 
+   - You can check your answers with the autograder at any point. 
+   - Make sure to **name your code chunks**.
+   - Add the names of anyone you discuss the problem set with on your write-up. 
+4. Push final version to GitHub and download the `.zip` file. 
+5. Upload the `.zip` file to the Gradescope autograder. 
+6. Upload final `.pdf` file to Gradescope.
 
 ## Writing good code
 

@@ -19,10 +19,16 @@ type: docs
 
 ## Tutorials
 
-- Before getting started with the course, please complete [Problem Set 0][ps0] which will guide you through installing the relevant tools for the course. 
+- Before getting started with the course, please complete [the guide on getting your software setup][ps0] which will guide you through installing the relevant tools for the course. 
 - Install the `qsslearnr` package that contains the tutorials, following [these instructions][tut]. 
 - Complete "QSS Tutorial 0: Introduction to R" and upload the PDF report you produce at the end of the tutorial to Gradescope (see link at the top of this page). 
 
+## Problem Set 0
+
+- We now have a [Problem Set 0][ps0-turnout] available to complete. It will not count toward your overall grade, but will give you practice at using R and RMarkdown and all of the tools we will use to complete assignments in this course. 
+- Please read the [Problem Set and Exam Instructions][ps-instructions] on how to access the problem sets and how to submit them to Gradescope. 
 
 [ps0]: /assignments/00-r-intro/
 [tut]: /assignments/tutorials/
+[ps0-turnout]: /assignments/ps0-turnout/
+[ps-instructions]: /assignments/problem-sets/

@@ -1,0 +1,81 @@
+---
+title: "Problem Set 0: Bias in Self-reported Turnout"
+---
+
+For Gov 51 students, you can find the GitHub Classroom link to download the template repository [here](https://canvas.harvard.edu/courses/74805/pages/github-classroom-links).
+
+For Gov E-1005 students, you can find the GitHub Classroom link to download the template repository [here](https://canvas.harvard.edu/courses/79867/pages/github-classroom-links).
+
+Surveys are frequently used to measure political behavior such as
+voter turnout, but some researchers are concerned about the accuracy
+of self-reports.  In particular, they worry about possible *social
+desirability bias* where in post-election surveys, respondents who did
+not vote in an election lie about not having voted because they may
+feel that they should have voted.  Is such a bias present in the
+American National Election Studies (ANES)?  The ANES is a nation-wide
+survey that has been conducted for every election since 1948.  The
+ANES conducts face-to-face interviews with a nationally representative
+sample of adults.  The table below displays the names and descriptions
+of variables in the `turnout.csv` data file.
+
+--------------------------------------------------------------------------------
+ Name                 Description
+ -------------------- ----------------------------------------------------------
+ `year`               Election year
+ 
+ `ANES`               ANES estimated turnout (percentage)
+ 
+ `VEP`                Voting Eligible Population (in thousands) 
+ 
+ `VAP`                Voting Age Population (in thousands) 
+ 
+ `total`              Total ballots cast for highest office (in thousands) 
+ 
+ `felons`             Total ineligible felons (in thousands) 
+ 
+ `noncitizens`        Total non-citizens (in thousands) 
+ 
+ `overseas`           Total eligible overseas voters (in thousands)
+ 
+ `osvoters`           Total ballots counted by overseas voters (in thousands)
+--------------------------------------------------------------------------------
+
+
+## Question 1
+
+Load the data into R and assign it the name `turnout`. Save two
+  objects, `t_dim` and `year_range` that are the dimensions of the
+  data and the range of the `year` variable. Use these to answer the
+  following questions (in the text): How many observations are there?
+  What is the range of years covered in this data set?
+
+
+## Question 2
+
+Create two new variables in the data set:
+
+  - `turnout$VAPtr`: the turnout rate (as a percentage) based on the
+  voting age population or VAP. Note that for this data set, we must
+  add the total number of eligible overseas voters since the `VAP`
+  variable does not include these individuals in the count.
+  - `turnout$VEtr`: the turnout rate (as a percentage) based on the
+  voting eligible population or VEP.
+
+ Create a table using `knitr::kable()` with columns for year, both
+  types of turnout rates as columns. What difference do you observe?
+  
+## Question 3
+
+Compute the difference between the ANES and VAP estimates of turnout
+  rate and the difference between the ANES and VEP estimates of
+  turnout. Save these as new columns in the data called
+  `turnout$diffVAP` and `turnout$diffVEP`. How big are each of these
+  differences on average? What is the range of the differences?
+
+
+
+## Question 4
+
+Create two vectors of the ANES-VEP difference in turnout rates that contain presidential election years (1980, 1984, ...) and midterm election years  (1982, 1986, ...) separately. Call these vectors `pres_diffVEP` and `mid_diffVEP`. Note that the data set excludes the year 2006. How does the average bias of the ANES vary across election types, if at all?
+
+
