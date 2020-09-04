@@ -80,12 +80,12 @@ You'll see in the bottom right window of RStudio you'll now see the files from y
 <div class="bordered-image"><img src="/images/rstudio-files.png" alt="Files in RStudio" width=700></img></div>
 
 
-Let's edit the README file by clicking on `README.md` in that file pane and you'll be able to edit it in the top-left pane. Change the header from `# gov-51-problem-set0` to `# Introduction`. If you click on the "Git" tab in the top right panel, you will a list of the changes you've made to the repo since the last commit (you can think of a commit as a more permanent type of saving work to the git repo). 
+Let's edit the README file by clicking on `README.md` in that file pane and you'll be able to edit it in the top-left pane. Change the header from `# gov-51-problem-set0` to `# Introduction` and save the file (⌘+S or Ctrl+S). If you click on the "Git" tab in the top right panel, you will a list of the changes you've made to the repo since the last commit (you can think of a commit as a more permanent type of saving work to the git repo). 
 
 <div class="bordered-image"><img src="/images/rstudio-git-panel.png" alt="Git panel in RStudio" width=700></img></div>
 
 
-One thing you'll notice here is that git thinks that `gov51-problem-set0.Rproj` is a file that maybe should go into the repo. But this file is just for our local copy of RStudio and shouldn't really go into the repo. To prevent git from bothering us about it every time we open something, we can modify the `.gitignore` file to tell git to ignore certain files. Open `.gitignore` and add a new line with `*.Rproj` on it to tell git to ignore any file with the extension `.Rproj`. 
+One thing you'll notice here is that git thinks that `gov51-problem-set0.Rproj` is a file that maybe should go into the repo. But this file is just for our local copy of RStudio and shouldn't really go into the repo. To prevent git from bothering us about it every time we open something, we can modify the `.gitignore` file to tell git to ignore certain files. Open `.gitignore` and add a new line with `*.Rproj` on it to tell git to ignore any file with the extension `.Rproj`. Make sure to save the file. 
 
 <div class="bordered-image"><img src="/images/rstudio-edit-gitignore.png" alt="Editing .gitignore" width=800></img></div>
 
