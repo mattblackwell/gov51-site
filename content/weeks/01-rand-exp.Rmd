@@ -13,6 +13,15 @@ type: docs
 
 - Sections 2.1-2.4 of Quantitative Social Science.
 
+## Tutorials
+
+- Complete "QSS Tutorial 1: Causality I" and upload the PDF report you produce at the end of the tutorial to Gradescope (see link at the top of this page) by Monday, September 7th 11:59pm ET. 
+- If you have any issues opening the tutorial, please see the instructions on [how to install the tutorials](/assignments/tutorials/).
+
+## Problem Sets
+
+- Problem Set 1 will be released on Thursday, 9/10. 
+
 ## Topic 1: Introduction to Causality
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/gyRZSzCtU_o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
