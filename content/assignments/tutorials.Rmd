@@ -5,18 +5,20 @@ date: 2020-09-02
 
 ## Installing the QSS tutorials pacakge
 
-To install the package that contains the tutorials for the class run the following lines of code:
+To install the package that contains the tutorials for the class run the following lines of code, each entered separately. Note that you may be asked to update packages when you enter this code. You can select 1 for "All" to perform any updates. 
 
 ```{r, eval = FALSE}
+remotes::install_github("kosukeimai/qss-package", build_vignettes = TRUE)
 remotes::install_github("rstudio/learnr")
 remotes::install_github("rstudio-education/gradethis")
 remotes::install_github("mattblackwell/qsslearnr")
 ```
 
-After the package has been installed, you should be able to find all of the tutorials for the course in the "Tutorials" tab in the top-right pane of RStudio. Scroll down to find a QSS tutorial and click "Start Tutorial" to launch a tutorial: 
+For each After the package has been installed, you should be able to find all of the tutorials for the course in the "Tutorials" tab in the top-right pane of RStudio. Scroll down to find a QSS tutorial and click "Start Tutorial" to launch a tutorial: 
 
 <div class="bordered-image"><img src="/images/rstudio-tutorials.png" alt="RStudio Tutorials Tab" width=800></img></div>
 
+If you do not see any QSS tutorials after scrolling to the bottom, try to restart RStudio and check again. If you still don't see any tutorials, confirm that you have installed the package by running `library(qsslearnr)`. If you get an error about the package not being installed, try the above installation procedure again and note any error messages you receive before reaching out to the teaching staff for assistance. 
 
 ## Submission Reports
 

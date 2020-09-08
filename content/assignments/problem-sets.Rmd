@@ -75,7 +75,7 @@ Check the messages on any questions you got wrong for hints about how to fix the
 
 ### Step 4: Upload PDF
 
-Once you have uploaded the final zip file, you can go to the other Gradescope assignment labelled "Problem Set X: PDF". There, you will be prompted to upload your final PDF report. You'll be asked to indicate on which page each answer is. Label the PDF with where those answers are (being sure to mark two different pages if an answer continues on two pages).
+Once you are satisfied with your autograding, then you should produce your final PDF report by hitting the "Knit" button at the top of the RStudio editor. This should produce a PDF output that you can then upload to Gradescope. In Gradescope, there will be an assignment labelled "Problem Set X: PDF". There, you will be prompted to upload your final PDF report. You'll be asked to indicate on which page each answer is. Label the PDF with where those answers are (being sure to mark two different pages if an answer continues on two pages).
 
 
 ## Checklist
