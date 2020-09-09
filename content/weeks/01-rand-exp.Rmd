@@ -38,3 +38,10 @@ type: docs
 ### Materials
 
 - [Slides](/slides/02-causality/02-rand-exp.pdf)
+
+
+## Live Meeting 
+
+- Data: [`transphobia.csv`](/data/transphobia.csv)
+- Completed Rmd file with all prompts: [`week-01-notes.Rmd`](/weeks/week-01-notes.Rmd)
+- [Zoom Recording](https://canvas.harvard.edu/courses/74805/external_tools/53531) (Go to "Cloud Recordings" Tab)

@@ -1,0 +1,142 @@
+---
+title: "Live Meeting Week 1: Reducing Transphobia"
+output:
+  html_document:
+    theme: flatly
+    highlight: tango
+---
+
+## Introduction
+
+- Logistical announcements
+  - Recording live sessions
+  - PS 0 (not for a grade) submissions close tomorrow, 11:59pm
+  - PS 1 will be released on Thursday. 
+  - Study Halls
+  - Using Ed
+- TF announcements
+  - Sections
+- Flow of live meetings. 
+- Questions about the material
+
+
+
+## Data
+
+> Broockman, David and Joshua Kalla. 2016. "[Durably Reducing Transphobia: A Field Experiment on Door-to-door Canvassing.](https://science.sciencemag.org/content/352/6282/220.abstract)" *Science* Vol 352, No. 6282. pp. 220--224
+
+
+This data comes from a randomized experiment in South Florida on whether door-to-door canvassing with a short conversation can lastingly reduce intergroup prejudices. This particular experiment targeted antitransgender prejudice and 56 canvassers were sent door to door to encourage active perspective-taking with 501 voters. Each household was randomly assigned to either the active treatment of a conversation about transgender people or they were assigned a placebo conversation about recycling. Some canvassers identified as transgender while others identified as nontransgender. 
+
+
+We have taken a subset of their data and cleaned it up for use in today's session as `transphobia.csv`. Here are a list of the variables in the data set:
+
+| Variable Name    | Description                                                                |
+|------------------|----------------------------------------------------------------------------|
+| `age`            | Age of the respondent in years                                             |
+| `female`         | 1=respondent marked "Female" on voter registration, 0 otherwise            |
+| `voted_gen_14`   | 1 if  respondent voted in the 2014 general election                        |
+| `vote_gen_12`    | 1 if respondent voted in the 2012 general election                         |
+| `treat_ind`      | 1 if respondent was assigned to treatment, 0 for control                   |
+| `racename`       | character name of racial identity indicated on voter file                  |
+| `democrat`       | 1 if respondent is a registered Democrat                                   |
+| `therm_trans_t0` | 0-100 feeling thermometer about transgender people at baseline             |
+| `therm_trans_t1` | 0-100 feeling thermometer about transgender people 3 days after treatment  |
+| `therm_trans_t2` | 0-100 feeling thermometer about transgender people 3 weeks after treatment |
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval = TRUE)
+options(width = 100)
+phobia <- read.csv("data/transphobia.csv")
+```
+
+
+## Prompt 1 (10 mins)
+
+First, let's a get sense for this data. Use `head()` to take a quick look at it. What are its dimensions? Summarize the data. Then, create a table for (a) the number of units in the treated and control groups and (b) the proportion of respondents in each of those groups.
+
+```{r summary}
+head(phobia)
+dim(phobia)
+summary(phobia)
+```
+
+
+```{r tables}
+table(phobia$treat_ind)
+prop.table(table(phobia$treat_ind))
+round(100 * prop.table(table(phobia$treat_ind)), digits = 1)
+```
+
+## Prompt 2 (10 mins)
+
+Check the balance between treatment and control group by calculating the average age in each group. If you have extra time: What about race? Does each racial group have a similar proportion treated? How many respondents are in each racial group? 
+
+```{r balance}
+# method (1): subsetting w/ []
+mean(phobia$age[phobia$treat_ind == 1])
+mean(phobia$age[phobia$treat_ind == 0])
+
+# method (2): subsetting w/ subset()
+treated <- subset(phobia, treat_ind == 1)
+control <- subset(phobia, treat_ind == 0)
+mean(treated$age)
+mean(control$age)
+
+# method (3): tapply
+tapply(phobia$age, phobia$treat_ind, mean)
+```
+
+
+```{r race_treatment}
+tapply(phobia$treat_ind, phobia$racename, mean)
+table(phobia$racename)
+```
+
+
+## Prompt 3
+
+Let’s calculate a treatment effect in these data. Calculate the ATE on `therm_trans_t1` and `therm_trans_t2`. Are the two estimated effects very different? Why do you think they might be?
+
+```{r ate, eval = TRUE, echo = TRUE}
+# let's get rid of missing values using na.rm = TRUE
+mean(treated$therm_trans_t1)
+mean(control$therm_trans_t1)
+
+mean(treated$therm_trans_t1) - mean(control$therm_trans_t1)
+
+mean(treated$therm_trans_t2) - mean(control$therm_trans_t2)
+
+tapply(phobia$therm_trans_t1, phobia$treat_ind, mean)
+```
+
+
+## Prompt 4
+
+Could it be the case that maybe the treated group just had warmer feelings toward transgender people? We can use the baseline survey to find out. The authors measured that as `therm_trans_t0`. 
+
+```{r balance_baseline}
+tapply(phobia$therm_trans_t0, phobia$treat_ind, mean)
+```
+
+ 
+## Prompt 5
+
+Calculate the effect of the treatment the first follow-up survey thermometer scores toward transgender people separately for men and women. For which group is the effect larger? 
+
+```{r ate_changes}
+# use subset to create groups
+fem_phobia_trt <- subset(phobia, female == 1 & treat_ind == 1)
+fem_phobia_crt <- subset(phobia, female == 1 & treat_ind == 0)
+
+# use subset to create groups
+male_phobia_trt <- subset(phobia, female == 0 & treat_ind == 1)
+male_phobia_crt <- subset(phobia, female == 0 & treat_ind == 0)
+
+## calculate effect
+mean(fem_phobia_trt$therm_trans_t1) - mean(fem_phobia_crt$therm_trans_t1)
+
+mean(male_phobia_trt$therm_trans_t1) - mean(male_phobia_crt$therm_trans_t1)
+```
