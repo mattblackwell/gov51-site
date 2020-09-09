@@ -65,13 +65,15 @@ On Gradescope, you'll find two entries for each assignment. One will be labelled
 
 <div class="bordered-image"><img src="/images/gradescope-upload.png" alt="Uploading your zip file to Gradescope" width=800></img></div>
 
-### Step 3: Check autograder  output
+### Step 3: Check autograder output
 
 When you submit the zip file, Gradescope will run a series of tests on your code to see if it runs and to check that you have completed the coding tasks asked of you in the assignment. You'll see a list of test results and an overall score.
 
 <div class="bordered-image"><img src="/images/gradescope-upload.png" alt="Uploading your zip file to Gradescope" width=800></img></div>
 
 Check the messages on any questions you got wrong for hints about how to fix them. You may then re-upload the zip file again once you have fixed the code. You should repeat this process as many times as needed before you get a perfect score. 
+
+If you get an autograder error saying "The autograder failed to execute correctly" and you are using the Safari browser on macOS, check to see if Safari is unzipping the zip file automatically upon download. If it is, you can turn off this setting by following [these instructions](https://wiki.umbc.edu/pages/viewpage.action?pageId=31919091). 
 
 ### Step 4: Upload PDF
 
