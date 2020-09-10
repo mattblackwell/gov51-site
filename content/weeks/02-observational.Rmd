@@ -1,0 +1,41 @@
+---
+title: "Week 2: Observational Studies and Descriptive Statistics"
+linktitle: "2: Observational Studies and Descriptive Statistics"
+date: 2020-09-14
+menu:
+  weeks:
+    parent: Weeks
+    weight: 2
+type: docs
+---
+
+## Reading
+
+- Sections 2.5-2.6 of Quantitative Social Science.
+
+## Tutorials
+
+- Complete "QSS Tutorial 2: Causality II" and upload the PDF report you produce at the end of the tutorial to Gradescope (see link at the top of this page) by Monday, September 14th 11:59pm ET. 
+- If you have any issues opening the tutorial, please see the instructions on [how to install the tutorials](/assignments/tutorials/).
+
+## Problem Sets
+
+- Problem Set 1 is due on Wednesday, 9/14 at 11:59pm ET. 
+
+## Video 1: Observational Studies
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/rf9O1tFRGEU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+### Materials
+
+- [Slides](/slides/02-causality/03-obs-studies.pdf)
+
+## Topic 2: Randomized Experiments
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/DH4w-Tj4A1Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+### Materials
+
+- [Slides](/slides/03-measurement/01-descriptive-stats.pdf)
+
