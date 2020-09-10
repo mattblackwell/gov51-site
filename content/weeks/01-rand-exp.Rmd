@@ -20,7 +20,8 @@ type: docs
 
 ## Problem Sets
 
-- Problem Set 1 will be released on Thursday, 9/10. 
+- [Problem Set 1](/assignments/ps1-trains/) is due on Wednesday 9/16 at 11:59pm. 
+
 
 ## Topic 1: Introduction to Causality
 

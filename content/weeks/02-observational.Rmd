@@ -20,7 +20,7 @@ type: docs
 
 ## Problem Sets
 
-- Problem Set 1 is due on Wednesday, 9/14 at 11:59pm ET. 
+- [Problem Set 1](/assignments/ps1-trains/) is due on Wednesday, 9/14 at 11:59pm ET. 
 
 ## Video 1: Observational Studies
 

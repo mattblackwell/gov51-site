@@ -6,12 +6,14 @@ lessons:
     week: "00-week"
     reading: "QSS 1.1-1.4"
     assignment: "ps0-turnout"
+    assignment_label: "PS 0"
 
   - title: "Causality: Randomized Experiments"
     weeknum: 1
     date: "September 7th"
     reading: "QSS 2.1-2.4"
-    assignment: ""
+    assignment: "ps1-trains"
+    assignment_label: "PS 1"
     week: "01-rand-exp"
 
   - title: "Causality: Observational Studies"
