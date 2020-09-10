@@ -1,0 +1,113 @@
+---
+title: "Problem Set 1: Effect of Demographic Change on Exclusionary Attitudes"
+due_date: 2020-09-16
+---
+
+You can find instructions for obtaining and submitting problem sets [here](/assignments/problem-sets/).
+
+For Gov 51 students, you can find the GitHub Classroom link to download the template repository [here](https://canvas.harvard.edu/courses/74805/pages/github-classroom-links).
+
+For Gov E-1005 students, you can find the GitHub Classroom link to download the template repository [here](https://canvas.harvard.edu/courses/79867/pages/github-classroom-links).
+
+
+## Background
+
+A professor in the Government department here at Harvard, Ryan Enos, conducted a randomized field experiment assessing the extent to which individuals living in suburban communities around Boston, Massachusetts, and their views were affected by exposure to demographic change.
+
+> This exercise is based on: Enos, R. D. 2014. “[Causal Effect of  Intergroup Contact on Exclusionary Attitudes.](http://dx.doi.org/10.1073/pnas.1317670111)” *Proceedings of the National Academy of Sciences* 111(10): 3699–3704.
+
+Subjects in the experiment were individuals riding on the commuter rail line and overwhelmingly white. Every morning, multiple trains pass through various stations in suburban communities that were used for this study. For pairs of trains leaving the same station at roughly the same time, one was randomly assigned to receive the treatment and one was designated as a control. By doing so all the benefits of randomization apply for this dataset.
+
+The treatment in this experiment was the presence of two native Spanish-speaking 'confederates' (a term used in experiments to indicate that these individuals worked for the researcher, unbeknownst to the subjects) on the platform each morning prior to the train's arrival. The presence of these confederates, who would appear as Hispanic foreigners to the subjects, was intended to simulate the kind of demographic change anticipated for the United States in coming years. For those individuals in the control group, no such confederates were present on the platform. The treatment was administered for 10 days. Participants were asked questions related to immigration policy both before the experiment started and after the experiment had ended. The names and descriptions of variables in the data set `boston.csv` are:
+
+ -------------------- ----------------------------------------------------------
+ Name                 Description
+ -------------------- ----------------------------------------------------------
+ `age`                Age of individual at time of experiment
+
+ `male`               Sex of individual, male (1) or female (0)
+
+ `income`             Income group in dollars (not exact income)
+
+ `white`              Indicator variable for whether individual
+                      identifies as white (1) or not (0)
+
+ `college`            Indicator variable for whether individual
+                      attended college (1) or not (0)
+
+ `usborn`             Indicator variable for whether individual was
+                      born in the US (1) or not (0)
+
+ `treatment`          Indicator variable for whether an individual
+                      was treated (1) or not (0)
+
+ `ideology`           Self-placement on ideology spectrum from Very Liberal (1)
+                      through Moderate (3) to Very Conservative (5)
+
+ `numberim.pre`       Policy opinion on question about increasing the number
+                      immigrants allowed in the country from Increased (1) to Decreased (5)
+
+ `numberim.post`      Same question as above, asked later
+
+ `remain.pre`         Policy opinion on question about allowing the children of
+                      undocumented immigrants to remain in the country from
+                      Allow (1) to Not Allow (5)
+
+ `remain.post`        Same question as above, asked later
+
+ `english.pre`        Policy opinion on question about passing a law establishing
+                      English as the official language from Not Favor (1) to Favor (5)
+
+ `english.post`       Same question as above, asked later
+
+ ------------------------------------------------------------------------------
+
+## Question 1 (4 points)
+
+The benefit of randomly assigning individuals to the treatment or control groups is that the two groups should be similar, on average, in terms of their covariates. This is referred to as 'covariate balance.' First, read the data into R using `read.csv` and call the data `trains`. Using the `tapply` function, create one vector called `age_means` that calculates the sample average of the `age` variable in the treatment and control group. Do the same to create a `male_means` variable that is the sample mean/proportion of the `male` variable in those groups. Use the following code to create a table with these values (`rbind` binds two rows together into a matrix):
+
+```{r, eval = FALSE}
+balance_tab <- rbind(Age = age_means, Male = male_means)
+```
+
+Then use the `knitr::kable()` function to create a nice-looking table, including some informative column names. Briefly comment on the whether you think these variables appear balanced.
+
+## Question 2 (3 points)
+
+Individuals in the experiment were asked a series of questions both at the beginning and the end of the experiment. One such question was "Do you think the number of immigrants from Mexico who are permitted to come to the United States to live should be increased, left the same, or decreased?"
+
+The response to this question prior to the experiment is in the variable `numberim.pre`. The response to this question after the experiment is in the variable `numberim.post`. In both cases the variable is coded on a 1 -- 5 scale. Responses with values of 1 are inclusionary ('pro-immigration') and responses with values of 5 are exclusionary ('anti-immigration'). Create the  following two  objects:
+
+- `trt_change`: the average change in attitudes about immigration in the treated group.
+- `ctr_change`: the average change in attitudes about immigration in the control group.
+
+Use these to compute the average treatment effect on the change in attitudes about immigration and assign it to an object called `ate`. Report these estimates in text and describe what they mean substantively with respect to the study.
+
+## Question 3 (3 points)
+
+Describe, in words, what the potential outcomes for a particular person are in the analysis for the last problem. Substantively, what does the fundamental problem of causal inference refer to in this context? Make sure to refer to what treatment and control means in this experiment rather than just mention the "treatment" and "control" groups.
+
+## Question 4 (2 points)
+
+In your data science group, two members have alternative ideas for what the outcome should have been instead of the change in attitudes on immigration between the beginning and end of the experiment. Jimmy Q. Boxplot thinks that you should have used `numberim.pre` as the outcome and Suzy T. Histogram thinks that you should have used `numberim.post`. Are either of these two valid and interesting outcomes to explore in this study? Briefly explain why or why not.
+
+## Question 5 (6 points)
+
+Does having attended college influence the effect of being exposed to 'outsiders' on exclusionary attitudes? Another way to ask the same question is this: is there evidence of a differential impact of treatment, conditional on attending college versus not attending college? 
+
+Calculate the average treatment effect for those who attended college and call it `ate_col`. Calculate the average treatment effect for those who did not attend college and calls this `ate_nocol`. Report these values in text and comment on whether or not you see evidence of a differential effect of treatment.
+
+
+## Question 6 (7 points)
+
+Repeat the same analysis as in the previous question but this time with respect to age. For age, use logical vectors and subsets to create a new variable `trains$age_group` that has the following values:
+
+- `1` when `age` is 25 and under,
+- `2` when `age` is between 26-40,
+- `3` when `age` is between 41-60, and
+- `4` when `age` is 61 and over.
+
+Using this variable and `tapply()`, calculate the average treatment effect within each of the resulting four groups and assign this vector to `ate_age`. Give an informative label to this vector using the `names()` function, where the labels should tell us what group each effect is for.
+
+Using `knitr::kable()`, make a table that nicely display these effects and has a column label and a caption. Do there appear to be systematic relationships between the treatment effects and age? If so, what patterns do you see?
+
