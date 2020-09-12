@@ -76,8 +76,9 @@ Then use the `knitr::kable()` function to create a nice-looking table, including
 
 Individuals in the experiment were asked a series of questions both at the beginning and the end of the experiment. One such question was "Do you think the number of immigrants from Mexico who are permitted to come to the United States to live should be increased, left the same, or decreased?"
 
-The response to this question prior to the experiment is in the variable `numberim.pre`. The response to this question after the experiment is in the variable `numberim.post`. In both cases the variable is coded on a 1 -- 5 scale. Responses with values of 1 are inclusionary ('pro-immigration') and responses with values of 5 are exclusionary ('anti-immigration'). Create the  following two  objects:
+The response to this question prior to the experiment is in the variable `numberim.pre`. The response to this question after the experiment is in the variable `numberim.post`. In both cases the variable is coded on a 1 -- 5 scale. Responses with values of 1 are inclusionary ('pro-immigration') and responses with values of 5 are exclusionary ('anti-immigration'). Create the  following objects:
 
+- `trains$change`: a variable that is the change in immigration attitudes between pre- and post-experiment (post minus pre). 
 - `trt_change`: the average change in attitudes about immigration in the treated group.
 - `ctr_change`: the average change in attitudes about immigration in the control group.
 
