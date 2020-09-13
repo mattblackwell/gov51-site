@@ -1,0 +1,541 @@
+---
+title: R Cheatsheet for Gov 51
+date: 2020-09-11
+output:
+  blogdown::html_page:
+      toc: TRUE
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set()
+options(width = 90)
+```
+
+# Week 0
+
+## Vectors 
+
+### Create a vector 
+
+Use the `c()` function for concatenate. 
+
+```{r}
+x <- c(2.2, 6.2, 1.2, 5.5, 20.1)
+```
+
+### Creating a vector from a sequence
+
+The `seq()` function will create a sequence from a starting point to an ending point. If you specify the `by` argument, you can skip values. For instance, if we wanted a vector of all presidential election years from 1788 until 2020, we would use:
+
+```{r}
+pres_elections <- seq(from = 1788, to = 2020, by = 4)
+pres_elections
+```
+
+If we want to a sequence from `a` to `b` counting by 1s, we can use the `a:b` shorthand:
+
+```{r}
+2014:2020
+```
+
+### Length of a vector
+
+```{r}
+length(x)
+```
+
+### Summarizing a numeric vector
+
+The `summary` function will give you some summary statistics about a vector:
+
+```{r}
+summary(pres_elections)
+```
+
+### Means, median, sums, min, max
+
+There are various simple summary functions for specific summaries. 
+
+```{r}
+mean(x)
+median(x)
+sum(x)
+```
+
+### Ranges of a vector
+
+You can easily get the smallest and largest values of a vector with `min`, `max`, and `range`. 
+
+```{r}
+min(x)
+max(x)
+
+## get both in one vector
+range(x)
+```
+
+### Subsetting a vector
+
+To access a single element of a vector by position in the vector, use the square brackets `[]`:
+
+```{r}
+x[2]
+```
+
+If you want to access more than one element of a vector, put a vector of the positions you want to access in the brackets:
+
+```{r}
+x[c(2, 5)]
+```
+
+### Subsetting by a logical vector
+
+The last two approaches selected subsets by position ("give me the 2nd and 5th element of this vector"). Many times, we will want to select the values of a vector that meet some logical condition. To achieve this, we can put a logical vector **the same length as the vector being subsetted** in the square `[]` brackets with `TRUE` or `FALSE` indicating if each entry should or should not be included in the subset. For instance, we can recreate the `x[c(2, 5)]` subset with the following:
+
+```{r}
+x[c(FALSE, TRUE, FALSE, FALSE, TRUE)]
+```
+
+More usefully, we can create logical vectors from expressions to get all values from the vector that meet some condition:
+
+```{r}
+x[x > 5]
+``` 
+
+**Gotcha**: if your logical subsetting vector that is shorter than the length of the vector being subsetted, R will implicitly repeat the logical vector to the right length. So these two commands give the same output:
+
+```{r}
+x[c(TRUE, FALSE)]
+x[c(TRUE, FALSE, TRUE, FALSE, TRUE)]
+```
+
+If your logical subsetting vector is longer than the vector being subsetted, you will get `NA` values for the values beyond the correct length:
+
+```{r}
+x[c(TRUE, TRUE, TRUE, FALSE, TRUE, TRUE, TRUE)]
+```
+
+### Subsetting accidents
+
+If you try to access an element past the length of the vector, it will return a missing value `NA`:
+
+```{r}
+x[10]
+```
+
+
+If you accidentally subset a vector by `NA` (the missing value), you get the vector back with all its entries replaced by `NA`:
+
+```{r}
+x[NA]
+```
+
+Sometimes you'll notice that a vector or data frame you've been messing with all of a sudden has lots of missing values (maybe whole rows of them). Usually the culprit in that case is some errant missing value in a subset. 
+
+### Subsetting to the first 5 values
+
+```{r}
+pres_elections[1:5]
+head(pres_elections, n = 5)
+```
+
+
+### Subsetting to the last value in a vector
+
+The `length` function gives us the number of positions in the vector and so it is also the last position. You can also use the tail function. 
+
+```{r}
+pres_elections[length(pres_elections)]
+tail(pres_elections, n = 1)
+```
+
+
+### Modifying values in a vector 
+
+Let's say you want to modify one value in your vector. You can combine the square bracket subset `[]` with the assignment operator `<-` to replace a particular value:
+
+```{r}
+x
+x[3] <- 50.3
+x
+```
+
+You can replace multiple values at the same time by using a vector for subsetting:
+
+```{r}
+x
+x[1:2] <- c(-1.3, 42)
+x
+```
+
+If the replacement vector (the right-hand side) is shorter than what you are assigning to (the left-hand side), the values will "recycle" or repeat as necessary:
+
+```{r}
+x[1:2] <- 3.2
+x
+
+x[1:4] <- c(1.2, 2.4)
+x
+```
+
+**Gotcha:** if the right-hand side length is not a multiple of the left-hand side length, R will do the replacement and truncate things correctly, but will complain and give a warning:
+
+```{r}
+x[1:3] <- c(0.5, 1.5)
+x
+```
+
+Usually if you get this warning in Gov 51, something has gone wrong and you should check your code. (That's a more general rule about warnings in Gov 51.)
+
+### Arithmetic on vectors
+
+You can perform simple arithmetic on vectors and it will apply to each element:
+
+```{r}
+x
+x * 10
+```
+
+You can also take apply arithmetic on multiple vectors that are the same lengths. Suppose we have two vectors of test scores for 5 students. We can calculate the change in their scores with:
+
+```{r}
+score_1 <- c(88, 95, 92, 75, 82)
+score_2 <- c(90, 92, 97, 81, 85)
+score_2 - score_1
+```
+
+Of course, we could also save that vector for future use:
+
+```{r}
+score_change <- score_2 - score_1
+mean(score_change)
+```
+
+### Character vectors
+
+You can also create a vector of characters (words, letters, punctuation, etc):
+
+```{r}
+jedi <- c("Yoda", "Obi-Wan", "Luke", "Leia", "Rey")
+```
+
+Note for vectors, you cannot mix characters and numbers in the same vector. If you add a single character element, the whole vector gets converted. 
+
+```{r}
+## output is numeric
+x
+
+## output is now character
+c(x, "hey")
+```
+
+## Data frames
+
+### Reading in CSV files
+
+You can import data into R using the `read.csv()` function. 
+
+```{r, eval = FALSE}
+my_data <- read.csv("data/mydata.csv")
+```
+
+**Troubleshooting**: if you get an error trying to load data, double check the name of the file you are trying to load and make sure that the csv file exists where you think it does. You can always look at the Files pane of RStudio to look in a data folder to see what the contents are and what the names of the files are you are trying to import. 
+
+### Reading in RData files
+
+You can read files with an `.RData` extension with the `load()` function:
+
+```{r, eval = FALSE}
+load("data/mydata.RData")
+```
+
+With the `load()` function, you don't actually assign its output to anything. An `.RData` file contains R objects (vectors, data frame, etc) and when you load it, those objects are dumped into your R environment. 
+
+### Dimensions of a data frame
+
+The `cars` data frame is built into R and so you can access it without loading any files. To get the dimensions, you can use `dim()`, `nrow()`, and `ncol()`.
+
+```{r}
+dim(mtcars)
+nrow(mtcars)
+ncol(mtcars)
+```
+
+### Accessing variables/columns
+
+You can grab each column/variable from the data frame use the `$`, turning it into a vector:
+
+```{r}
+mtcars$wt
+```
+
+You can now treat this just like a vector, with the subsets and all. 
+
+```{r}
+mtcars$wt[1]
+```
+
+### Subsetting a data frame
+
+
+You can subset data frame using the square brackets `[]`, but things are somewhat more complicated. Here, you have to use the comma: `[,]`. Before the comma comes the subsets for rows and after the comma subsets the columns. 
+
+```{r}
+mtcars[, "wt"]
+```
+
+Grab the first 5 rows:
+
+```{r}
+mtcars[1:5,]
+```
+
+Grab the first 3 columns:
+
+```{r}
+mtcars[,1:3]
+```
+
+### Summarizing a data frame
+
+If you call `summary()` a data frame, it produces applies the vector version of the summary command to each column:
+
+```{r}
+summary(mtcars)
+```
+
+### Subset to the first/last k rows of a data frame
+
+```{r}
+head(mtcars)
+tail(mtcars)
+```
+
+# Week 1
+
+For this section, we'll use the `social` data from QSS, which is the social pressure mailer for voter turnout experiment. 
+
+```{r}
+data("social", package = "qss")
+```
+
+## Getting counts and cross-tabs
+
+### Get counts of each value in a vector
+
+When passed a single vector, the `table` function will return the number of entries that take each unique value. That is, it gives you the counts of each unique value. 
+
+```{r}
+table(social$primary2004)
+```
+
+### Cross-tabulation
+
+When passed two vectors, the `table` function will return counts for each combination of the two vectors:
+
+```{r}
+table(social$primary2004, social$primary2006)
+```
+
+You can give these entries names to produce slightly nicer tables that have labels:
+
+```{r}
+table(Turnout2004 = social$primary2004, Turnout2006 = social$primary2006)
+```
+
+If you want to add a space in the label, you should put it in quotes:
+
+```{r}
+table("Turnout in 2004 Primary" = social$primary2004,
+      "Turnout in 2006 Primary" = social$primary2006)
+```
+
+Adding a third vector will give you a cross-tab for each unique value of the third variable.
+
+```{r}
+table(social$primary2004, social$primary2006, social$sex)
+```
+
+### Converting counts to proportions using `prop.table`
+
+You can convert any `table()` output from counts to proportions by wrapping the call in `prop.table`:
+
+```{r}
+prop.table(table(social$primary2006))
+```
+
+## Controlling output
+
+### Rounding numbers 
+
+R often gives you way more significant digits than you need to display. You can always pass a vector or number to `round()` to display/print only a certain number of digits:
+
+```{r}
+round(prop.table(table(social$primary2006)), digits = 2)
+```
+
+This is useful in R Markdown files when you want to access a particular value in text as `` `r "\x60r mean(social$primary2006)\x60"` `` which would be `r mean(social$primary2006)`. You can instead use `` `r "\x60r round(mean(social$primary2006), 2)\x60"`  `` to get `r round(mean(social$primary2006), 2)`. 
+
+## Logicals
+
+
+### Logical vectors
+
+Logical vectors are just vectors that only contain the special R values `TRUE` or `FALSE`. 
+
+```{r}
+c(TRUE, FALSE, TRUE, TRUE, FALSE)
+```
+
+
+
+
+
+### TRUE/FALSE are case sensitive 
+
+You could but never should shorten `TRUE` to `T` and `FALSE` to `F`. It's easy for this shortening to go wrong so better just to spell out the full word. Also not that this is case-sensitive, and this will produce an error:
+
+```{r, error = TRUE}
+true
+True
+false
+```
+
+### Converting logicals to numerics
+
+Like numeric and character vectors, you cannot mix these types with other values. But if you treat a logical vector like a numeric and apply a function to it, R will usually silent convert the logical to a numeric with `TRUE` being assigned to `1` and `FALSE` being assigned to `0`. You can see this explicitly by passing a logical vector to the `as.numeric` function:
+
+```{r}
+as.numeric(c(TRUE, FALSE, TRUE, TRUE, FALSE))
+```
+
+### The number and proportion of TRUE values
+
+Because of the conversion mentioned above, passing a logical vector to the `sum()` function (which adds all of the entries together) will return the number of true values in the vector:
+
+```{r}
+sum(c(TRUE, FALSE, TRUE, TRUE, FALSE))
+```
+
+The `mean()` function will give the proportion of `TRUE` values in the vector:
+
+```{r}
+mean(c(TRUE, FALSE, TRUE, TRUE, FALSE))
+```
+
+### and/or statements with logicals
+
+
+We often combine logical statements using AND (`&`) and OR (`|`) in R. For AND statements, both expressions have to be true for the whole expression to be true:
+
+- `TRUE & FALSE`, `FALSE & TRUE`, and `FALSE & FALSE` are `FALSE`
+- `TRUE & TRUE` is `TRUE`
+
+For OR statements, either statement being true makes the whole expression true:
+
+- `TRUE | FALSE`, `FALSE | TRUE`, and `TRUE | TRUE` are `TRUE`
+- `FALSE | FALSE` is `FALSE`
+
+You can also use these to compare two logical vectors:
+
+```{r}
+## Apply "or" statement to each pair of elements
+c(TRUE, FALSE, TRUE, TRUE, FALSE) | c(TRUE, TRUE, FALSE, FALSE, FALSE)
+
+# Apply "and" statement to each pair of elements
+c(TRUE, FALSE, TRUE, TRUE, FALSE) & c(TRUE, TRUE, FALSE, FALSE, FALSE)
+```
+
+### Comparing objects
+
+
+There are several *relational operators* that allow us to compare objects in R. The most useful of these are the following:
+
+- `>` greater than, `>=` greater than or equal to
+- `<` less than, `<=` less than or equal to
+- `==` equal to
+- `!=` not equal to
+
+When we use these to compare two objects in R, we end us with a logical object. You can also compare a vector to a particular number.
+
+```{r}
+pres_elections > 2000
+```
+
+
+### Subset using logical vectors
+
+You can use logical vectors to subset vectors to meet certain conditions:
+
+```{r}
+pres_elections[pres_elections > 2000]
+```
+
+### Subsetting data frame using `subset`
+
+The `subset` function creates subsets of a data frame that meet certain conditions:
+
+```{r}
+control <- subset(social, subset = messages == "Control")
+head(control)
+```
+
+Note that you don't have to use the `resume$firstname` syntax in the subset argument here. The function smartly knows to find `firstname` in the `resume` data frame. 
+
+### `subset` with multiple conditions
+
+```{r}
+control_males <- subset(social, subset = messages == "Control" & sex == "male")
+head(control_males)
+```
+
+# Week 2
+
+## Creating vectors based on logicals 
+
+### Two possible values using `ifelse`
+
+`ifelse` is a function that will take a logical vector and create a new vector that takes two different values when the entry in the logical vector is either `TRUE` or `FALSE`. The first argument is the logical vector, the second is what the entries of the new vector should be if the logical entry is `TRUE` and the third is what the entries of the new vector should be when the logical entries are `FALSE. `
+
+```{r}
+ifelse(c(TRUE, FALSE, TRUE, TRUE, FALSE), 100, -100)
+```
+
+You can also create character vectors this way:
+
+```{r}
+ifelse(c(TRUE, FALSE, TRUE, TRUE, FALSE), "yessss", "this ain't it")
+```
+
+### Creating vectors based on several conditions
+
+If you want to create a vector that has more than two levels based on a several logical conditions, you can do this with subsetting. For example, let's bin `social$ages` into four groups based on their rough generation labels.
+
+- `"Greatest"` for those born in 1927 and before
+- `"Silent"` for those born between 1928 until 1945
+- `"Boomers"` for those born between 1946 until 1964
+- `"GenX"` for those born between 1965 and 1980
+- `"Millenial"` those born in 1981 and after
+
+```{r}
+## creates a column of NA placeholder values with the name "generation"
+social$gen <- NA
+
+## replace each subset separately
+social$gen[social$yearofbirth <= 1927] <- "Greatest"
+social$gen[social$yearofbirth >= 1928 & social$yearofbirth <= 1945] <- "Silent"
+social$gen[social$yearofbirth >= 1946 & social$yearofbirth <= 1964] <- "Boomers"
+social$gen[social$yearofbirth >= 1965 & social$yearofbirth <= 1980] <- "GenX"
+social$gen[social$yearofbirth >= 1981] <- "Millenial"
+
+table(social$gen)
+```
+
+
+### Calculating the mean within groups using `tapply`
+
+An efficient way to do this task would be to use the `tapply(X, INDEX, FUN)` function, which allows you to compute a function (`FUN`) on subsets of the data (`X`) defined by a factor variable (`INDEX`). For instance, to calculate the mean of the `primary2006` variable within levels the treatment `messages` variable we use:
+
+```{r}
+tapply(social$primary2006, social$messages, mean)
+```
