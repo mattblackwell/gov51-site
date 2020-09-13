@@ -5,6 +5,9 @@ main:
   - name: Schedule
     url: /schedule/
     weight: 2
+  - name: Resources
+    url: /resources/
+    weight: 3
   - name: Classes
     url: /weeks/
     weight: 4

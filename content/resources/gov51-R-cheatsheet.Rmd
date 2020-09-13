@@ -491,8 +491,6 @@ head(control_males)
 
 # Week 2
 
-## Creating vectors based on logicals 
-
 ### Two possible values using `ifelse`
 
 `ifelse` is a function that will take a logical vector and create a new vector that takes two different values when the entry in the logical vector is either `TRUE` or `FALSE`. The first argument is the logical vector, the second is what the entries of the new vector should be if the logical entry is `TRUE` and the third is what the entries of the new vector should be when the logical entries are `FALSE. `
