@@ -2,89 +2,111 @@ lessons:
   - header: true
   - title: "Introduction"
     weeknum: 0
-    date: "September 2nd"
+    date: 2020-09-02
     week: "00-week"
     reading: "QSS 1.1-1.4"
     assignment: "ps0-turnout"
     assignment_label: "PS 0"
+    tutorial: "QSS Tutorial 0"
 
   - title: "Causality: Randomized Experiments"
     weeknum: 1
-    date: "September 7th"
+    date: 2020-09-07
     reading: "QSS 2.1-2.4"
-    assignment: "ps1-trains"
-    assignment_label: "PS 1"
     week: "01-rand-exp"
+    tutorial: "QSS Tutorial 1"
 
   - title: "Causality: Observational Studies"
     weeknum: 2
-    date: "September 14th"
+    date: 2020-09-14 
     reading: "QSS 2.5-2.6"
-    assignment: ""
+    assignment: "ps1-trains"
+    assignment_label: "PS 1"
     week: "02-observational"
+    tutorial: "QSS Tutorial 2"
 
   - title: "Measurement: Descriptive Statistics"
     weeknum: 3
-    date: "September 21st"
+    date: 2020-09-21
     reading: "QSS 3.1-3.3"
     assignment: ""
+    tutorial: "QSS Tutorial 3"
 
   - title: "Measurement: Sampling & Bivariate Statistics"
     weeknum: 4
-    date: "September 29th"
+    date: 2020-09-29
     reading: "QSS 3.4-3.6"
     assignment: ""
+    assignment_label: "PS 2"
+    tutorial: "QSS Tutorial 4"
 
   - title: "Prediction: Elections & Regression"
     weeknum: 5
-    date: "October 5th"
+    date: 2020-10-05
     reading: "QSS 4.1-4.2.3"
     assignment: ""
+    tutorial: "QSS Tutorial 5"
 
   - title: "Prediction: More Regression"
     weeknum: 6
-    date: "October 12th"
+    date: 2020-10-12
     reading: "QSS 4.2.4-4.2.6"
     assignment: ""
+    assignment_label: "Exam 1"
+    tutorial: "QSS Tutorial 6"
 
   - title: "Prediction: Interactions & Nonlinearities"
     weeknum: 7
-    date: "October 19th"
+    date: 2020-10-19
     reading: "QSS 4.3"
     assignment: ""
+    
 
   - title: "Probability: Basics"
     weeknum: 8
-    date: "October 26th"
+    date: 2020-10-26
     reading: "QSS 6.1-6.2"
     assignment: ""
+    assignment_label: "PS 3"
+    tutorial: "QSS Tutorial 7"
 
   - title: "Probability: Random Variables & Large Samples"
     weeknum: 9
-    date: "November 2nd"
+    date: 2020-11-02
     reading: "QSS 6.3-6.4"
     assignment: ""
+    tutorial: "QSS Tutorial 8"
 
   - title: "Inference: Estimation"
     weeknum: 10
-    date: "November 9th"
+    date: 2020-11-09
     reading: "QSS 7.1"
     assignment: ""
+    tutorial: "QSS Tutorial 9"
 
   - title: "Inference: Hypothesis Testing"
     weeknum: 11
-    date: "November 16th"
+    date: 2020-11-16
     reading: "QSS 7.2"
     assignment: ""
+    tutorial: "QSS Tutorial 10"
 
   - title: "Inference: Uncertainty in Regression"
     weeknum: 12
-    date: "November 23th"
+    date: 2020-11-23
     reading: "QSS 7.3"
     assignment: ""
+    assignment_label: "PS 4"
 
   - title: "Review and Wrap-up"
     weeknum: 13
-    date: "November 30th"
+    date: 2020-11-30
     reading: " "
     assignment: ""
+
+  - title: "No meetings: Exam and Final Projects"
+    weeknum: --
+    date: 2020-12-07
+    reading: " "
+    assignment: ""
+    assignment_label: "Exam 2"

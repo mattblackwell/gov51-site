@@ -10,14 +10,16 @@
             <td style="width:10%;text-align:left" class="mid-table-header">Date</td>
             <td style="width:10%;text-align:left" class="mid-table-header">Topic</td>
             <td style="width:10%;text-align:left" class="mid-table-header">Reading</td>
-            <td style="width:10%;text-align:center" class="mid-table-header">Assignment</td>
-            <td style="width:10%;text-align:center" class="mid-table-header">Class</td>
+            <td style="width:10%;text-align:left" class="mid-table-header"><a href="/assignments/tutorials/">Tutorials</a></td>
+            <td style="width:10%;text-align:center" class="mid-table-header"><a href="/assignments/problem-sets/">Assignment</a></td>
+            <td style="width:10%;text-align:center" class="mid-table-header">Materials</td>
 
             {{- else }}
 
             <td align="center" style="width:2%;text-align:right">{{ .weeknum }}</td>
-            <td align="left" style="width:20%;text-align:left">{{ .date }}</td>
-            <td style="width:50%;text-align:left">{{ .title | markdownify }}</td>
+            <td align="left" style="width:15%;text-align:left">{{ dateFormat "Jan 2" .date  }}</td>
+            <td style="width:40%;text-align:left">{{ .title | markdownify }}</td>
+            
 
             {{- if .reading }}
             <td align="left" style="width:20%;text-align:left">{{ .reading }}</td>
@@ -28,14 +30,27 @@
             </td>
             {{- end }}
 
+            {{- if .tutorial }}
+            <td align="left" style="width:30%;text-align:left">{{ .tutorial }}</td>
+            {{- else }}
+            <td align="center" style="width:15%;text-align:center">
+                <font color="f1f1f1">
+                    <i class="fas fa-book-reader fa-lg"></i></font>
+            </td>
+            {{- end }}
+
             {{- if .assignment }}
             <td align="center" style="width:10%;text-align:center"><a
                     href="{{ .Site.baseurl }}/assignments/{{ .assignment }}/">
-                    <i class="fas fa-laptop-code"></i> {{ .assignment_label }}</a></td>
+                <i class="fas fa-file"></i> {{ .assignment_label }}</a></td>
+            {{- else if .assignment_label}}
+            <td align="center" style="width:10%;text-align:center">
+              <i class="fas fa-file"></i> {{ .assignment_label }}
+            </td>
             {{- else }}
             <td align="center" style="width:10%;text-align:center">
                 <font color="f1f1f1">
-                    <i class="fas fa-laptop-code"></i></font>
+                    <i class="fas fa-file"></i></font>
             </td>
             {{- end }}
 

@@ -5,4 +5,12 @@ slug: schedule
 
 ---
 
+Below is the schedule for the semester with the reading, tutorials, and problem sets/exams due in each week of course. You can find the lecture videos under the "Materials" links for that week. You should generally:
+
+-  watch the lecture videos and complete the readings by Monday; 
+- complete the tutorials by Monday evening at 11:59pm; and 
+- submit the problem set or exam by Wednesday at 11:59pm. 
+
 `r blogdown::shortcode("schedule")`
+
+**NOTE:** Exam 2 is due on Monday, December 7th. 
