@@ -14,3 +14,12 @@ Below is the schedule for the semester with the reading, tutorials, and problem 
 `r blogdown::shortcode("schedule")`
 
 **NOTE:** Exam 2 is due on Monday, December 7th. 
+
+## Final project dates
+
+| Milestone      | Due Date                 |
+|:---------------|:-------------------------|
+| Proposal       | Wed, Oct 14th 11:59pm ET |
+| Draft Analyses | Wed, Nov 11th 11:59pm ET |
+| Final Report   | Mon, Dec 14th 11:59pm ET |
+
