@@ -31,11 +31,10 @@ type: docs
 
 - [Slides](/slides/02-causality/03-obs-studies.pdf)
 
-## Topic 2: Randomized Experiments
+## Topic 2: Descriptive Statistics
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/DH4w-Tj4A1Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Materials
 
 - [Slides](/slides/03-measurement/01-descriptive-stats.pdf)
-
