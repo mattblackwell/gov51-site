@@ -1,8 +1,9 @@
 ---
-title: Resources
+title: "Resources"
 ---
 
-## Gov 51 Resources
+
+### Gov 51 Resources tyest
 
 - [Gov 51 R Cheatsheet](/resources/gov51-r-cheatsheet/)
 - [Getting Software Set Up](/assignments/00-r-intro/)

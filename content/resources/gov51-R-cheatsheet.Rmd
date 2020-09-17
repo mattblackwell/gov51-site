@@ -1,9 +1,10 @@
 ---
 title: R Cheatsheet for Gov 51
 date: 2020-09-11
+summary: "Guide to the R techniques used in Gov 51"
 output:
   blogdown::html_page:
-      toc: TRUE
+    toc: true
 ---
 
 ```{r setup, include = FALSE}
@@ -537,3 +538,124 @@ An efficient way to do this task would be to use the `tapply(X, INDEX, FUN)` fun
 ```{r}
 tapply(social$primary2006, social$messages, mean)
 ```
+
+# Week 3
+
+## Visualization
+
+### Barplot
+
+First we create a basic barplot with defaults:
+
+```{r barplot-plain}
+barplot(table(social$primary2006))
+```
+
+Now we can also add in a bunch of arguments to make it more attractive:
+
+```{r barplot}
+barplot(
+  table(social$primary2006),
+  names.arg = c("Didn't Vote", "Voted"), ## group labels, L to R
+  main = "Distribution of Turnout in 2006 Primary", ## main title
+  ylab = "Number of Respondents", ## y-axis label
+  col = "lightblue",  ## color of the bars
+  border = NA ## remove black border
+)
+```
+
+
+### Histograms
+
+Again, a plain histogram with just the defaults except `freq = FALSE` to ensure the histogram is giving us density.
+
+```{r hist-plain}
+social$age <- 2006 - social$yearofbirth
+hist(social$age, freq = FALSE)
+```
+
+We can also make it fancy using various arguments. You may only want to use some of these. 
+
+```{r hist-fancy}
+hist(
+  social$age,
+  freq = FALSE,
+  main = "Distribution of Subject Ages",
+  xlab = "Age",
+  col = "lightblue",
+  border = "white",
+  las = 1,  ## make the y-axis tick labels horizontal
+  cex.axis = 0.8 ## size of axis tick labels relative to 1
+)
+```
+The `cex.axis` argument below is expressed as a fraction of the default size. So, setting this to 1 would be the default text size, and `0.8` makes it 20% smaller. This is helpful when we use `las=1` to make the axis labels horizontal.
+
+### Boxplots
+
+Here is the basic boxplot code with the defaults:
+
+```{r boxplot-plain}
+boxplot(social$age)
+```
+
+We can also add in many of the arguments from the other plotting commands:
+
+```{r boxplot-fancy}
+boxplot(
+  social$age,
+  main = "Distribution of Subject Age",
+  ylab = "Age",
+  col = "lightblue",
+  las = 1,
+  border = "grey20"
+)
+```
+
+## Missing data
+
+### Calculating means of vectors with missing values
+
+To calculate the mean or sum of a vector with missing elements, using `na.rm = TRUE` as the final argument. 
+
+```{r}
+x <- c(1:5, NA)
+x
+
+mean(x)
+
+mean(x, na.rm = TRUE)
+
+sum(x)
+
+sum(x, na.rm = TRUE)
+```
+
+### Testing if vector entries are missing or not
+
+You can test if the entries of a vector are missing using the `is.na()` function:
+
+```{r isna}
+x
+is.na(x)
+```
+
+You can use the NOT operator `!` to give you a vector that is `TRUE` when the vector is not missing:
+
+```{r notna}
+!is.na(x)
+```
+
+
+### Removing `NA` values from a vector or data frame
+
+There are a couple of ways to subset to a vector without the missing values. 
+
+```{r remove-na}
+x
+
+na.omit(x)
+
+x[!is.na(x)]
+```
+
+When applied to a data frame `na.omit()` removes any rows of the data frame that contain any missing values. 

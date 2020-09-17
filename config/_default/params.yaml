@@ -201,7 +201,6 @@ comments:
     # If self-hosting Commento, enter its URL here (e.g. "https://commento.?.com"), otherwise leave empty.
     url: ''
 
-
 ############################
 ## Search
 ############################
@@ -210,7 +209,7 @@ search:
   #   0: No search engine
   #   1: Academic (built-in)
   #   2: Algolia (https://www.algolia.com)
-  engine: 0
+  engine: 1
 
   # Configuration of Algolia search engine.
   # Paste the values from your Algolia dashboard.
@@ -227,3 +226,4 @@ search:
 marketing:
   google_analytics: ''
   google_tag_manager: ''
+

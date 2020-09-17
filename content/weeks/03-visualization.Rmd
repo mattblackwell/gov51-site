@@ -1,0 +1,44 @@
+---
+title: "Week 3: Visualization and Missing Data"
+linktitle: "3:  Visualization and Missing Data"
+date: 2020-09-21
+menu:
+  weeks:
+    parent: Weeks
+    weight: 3
+type: docs
+---
+
+## Reading
+
+- Sections 3.1-3.3 of Quantitative Social Science.
+
+## Tutorials
+
+- Before completing the next tutorial, reinstall the `qsslearnr` package to have the latest version by running these lines of code:
+
+```{r eval = FALSE}
+remove.packages("qsslearnr")
+remotes::install_github("mattblackwell/qsslearnr")
+```
+
+- Complete "QSS Tutorial 3: Measurement I" and upload the PDF report you produce at the end of the tutorial to Gradescope (see link at the top of this page) by Monday, September 21st 11:59pm ET. 
+- If you have any issues opening the tutorial, please see the instructions on [how to install the tutorials](/assignments/tutorials/).
+
+## Problem Sets
+
+- Problem Set 2 will go out on Thursday, 9/25 at 12:00 noon ET. 
+
+## Lecture Video 5: Visualizing a Single Variable
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/bvaa7FN1_30" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+- [Slides](/slides/03-measurement/02-visual-dist.pdf)
+
+## Lecture Video 6: Missing Data in R
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/SMF-BhDQ6aE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+- [Slides](/slides/03-measurement/03-missing-data.pdf)
+
+

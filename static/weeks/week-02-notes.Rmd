@@ -1,0 +1,171 @@
+---
+title: "Live Meeting Week 2: Effect of Newspaper Endorsements"
+output:
+  html_document:
+    theme: flatly
+    highlight: tango
+---
+
+## Introduction
+
+- Logistical announcements
+  - PS 1 due tomorrow, 11:59pm, gradescope autograder
+  - study groups/DMs
+  - Using Ed
+  - Study Hall updates
+
+
+## Introduction
+
+Can the media persuade people to vote differently? This is a really hard problem to investigate from a causal perspective since people choose their media based on their political preferences. So liberals choose to watch MSNBC or read the New York Times and conservatives choose to watch Fox News or read the Wall Street Journal. We could do a lab experiment, but there would be concerns about external validity.
+
+Two political scientists tried to get around this problem by focusing on a particular moment in UK politics. The data for this exercise comes from this paper:
+
+> Ladd, Jonathan M., and Gabriel S. Lenz. "Exploiting a Rare Communication Shift to Document the Persuasive Power of the News Media." American Journal of Political Science 53, no. 2 (2009): 394–410. [https://www.jstor.org/stable/25548125](https://www.jstor.org/stable/25548125)
+
+
+Four newspapers in the UK changed their editorial stance and tone between the 1992 and 1997 from supporting the Conservative Party to supporting the Labour Party. Switching papers were largely seen as a surprise to the public. The data, contained in the `newspapers.csv` file contains the following variables: 
+
+
+| Name            | Description                                                                                                  |
+|-----------------|--------------------------------------------------------------------------------------------------------------|
+| `to_labour`       | Did respondent read a newspaper that switched endorsement to the Labour between 1992 and 1997 (1=Yes, 0=No)? |
+| `vote_lab_92`   | Did respondent vote for Labour in 1992 election (1=Yes, 0=No)?                                               |
+| `vote_lab_97`   | Did respondent vote for Labour in 1997 election (1=Yes, 0=No)?                                               |
+| `parent_labour` | Did the respondent's parents vote for Labour (1=Yes, 0=No)?                                                  |
+| `wkclass`       | Does the respondent identify as working class (1=Yes, 0=No)?                                                 |
+| `male`          | Does the respondent identify as Male (1=Yes, 0=No)?                                                          |
+| `age`     | Age of respondent |
+
+
+The treatment here is someone reading a paper that switched their endorsement. The outcome of interest is how the respondent voted in 1997.
+
+
+```{r setup}
+news <- read.csv("data/newspapers.csv")
+```
+
+
+## Question 1 (MB demo, 10 mins)
+
+Calculate the average treatment effect of reading a switching to Labour paper on voting for Labour in 1997 under a cross-sectional design. 
+
+
+## Answer 1
+
+- **Question**: How do we estimate the ATE in a cross-sectional design? Without controls, no different than a randomized experiment. 
+
+```{r}
+switched <- subset(news, subset = to_labour == 1)
+no_change <- subset(news, subset = to_labour == 0)
+
+ate <- mean(switched$vote_lab_97) - mean(no_chage$vote_lab_97)
+ate
+```
+
+Using a cross-sectional design with no statistical control, the estimated average treatment effect is `r round(ate, digits = 2)`. 
+
+
+- **Question:** how is the analysis of a cross-sectional design different than the analysis of a randomized experiment?
+
+- **Question:** why might we not believe this estimate of the ATE?
+
+
+- If more liberal people were more likely to read the NYT, what kind of cross-sectional estimate would we expect? How would we expect the estimate to change if we looked at the effect among liberals? **Use yes/no to vote on what direction the effect would go.**
+
+## Question 2 (Breakout room, 20 mins)
+
+Choose one of the binary pretreatment variable to do a balance check. Compare the sample proportions of that variable across the treated and control groups. Come up with a story for how the confounding might occur for this variable. That is, how do you expect the confounder to affect both the treatment and the outcome in this case? 
+
+Nest, use the method of subclassification to statistically control for this variable  and estimate the treatment effect within levels of that variable. Do the effects in each group look similar to the overall ATE? 
+
+**Challenge question:** do the quantitative results from these two exercises seem to validate your story for the confounding bias?
+
+See QSS Section 2.5.2 for more information if you need it. 
+
+
+## Answer 2
+
+- Compare the sample proportions of men in the treated and control groups:
+
+```{r}
+mean(switched$male)
+mean(no_change$male)
+```
+
+```{r}
+switched_males <- switched[switched$male == 1,]
+no_change_males <- no_change[no_change$male == 1,]
+
+mean(switched_males$vote_lab_97) - mean(no_change_males$vote_lab_97)
+```
+
+- For women: 
+
+
+```{r}
+switched_females <- switched[switched$male == 0,]
+no_change_females <- no_change[no_change$male == 0,]
+
+mean(switched_females$vote_lab_97) - mean(no_change_females$vote_lab_97)
+```
+
+- Pick one group to present their results. 
+- What about variables that we didn't measure? 
+
+## Question 3 (Breakout rooms, 20 mins)
+
+This data set is a panel data set since we have measurements on the same individuals at two different time points. This allows us to conduct new types of observational studies. Review section 2.5.3 of QSS and conduct two analyses on this data set:
+
+1. A before-and-after comparison of the treated group, comparing their average vote in 1997 to their average vote in 1992. 
+2. A differences-in-differences design that compares the average changes over time in the treatment group to average changes over time in the control group. 
+
+How do these estimates compare to the cross-sectional design? For both of these methods, come up with one possible source of bias. Which of the three methods do you find the most plausible for inferring causal effects?
+
+## Answer 3
+
+### Before-and-after comparison
+
+
+```{r}
+switched_diff <- mean(switched$vote_lab_97) - mean(switched$vote_lab_92)
+switched_diff
+```
+
+### Differences-in-differences
+
+```{r}
+no_change_diff <- mean(no_change$vote_lab_97) - mean(no_change$vote_lab_92)
+switched_diff - no_change_diff
+```
+
+- Pick one group to share. 
+- What are the assumptions that make a before-and-after design valid?
+  - Tony Blair very popular across the board. 
+- What are the assumptions that make a differences-in-differences design valid?
+- Are these assumptions plausible in this case? 
+- Final thing: **we always rely on assumptions to make observational studies causally valid**
+
+
+## Question 4 (Breakout room, 15 mins)
+
+With continuous covariates, we might want to check different aspects of the distribution of the data are different in the treated and control group. 
+
+1. Compare the summary statistics from a `summary()` call on the `age` variable in the treated and control group. If we were worried about confounding bias from age, what should we expect to see in this comparison? What do you actually see?
+2. Compare the standard deviation of `age` in the two groups. What does this comparison tell us?
+
+
+## Answer 4
+
+```{r}
+summary(switched$age)
+summary(no_change$age)
+
+sd(switched$age)
+sd(no_change$age)
+```
+
+
+- What does it mean for one group to have a higher standard deviation of age than another group? 
+- Is it possible for an SD to be negative? 
+- Is it possible for an SD to be zero? What would that mean?
