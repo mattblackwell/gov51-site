@@ -3,3 +3,4 @@ static/rmarkdown-libs/
 public/
 static/**/*.zip
 content/**/*.html
+*_files/
