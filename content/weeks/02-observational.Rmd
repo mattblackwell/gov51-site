@@ -45,3 +45,6 @@ type: docs
 - Data: [`newspapers.csv`](/data/newspapers.csv)
 - Completed Rmd file with all prompts: [`week-02-notes.Rmd`](/weeks/week-02-notes.Rmd)
 - [Zoom Recording](https://canvas.harvard.edu/courses/74805/external_tools/53531) (Go to "Cloud Recordings" Tab)
+- Video of Prof Blackwell's solutions:
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/-XYoIxWwISg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
