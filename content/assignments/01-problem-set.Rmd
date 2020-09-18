@@ -3,6 +3,9 @@ title: "Problem Set 1: Effect of Demographic Change on Exclusionary Attitudes"
 due_date: 2020-09-16
 author: "Gov 51"
 date: 2020-09-02
+summary: >-
+  First Gov 51 problem set exploring a randomized experiment of
+  exposure to demographic change on immigration attitudes.
 ---
 
 

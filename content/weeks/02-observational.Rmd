@@ -1,6 +1,7 @@
 ---
 title: "Week 2: Observational Studies and Descriptive Statistics"
 linktitle: "2: Observational Studies and Descriptive Statistics"
+summary: "Materials for week 2 of Gov 51"
 date: 2020-09-14
 menu:
   weeks:

@@ -1,6 +1,8 @@
 ---
 title: "Problem Sets and Exams"
 date: 2020-09-01
+summary: >-
+  A guide for setting up, completing, and submitting assignments in Gov 51. 
 ---
 
 For both problem sets and exams, you will end up producing two types of documents:

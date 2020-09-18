@@ -1,5 +1,8 @@
 ---
 title: "Problem Set 0: Bias in Self-reported Turnout"
+summary: >-
+  Practice problem set for Gov 51 to familiarize yourself with R, R
+  Markdown, and submission.
 ---
 
 You can find instructions for obtaining and submitting problem sets [here](/assignments/problem-sets/).

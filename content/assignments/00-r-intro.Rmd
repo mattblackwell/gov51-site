@@ -2,6 +2,9 @@
 title: "Getting Started with R, R Studio, Git, and Github"
 author: "Gov 51"
 date: 2020-09-02
+summary: >-
+  A guide to installing and setting up the software required for
+  Gov 51. 
 ---
 
 ## Installing R and RStudio

@@ -1,6 +1,7 @@
 ---
 title: "Week 1: Randomized Experiments"
 linktitle: "1: Randomized Experiments"
+summary: "Materials for week 1 of Gov 51"
 date: 2020-08-07
 menu:
   weeks:

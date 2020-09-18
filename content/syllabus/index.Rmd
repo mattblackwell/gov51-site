@@ -1,6 +1,7 @@
 ---
 title: "Syllabus for Gov 51: Data Analysis and Politics"
 slug: syllabus
+summary: "Information about the content and policies for Gov 51"
 citeproc: true
 output:
   blogdown::html_page:

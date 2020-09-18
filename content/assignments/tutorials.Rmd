@@ -1,6 +1,8 @@
 ---
 title: "QSS R Tutorials Instructions"
 date: 2020-09-02
+summary: >-
+  A guide for installing and completing the R tutorials in Gov 51.
 ---
 
 ## Installing the QSS tutorials pacakge

@@ -1,6 +1,9 @@
 ---
 title: "Schedule"
 slug: schedule
+summary: >
+  Schedule of the Gov 51 semester with readings,
+  due dates, and links to materials
 ---
 
 ---

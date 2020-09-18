@@ -1,6 +1,7 @@
 ---
 title: "Week 3: Visualization and Missing Data"
 linktitle: "3:  Visualization and Missing Data"
+summary: "Materials for week 3 of Gov 51"
 date: 2020-09-21
 menu:
   weeks:
