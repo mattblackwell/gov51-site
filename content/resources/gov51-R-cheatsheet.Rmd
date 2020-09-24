@@ -659,3 +659,173 @@ x[!is.na(x)]
 ```
 
 When applied to a data frame `na.omit()` removes any rows of the data frame that contain any missing values. 
+
+# Week 4
+
+## Summarizing bivariate relationships
+
+For this week, we'll load the `STAR` data from the QSS package:
+
+```{r}
+data(STAR, package = "qss")
+```
+
+### Scatterplots
+
+To create a basic scatterplot, simply provide the variables corresponding the x and y axes:
+
+```{r}
+plot(x = STAR$g4math, y = STAR$g4reading)
+```
+
+Of course, we can make these look quite a bit nicer:
+
+```{r}
+plot(x = STAR$g4math, y = STAR$g4reading,
+     xlab = "Grade 4 Math Score", ylab = "Grade 4 Reading Score",
+     las = 1, main = "Reading and Math Score Relationship",
+     col = "steelblue2")
+```
+
+You can change the shape of the points in the scatterplot using the `pch` (plotting character) argument. For instance, `pch = 19` uses filled dots:
+
+```{r}
+plot(x = STAR$g4math, y = STAR$g4reading,
+     xlab = "Grade 4 Math Score", ylab = "Grade 4 Reading Score",
+     las = 1, main = "Reading and Math Score Relationship",
+     col = "steelblue2",
+     pch = 19 ## filled points
+     )
+```
+
+### Making points more transparent in scatterplots
+
+One thing to note is that when points are plotted over one another, solid points can look like a blob. In those cases, it might be reasonable to make the points more transparent. You can achieve this by using the `adjustcolor()` function in your `col` argument like so:
+
+```{r}
+plot(x = STAR$g4math, y = STAR$g4reading,
+     xlab = "Grade 4 Math Score", ylab = "Grade 4 Reading Score",
+     las = 1, main = "Reading and Math Score Relationship",
+     col = adjustcolor("steelblue2", alpha = 0.5),
+     pch = 19
+     )
+```
+
+Here, setting the value of `alpha` in `adjustcolor` will change how transparent (0 being non-visible and 1 being full opaque). But now we can tell when points are plotted over one another more clearly. 
+
+
+### Correlation
+
+To take the correlation between two vectors of the same length, use the `cor()` function. 
+
+```{r}
+cor(STAR$g4math, STAR$g4reading)
+```
+
+Oops, there are missing values. Unlike other functions, you can't use `na.rm = TRUE` here and instead you want to use `use="pairwise"`:
+
+```{r}
+cor(STAR$g4math, STAR$g4reading, use = "pairwise")
+```
+
+### Testing if entries of a vectors are equal to one of several values
+
+In the `STAR` data, there is a variable `yearssmall` that describes how many years a student was in a small class type. This can take on 5 different values:
+
+```{r}
+head(STAR$yearssmall)
+table(STAR$yearsmall)
+```
+
+Maybe we want to compare units who are only have 0 or 1 year of small classes. We could do this with an OR statement:
+
+```{r}
+STAR$zero_or_one <- ifelse(STAR$yearssmall == 0 | STAR$yearssmall == 1, 1, 0)
+head(STAR$zero_or_one)
+```
+
+This is a bit clunky, especially if we want to test for multiple categories. It is slightly easier to use the `a %in% b` syntax, which will check every entry of `a` to see if it is in `b` and give `TRUE`, otherwise it will give `FALSE`:
+
+```{r}
+STAR$zero_or_one <- ifelse(STAR$yearssmall %in% c(0, 1), 1, 0)
+head(STAR$zero_or_one)
+```
+
+### Boxplots by group
+
+You can create boxplots by group using a formula: `y ~ x` where `y` is the name of the variable you want to plot in the boxplot and `x` is the name of the grouping variable. You also need to pass the name of the data set to `data`.
+
+```{r}
+boxplot(g4math ~ classtype, data = STAR)
+```
+
+Of course, we can make this much nicer in appearance using the usual tricks. Note that the class size variable measures type of kindergarten class and takes on these values: small = 1, regular = 2, regular with aid = 3. 
+
+```{r}
+boxplot(g4math ~ classtype, data = STAR,
+        names = c("Small", "Regular", "Regular w/ Aid"),
+        xlab = "Classroom Type",
+        ylab = "Grade 4 Math Scores",
+        main = "Math Scores by Classroom Type",
+        las = 1, col = "steelblue2")
+```
+
+
+### Removing the box in a base R plot
+
+For almost any base R plot command, you can remove the box that the plot sits in using the `frame = FALSE` argument:
+
+```{r}
+boxplot(g4math ~ classtype, data = STAR,
+        names = c("Small", "Regular", "Regular w/ Aid"),
+        xlab = "Classroom Type",
+        ylab = "Grade 4 Math Scores",
+        main = "Math Scores by Classroom Type",
+        las = 1, col = "steelblue2",
+        frame = FALSE)
+```
+
+
+### Q-Q plots
+
+Use the `qqplot()` function to produce Q-Q plots:
+
+```{r}
+qqplot(x = STAR$g4math, y = STAR$g4reading,
+       xlab = "Grade 4 Math Score",
+       ylab = "Grade 4 Reading Score",
+       las = 1,
+       col = "steelblue2")
+```
+
+
+### Producing lines on plots
+
+You can produce straight lines on plots using the `abline()` command. There are three different ways to use it:
+
+- `abline(v = 0)`: this will draw a vertical line at x = 0. 
+- `abline(h = 0)`: this will draw a horizontal line at y = 0. 
+- `abline(a = 0, b = 1)`: this will draw a straight line with y-intercept 0 and slope 1 (`y = x`). 
+
+We can use this in the Q-Q plot to draw a reference line:
+
+```{r}
+qqplot(x = STAR$g4math, y = STAR$g4reading,
+       xlab = "Grade 4 Math Score",
+       ylab = "Grade 4 Reading Score",
+       las = 1,
+       col = "steelblue2")
+abline(a = 0, b = 1)
+```
+
+You can also change the type of line produced using the `lty` argument ("line type"). This [blog post](https://www.benjaminbell.co.uk/2018/02/quick-guide-to-line-types-lty-in-r.html) has a good overview of the different options. You can also pass a `col` argument to change the color of the line and `lwd` to change the thickness (where 1 is the default and 2 is double width, etc)
+
+```{r}
+qqplot(x = STAR$g4math, y = STAR$g4reading,
+       xlab = "Grade 4 Math Score",
+       ylab = "Grade 4 Reading Score",
+       las = 1,
+       col = "steelblue2")
+abline(a = 0, b = 1, lty = 2, col = "grey50", lwd = 3)
+```
+
