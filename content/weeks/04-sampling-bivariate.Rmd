@@ -21,7 +21,7 @@ type: docs
 
 ## Problem Sets
 
-- [Problem Set 3](/assignments/ps2-judges/) will be due Wednesday, September 30th at 11:59pm ET. 
+- [Problem Set 2](/assignments/ps2-judges/) will be due Wednesday, September 30th at 11:59pm ET. 
 
 ## Lecture Video 7: Survey Sampling 
 
