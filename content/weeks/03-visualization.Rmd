@@ -28,7 +28,7 @@ remotes::install_github("mattblackwell/qsslearnr")
 
 ## Problem Sets
 
-- Problem Set 2 will go out on Thursday, 9/25 at 12:00 noon ET. 
+- [Problem Set 2](/assignments/ps2-judges) will go out on Thursday, 9/25 at 12:00 noon ET. 
 
 ## Lecture Video 5: Visualizing a Single Variable
 
@@ -43,3 +43,8 @@ remotes::install_github("mattblackwell/qsslearnr")
 - [Slides](/slides/03-measurement/03-missing-data.pdf)
 
 
+## Live Meeting 
+
+- Data: [`vignettes.csv`](/data/vignettes.csv)
+- Slides with solutions: [`week-03-slides.pdf`](/slides/week-03-slides.pdf)
+- [Zoom Recording](https://canvas.harvard.edu/courses/74805/external_tools/53531) (Go to "Cloud Recordings" Tab)

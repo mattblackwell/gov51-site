@@ -1,0 +1,28 @@
+---
+title: "Week 4: Sampling and Bivariate Statistics"
+linktitle: "4:  Sampling and Bivariate Statistics"
+summary: "Materials for week 4 of Gov 51"
+date: 2020-09-28
+menu:
+  weeks:
+    parent: Weeks
+    weight: 4
+type: docs
+---
+
+## Reading
+
+- Sections 3.4-3.6 of Quantitative Social Science.
+
+## Tutorials
+
+- Complete "QSS Tutorial 4: Measurement II" and upload the PDF report you produce at the end of the tutorial to Gradescope (see link at the top of this page) by Monday, September 28th 11:59pm ET. 
+- If you have any issues opening the tutorial, please see the instructions on [how to install the tutorials](/assignments/tutorials/).
+
+## Problem Sets
+
+- [Problem Set 3](/assignments/ps2-judges/) will be due Wednesday, September 30th at 11:59pm ET. 
+
+## Lecture Video 7: Survey Sampling (TK)
+
+## Lecture Video 8: Bivariate Statistics (TK)

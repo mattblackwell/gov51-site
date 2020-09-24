@@ -37,9 +37,10 @@ lessons:
     weeknum: 4
     date: 2020-09-29
     reading: "QSS 3.4-3.6"
-    assignment: ""
+    assignment: "ps2-judges"
     assignment_label: "PS 2"
     tutorial: "QSS Tutorial 4"
+    week: "04-sampling-bivariate"
 
   - title: "Prediction: Elections & Regression"
     weeknum: 5
