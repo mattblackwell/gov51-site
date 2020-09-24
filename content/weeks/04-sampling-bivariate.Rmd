@@ -23,6 +23,21 @@ type: docs
 
 - [Problem Set 3](/assignments/ps2-judges/) will be due Wednesday, September 30th at 11:59pm ET. 
 
-## Lecture Video 7: Survey Sampling (TK)
+## Lecture Video 7: Survey Sampling 
 
-## Lecture Video 8: Bivariate Statistics (TK)
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/X_oc5VJGxJU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+- [Slides](/slides/03-measurement/04-survey-sampling.pdf)
+
+## Lecture Video 8: Summarizing Bivariate Relationships (TK)
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/nEPGMv6whC0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+- [Slides](/slides/03-measurement/05-scatterplots.pdf)
+
+## Lecture Video 9: Boxplots and Q-Q plots
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/2-Z42bUqZIs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+- [Slides](/slides/03-measurement/06-boxplots-qqplots.pdf)
+
