@@ -125,7 +125,7 @@ The schedule for the problem sets will be:
 |:-|:--|:--|:--|
 | Problem Set 1 | Randomized Experiments | Thu, Sep 10th 12:00pm ET | Wed, Sep 16th 11:59pm ET |
 | Problem Set 2 | Summarizing Data | Thu, Sep 24th 12:00pm ET | Wed, Sep 30th 11:59pm ET |
-| Problem Set 3 | Regression | Thu, Oct 22nd 12:00pm ET | Wed, Oct 28th 11:59pm ET |
+| Problem Set 3 | Regression | Thu, Oct 29nd 12:00pm ET | Wed, Nov 4th 11:59pm ET |
 | Problem Set 4 | Inference | Thu, Nov 19th 12:00pm ET | Wed, Nov 25th 11:59pm ET |
 
 
@@ -137,7 +137,7 @@ There will be two take-home exams during the course. This exam will be similar t
 
 | Exam   | Release Date            | Due Date                 |
 |:-------|:------------------------|:-------------------------|
-| Exam 1 | Thu, Oct 8th 5:00pm ET | Wed, Oct 14th 11:59pm ET |
+| Exam 1 | Thu, Oct 15th 5:00pm ET | Wed, Oct 21th 11:59pm ET |
 | Exam 2 | Tue, Dec 1st 5:00pm ET | Mon, Dec 7th 11:59pm ET |
  
 
