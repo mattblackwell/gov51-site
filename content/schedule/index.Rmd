@@ -21,6 +21,6 @@ Below is the schedule for the semester with the reading, tutorials, and problem 
 | Milestone      | Due Date                 |
 |:---------------|:-------------------------|
 | Proposal       | Wed, Oct 28th 11:59pm ET |
-| Draft Analyses | Wed, Nov 11th 11:59pm ET |
+| Draft Analyses | Wed, Nov 18th 11:59pm ET |
 | Final Report   | Mon, Dec 14th 11:59pm ET |
 

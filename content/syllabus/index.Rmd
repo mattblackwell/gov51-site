@@ -148,8 +148,8 @@ The final project for the course will be a data analysis project where students 
 
 | Milestone      | Due Date                 |
 |:---------------|:-------------------------|
-| Proposal       | Wed, Oct 14th 11:59pm ET |
-| Draft Analyses | Wed, Nov 11th 11:59pm ET |
+| Proposal       | Wed, Oct 28th 11:59pm ET |
+| Draft Analyses | Wed, Nov 18th 11:59pm ET |
 | Final Report   | Mon, Dec 14th 11:59pm ET |
 
 
