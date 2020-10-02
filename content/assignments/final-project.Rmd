@@ -2,7 +2,7 @@
 title: "Final Project Information"
 date: 2020-10-02
 summary: >-
-  A guide for the final project in Gov 51. 
+  A guide for the final project in Gov 51/E-1005. 
 ---
 
 The final project consists of conducting data analysis in the pursuit of answering a research question. These reports are typically in the  5 to 15 pages range, some of which consists of tables and plots. As we get closer to the due dates for the final report, we will provide a rubric we will use for grading along with a template for producing the reports. Below, we outline the steps involved in this project. 
