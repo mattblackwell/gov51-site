@@ -5,11 +5,41 @@ summary: >-
   A guide for the final project in Gov 51. 
 ---
 
+The final project consists of conducting data analysis in the pursuit of answering a research question. These reports are typically in the  5 to 15 pages range, some of which consists of tables and plots. As we get closer to the due dates for the final report, we will provide a rubric we will use for grading along with a template for producing the reports. Below, we outline the steps involved in this project. 
 
 
 ## Step 1: Finding a data source
 
-The biggest part of the final project in Gov 51 is finding a data source. You are, of course, free to use any of the data from the QSS book (found in the `qss` package you have installed). 
+The biggest part of the final project in Gov 51 is finding a data source. You are, of course, free to use any of the data from the QSS book (found in the `qss` package you have installed). Here are some other resources and repositories with data sets:
+
+- [List of links to political science data sets](https://github.com/erikgahner/PolData) 
+- [Harvard Dataverse - Social Science](https://dataverse.harvard.edu/dataverse/harvard?q=&fq0=subject_ss%3A%22Social+Sciences%22&types=dataverses%3Adatasets&sort=dateSort&order=desc)
+- [Data.gov - Data sets released by the US government](https://catalog.data.gov/dataset) 
+- [Data published by FiveThirtyEight](Data published by FiveThirtyEight (Links to an external site.)) 
+- [Harvard OpenData Group Directory](https://github.com/HarvardOpenData/harvard-data)
+- [Harvard Program on Survey Research Data Collections](https://psr.iq.harvard.edu/book/survey-data-collections)
+- [Roper Center : Public Opinion in the US](https://psr.iq.harvard.edu/roper_center_public_opinion_research)
+- [Pew Research Center Data Sets](https://www.pewresearch.org/download-datasets/)
+
+If you find a data set that you think is interesting, but you have problems loading the data set into R, please contact the course staff. R can load almost anything, so we can likely help you.
+
+
+We also have the following specific datasets available to use:
+
+- American National Election Survey, 2016: [Data](https://www.dropbox.com/s/qf8mnhbpckx469u/anes-2016.csv?dl=0) [Codebook](https://www.dropbox.com/s/n5ogow0vdcbmrik/anes_timeseries_2016_userguidecodebook.pdf?dl=0)
+- Civil Wars: [Data](https://www.dropbox.com/s/gde30hr9yokqku5/civilwar.csv?dl=0) [Codebook](https://www.dropbox.com/s/m7hnd64g2z38plm/civilwar-codebook.txt?dl=0)
+- Political Violence: [Data](https://www.dropbox.com/s/8zms0isy8epvzvd/violence.csv?dl=0) [Codebook](https://www.dropbox.com/s/wqmnc9w2stvhlvj/violence-codebook.txt?dl=0)
+- Fox News rollout: [Data](https://www.dropbox.com/s/i1n16wng61tq02x/foxnews.csv?dl=0) [Codebook](https://www.dropbox.com/s/8a8lspgey9sx1pa/foxnews.pdf?dl=0)
+- Afrobarometer: [Data](https://www.dropbox.com/s/f4n778feixbvz4r/afrobarometer2016.RData?dl=0) [Codebook](https://www.dropbox.com/s/4uhrdeylzc8r6ib/merged_round_6_codebook_20161.pdf?dl=0)
+
+### General advice for choosing data sources
+
+- If you want to analyze the relationship between X and Y, make sure that these two variables are included in the data set. If you want to look at effects for subgroups, make sure there is a variable that you can use for subsetting.
+- Try to look for a 'codebook' or some other document that explains what the variables mean and how they are coded.
+- For most projects, preparing the data for analysis takes longer than the actual analysis itself. Try to find a data set where you do not need to extensively recode / clean up the data before you run your analyses, this makes the final project easier.
+- In similar vein, if the data set is greater than about 50MB (this is not a hard cutoff), R commands and analyses tend to take longer. 
+- Data from experiments is usually simple to analyze, since the analysis commonly involves simple comparisons of group means.
+
 
 ## Step 2: Proposal 
 
