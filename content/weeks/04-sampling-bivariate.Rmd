@@ -29,7 +29,7 @@ type: docs
 
 - [Slides](/slides/03-measurement/04-survey-sampling.pdf)
 
-## Lecture Video 8: Summarizing Bivariate Relationships (TK)
+## Lecture Video 8: Summarizing Bivariate Relationships
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/nEPGMv6whC0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -41,3 +41,9 @@ type: docs
 
 - [Slides](/slides/03-measurement/06-boxplots-qqplots.pdf)
 
+
+## Live Meeting 
+
+- Data: [`transphobia_all.csv`](/data/transphobia_all.csv)
+- Slides with solutions: [`week-04-slides.pdf`](/slides/week-04-slides.pdf)
+- [Zoom Recording](https://canvas.harvard.edu/courses/74805/external_tools/53531) (Go to "Cloud Recordings" Tab)

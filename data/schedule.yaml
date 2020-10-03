@@ -48,6 +48,7 @@ lessons:
     reading: "QSS 4.1-4.2.3"
     assignment: ""
     tutorial: "QSS Tutorial 5"
+    week: "05-prediction"
 
   - title: "Prediction: More Regression"
     weeknum: 6

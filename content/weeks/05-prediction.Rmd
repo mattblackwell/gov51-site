@@ -1,0 +1,40 @@
+---
+title: "Week 5: Prediction and Regression"
+linktitle: "5: Prediction and Regression"
+summary: "Materials for week 5 of Gov 51"
+date: 2020-10-05
+menu:
+  weeks:
+    parent: Weeks
+    weight: 5
+type: docs
+---
+
+## Reading
+
+- Sections 4.1-4.2.3 of Quantitative Social Science.
+
+## Tutorials
+
+- Complete "QSS Tutorial 5: Prediction I" and upload the PDF report you produce at the end of the tutorial to Gradescope (see link at the top of this page) by Monday, October 5th 11:59pm ET. 
+- If you have any issues opening the tutorial, please see the instructions on [how to install the tutorials](/assignments/tutorials/).
+
+
+## Lecture Video 10: Prediction & Loops
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/N63KShR1sMw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+- [Slides](/slides/04-prediction/01-loops.pdf)
+
+## Lecture Video 11: Linear Regression
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/VORnNGIbDrs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+- [Slides](/slides/04-prediction/02-regression-i.pdf)
+
+## Lecture Video 12: Least Squares for Linear Regression
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Z-RYne-9UxI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+- [Slides](/slides/04-prediction/03-regression-ols.pdf)
+
