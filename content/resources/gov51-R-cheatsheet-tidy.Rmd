@@ -1,0 +1,879 @@
+---
+title: R Cheatsheet (tidy version)
+date: 2020-09-26
+summary: "Guide to the R techniques used in Gov 51 (tidy version)"
+output:
+  blogdown::html_page:
+    toc: true
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set()
+options(width = 90)
+library(tidyverse)
+```
+
+# Week 0
+
+## Vectors 
+
+### Create a vector 
+
+Use the `c()` function for concatenate. 
+
+```{r}
+x <- c(2.2, 6.2, 1.2, 5.5, 20.1)
+```
+
+### Creating a vector from a sequence
+
+The `seq()` function will create a sequence from a starting point to an ending point. If you specify the `by` argument, you can skip values. For instance, if we wanted a vector of all presidential election years from 1788 until 2020, we would use:
+
+```{r}
+pres_elections <- seq(from = 1788, to = 2020, by = 4)
+pres_elections
+```
+
+If we want to a sequence from `a` to `b` counting by 1s, we can use the `a:b` shorthand:
+
+```{r}
+2014:2020
+```
+
+### Length of a vector
+
+```{r}
+length(x)
+```
+
+### Summarizing a numeric vector
+
+The `summary` function will give you some summary statistics about a vector:
+
+```{r}
+summary(pres_elections)
+```
+
+### Means, median, sums, min, max
+
+There are various simple summary functions for specific summaries. 
+
+```{r}
+mean(x)
+median(x)
+sum(x)
+```
+
+### Ranges of a vector
+
+You can easily get the smallest and largest values of a vector with `min`, `max`, and `range`. 
+
+```{r}
+min(x)
+max(x)
+
+## get both in one vector
+range(x)
+```
+
+### Subsetting a vector
+
+To access a single element of a vector by position in the vector, use the square brackets `[]`:
+
+```{r}
+x[2]
+```
+
+If you want to access more than one element of a vector, put a vector of the positions you want to access in the brackets:
+
+```{r}
+x[c(2, 5)]
+```
+
+### Subsetting by a logical vector
+
+The last two approaches selected subsets by position ("give me the 2nd and 5th element of this vector"). Many times, we will want to select the values of a vector that meet some logical condition. To achieve this, we can put a logical vector **the same length as the vector being subsetted** in the square `[]` brackets with `TRUE` or `FALSE` indicating if each entry should or should not be included in the subset. For instance, we can recreate the `x[c(2, 5)]` subset with the following:
+
+```{r}
+x[c(FALSE, TRUE, FALSE, FALSE, TRUE)]
+```
+
+More usefully, we can create logical vectors from expressions to get all values from the vector that meet some condition:
+
+```{r}
+x[x > 5]
+``` 
+
+**Gotcha**: if your logical subsetting vector that is shorter than the length of the vector being subsetted, R will implicitly repeat the logical vector to the right length. So these two commands give the same output:
+
+```{r}
+x[c(TRUE, FALSE)]
+x[c(TRUE, FALSE, TRUE, FALSE, TRUE)]
+```
+
+If your logical subsetting vector is longer than the vector being subsetted, you will get `NA` values for the values beyond the correct length:
+
+```{r}
+x[c(TRUE, TRUE, TRUE, FALSE, TRUE, TRUE, TRUE)]
+```
+
+### Subsetting accidents
+
+If you try to access an element past the length of the vector, it will return a missing value `NA`:
+
+```{r}
+x[10]
+```
+
+
+If you accidentally subset a vector by `NA` (the missing value), you get the vector back with all its entries replaced by `NA`:
+
+```{r}
+x[NA]
+```
+
+Sometimes you'll notice that a vector or data frame you've been messing with all of a sudden has lots of missing values (maybe whole rows of them). Usually the culprit in that case is some errant missing value in a subset. 
+
+### Subsetting to the first 5 values
+
+```{r}
+pres_elections[1:5]
+head(pres_elections, n = 5)
+```
+
+
+### Subsetting to the last value in a vector
+
+The `length` function gives us the number of positions in the vector and so it is also the last position. You can also use the tail function. 
+
+```{r}
+pres_elections[length(pres_elections)]
+tail(pres_elections, n = 1)
+```
+
+
+### Modifying values in a vector 
+
+Let's say you want to modify one value in your vector. You can combine the square bracket subset `[]` with the assignment operator `<-` to replace a particular value:
+
+```{r}
+x
+x[3] <- 50.3
+x
+```
+
+You can replace multiple values at the same time by using a vector for subsetting:
+
+```{r}
+x
+x[1:2] <- c(-1.3, 42)
+x
+```
+
+If the replacement vector (the right-hand side) is shorter than what you are assigning to (the left-hand side), the values will "recycle" or repeat as necessary:
+
+```{r}
+x[1:2] <- 3.2
+x
+
+x[1:4] <- c(1.2, 2.4)
+x
+```
+
+**Gotcha:** if the right-hand side length is not a multiple of the left-hand side length, R will do the replacement and truncate things correctly, but will complain and give a warning:
+
+```{r}
+x[1:3] <- c(0.5, 1.5)
+x
+```
+
+Usually if you get this warning in Gov 51, something has gone wrong and you should check your code. (That's a more general rule about warnings in Gov 51.)
+
+### Arithmetic on vectors
+
+You can perform simple arithmetic on vectors and it will apply to each element:
+
+```{r}
+x
+x * 10
+```
+
+You can also take apply arithmetic on multiple vectors that are the same lengths. Suppose we have two vectors of test scores for 5 students. We can calculate the change in their scores with:
+
+```{r}
+score_1 <- c(88, 95, 92, 75, 82)
+score_2 <- c(90, 92, 97, 81, 85)
+score_2 - score_1
+```
+
+Of course, we could also save that vector for future use:
+
+```{r}
+score_change <- score_2 - score_1
+mean(score_change)
+```
+
+### Character vectors
+
+You can also create a vector of characters (words, letters, punctuation, etc):
+
+```{r}
+jedi <- c("Yoda", "Obi-Wan", "Luke", "Leia", "Rey")
+```
+
+Note for vectors, you cannot mix characters and numbers in the same vector. If you add a single character element, the whole vector gets converted. 
+
+```{r}
+## output is numeric
+x
+
+## output is now character
+c(x, "hey")
+```
+
+## Data frames
+
+### Reading in CSV files
+
+You can import data into R using the `read.csv()` function. 
+
+```{r, eval = FALSE}
+my_data <- read.csv("data/mydata.csv")
+```
+
+**Troubleshooting**: if you get an error trying to load data, double check the name of the file you are trying to load and make sure that the csv file exists where you think it does. You can always look at the Files pane of RStudio to look in a data folder to see what the contents are and what the names of the files are you are trying to import. 
+
+### Reading in RData files
+
+You can read files with an `.RData` extension with the `load()` function:
+
+```{r, eval = FALSE}
+load("data/mydata.RData")
+```
+
+With the `load()` function, you don't actually assign its output to anything. An `.RData` file contains R objects (vectors, data frame, etc) and when you load it, those objects are dumped into your R environment. 
+
+### Dimensions of a data frame
+
+The `cars` data frame is built into R and so you can access it without loading any files. To get the dimensions, you can use `dim()`, `nrow()`, and `ncol()`.
+
+```{r}
+dim(mtcars)
+nrow(mtcars)
+ncol(mtcars)
+```
+
+### Accessing variables/columns
+
+You can grab each column/variable from the data frame use the `$`, turning it into a vector:
+
+```{r}
+mtcars$wt
+```
+
+You can now treat this just like a vector, with the subsets and all. 
+
+```{r}
+mtcars$wt[1]
+```
+
+### Subset to the first/last k rows of a data frame
+
+```{r}
+head(mtcars)
+tail(mtcars)
+```
+
+
+### Subsetting a data frame by rows/columns
+
+
+Subsetting a data frame means selecting certain rows or columns. In tidyverse, you can do this with the `filter()` function for selecting rows and the `select()` function for selecting columns. Here we pipe the selections into `head()` to show the first few rows. You could also use the `dplyr::slice_head` function 
+
+```{r}
+mtcars %>%
+  select(mpg, wt) %>%
+  head()
+```
+
+To select the cars with eight cylinders:
+
+```{r}
+mtcars %>%
+  filter(cyl == 8)
+```
+
+We can use the `slice()` function. For example, to get the 5th through 10th rows:
+
+```{r}
+mtcars %>%
+  slice(5:10)
+```
+
+
+If we pass a vector of integers to the `select` function, we will get the variables corresponding to those column positions. So to get the first through third columns:
+
+```{r}
+mtcars %>%
+  select(1:3) %>%
+  head()
+```
+
+### Summarizing a data frame
+
+If you call `summary()` a data frame, it produces applies the vector version of the summary command to each column:
+
+```{r}
+summary(mtcars)
+```
+
+
+# Week 1
+
+For this section, we'll use the `social` data from QSS, which is the social pressure mailer for voter turnout experiment. 
+
+```{r}
+data("social", package = "qss")
+```
+
+## Getting counts and cross-tabs
+
+### Get counts of each value in a variable
+
+You can use the `group_by` and `summarize` functions to get counts within levels of a single variable:
+
+```{r}
+social %>%
+  group_by(primary2004) %>%
+  summarize(n = n())
+```
+
+A simpler way to perform the same action is to use the `count()` function:
+
+```{r}
+social %>% count(primary2004)
+```
+
+
+
+### Cross-tabulation
+
+When grouping by two variables, this same approach  will return counts for each combination of the two vectors:
+
+```{r}
+social %>%
+  group_by(primary2004, primary2006) %>%
+  summarize(n = n())
+```
+
+And with `count`:
+
+```{r}
+social %>% count(primary2004, primary2006)
+```
+
+To put these into a cross-tab format, you need to put one of variables into the columns using `pivot_wider`:
+
+```{r}
+social %>%
+  group_by(primary2004, primary2006) %>%
+  summarize(n = n()) %>%
+  pivot_wider(names_from = primary2006, values_from = n)
+```
+
+To get slightly nicer column names in this crosstab, we can use `names_prefix`:
+
+```{r}
+social %>%
+  group_by(primary2004, primary2006) %>%
+  summarize(n = n()) %>%
+  pivot_wider(
+    names_from = primary2006,
+    values_from = n,
+    names_prefix = "primary2006_"
+  )
+```
+
+### Converting counts to proportions
+
+You can convert any count to a proportion fairly easily using the `nrow()` command:
+
+```{r}
+social %>%
+  group_by(primary2004) %>%
+  summarize(prop = n() / nrow(social))
+```
+
+
+
+## Controlling output
+
+### Rounding numbers 
+
+R often gives you way more significant digits than you need to display. You can always pass a vector or number to `round()` to display/print only a certain number of digits:
+
+```{r}
+p_counts <- social %>%
+  group_by(primary2006) %>%
+  summarize(prop = n() / nrow(social)) %>%
+  pull(prop, name = primary2006)
+
+p_counts
+round(p_counts, digits = 2)
+```
+
+This is useful in R Markdown files when you want to access a particular value in text as `` `r "\x60r mean(social$primary2006)\x60"` `` which would be `r mean(social$primary2006)`. You can instead use `` `r "\x60r round(mean(social$primary2006), 2)\x60"`  `` to get `r round(mean(social$primary2006), 2)`. 
+
+## Logicals
+
+
+### Logical vectors
+
+Logical vectors are just vectors that only contain the special R values `TRUE` or `FALSE`. 
+
+```{r}
+c(TRUE, FALSE, TRUE, TRUE, FALSE)
+```
+
+
+
+
+
+### TRUE/FALSE are case sensitive 
+
+You could but never should shorten `TRUE` to `T` and `FALSE` to `F`. It's easy for this shortening to go wrong so better just to spell out the full word. Also not that this is case-sensitive, and this will produce an error:
+
+```{r, error = TRUE}
+true
+True
+false
+```
+
+### Converting logicals to numerics
+
+Like numeric and character vectors, you cannot mix these types with other values. But if you treat a logical vector like a numeric and apply a function to it, R will usually silent convert the logical to a numeric with `TRUE` being assigned to `1` and `FALSE` being assigned to `0`. You can see this explicitly by passing a logical vector to the `as.numeric` function:
+
+```{r}
+as.numeric(c(TRUE, FALSE, TRUE, TRUE, FALSE))
+```
+
+### The number and proportion of TRUE values
+
+Because of the conversion mentioned above, passing a logical vector to the `sum()` function (which adds all of the entries together) will return the number of true values in the vector:
+
+```{r}
+sum(c(TRUE, FALSE, TRUE, TRUE, FALSE))
+```
+
+The `mean()` function will give the proportion of `TRUE` values in the vector:
+
+```{r}
+mean(c(TRUE, FALSE, TRUE, TRUE, FALSE))
+```
+
+### and/or statements with logicals
+
+
+We often combine logical statements using AND (`&`) and OR (`|`) in R. For AND statements, both expressions have to be true for the whole expression to be true:
+
+- `TRUE & FALSE`, `FALSE & TRUE`, and `FALSE & FALSE` are `FALSE`
+- `TRUE & TRUE` is `TRUE`
+
+For OR statements, either statement being true makes the whole expression true:
+
+- `TRUE | FALSE`, `FALSE | TRUE`, and `TRUE | TRUE` are `TRUE`
+- `FALSE | FALSE` is `FALSE`
+
+You can also use these to compare two logical vectors:
+
+```{r}
+## Apply "or" statement to each pair of elements
+c(TRUE, FALSE, TRUE, TRUE, FALSE) | c(TRUE, TRUE, FALSE, FALSE, FALSE)
+
+# Apply "and" statement to each pair of elements
+c(TRUE, FALSE, TRUE, TRUE, FALSE) & c(TRUE, TRUE, FALSE, FALSE, FALSE)
+```
+
+### Comparing objects
+
+
+There are several *relational operators* that allow us to compare objects in R. The most useful of these are the following:
+
+- `>` greater than, `>=` greater than or equal to
+- `<` less than, `<=` less than or equal to
+- `==` equal to
+- `!=` not equal to
+
+When we use these to compare two objects in R, we end us with a logical object. You can also compare a vector to a particular number.
+
+```{r}
+pres_elections > 2000
+```
+
+
+### Subset using logical vectors
+
+You can use logical vectors to subset vectors to meet certain conditions:
+
+```{r}
+pres_elections[pres_elections > 2000]
+```
+
+### Subsetting data frame using `filter`
+
+The `subset` function creates subsets of a data frame that meet certain conditions:
+
+```{r}
+control <- social %>%
+  filter(messages == "Control")
+head(control)
+```
+
+Note that you don't have to use the `resume$firstname` syntax in the subset argument here. The function smartly knows to find `firstname` in the `resume` data frame. 
+
+### `filter` with multiple conditions
+
+You can use the `&` to select based on multiple conditions or you can pass multiple conditons as arguments to `filter`
+
+```{r}
+control_males <- social %>%
+  filter(messages == "Control" & sex == "male")
+head(control_males)
+
+social %>%
+  filter(
+    messages == "Control",
+    sex == "male"
+  ) %>%
+  head() 
+```
+
+
+
+# Week 2
+
+### Two possible values using `ifelse`
+
+`ifelse` is a function that will take a logical vector and create a new vector that takes two different values when the entry in the logical vector is either `TRUE` or `FALSE`. The first argument is the logical vector, the second is what the entries of the new vector should be if the logical entry is `TRUE` and the third is what the entries of the new vector should be when the logical entries are `FALSE. `
+
+```{r}
+ifelse(c(TRUE, FALSE, TRUE, TRUE, FALSE), 100, -100)
+```
+
+You can also create character vectors this way:
+
+```{r}
+ifelse(c(TRUE, FALSE, TRUE, TRUE, FALSE), "yessss", "this ain't it")
+```
+
+### Creating vectors based on several conditions
+
+If you want to create a vector that has more than two levels based on a several logical conditions, you can do this with subsetting. For example, let's bin `social$ages` into four groups based on their rough generation labels.
+
+- `"Greatest"` for those born in 1927 and before
+- `"Silent"` for those born between 1928 until 1945
+- `"Boomers"` for those born between 1946 until 1964
+- `"GenX"` for those born between 1965 and 1980
+- `"Millenial"` those born in 1981 and after
+
+To do this in tidy, we can use the `case_when` function:
+
+```{r}
+social <- social %>%
+  mutate(
+    gen = case_when(
+      yearofbirth <= 1927 ~ "Greatest",
+      yearofbirth >= 1928 & yearofbirth <= 1945 ~ "Silent",
+      yearofbirth >= 1946 & yearofbirth <= 1964 ~ "Boomers",
+      yearofbirth >= 1965 & yearofbirth <= 1980 ~ "GenX",
+      yearofbirth >= 1981 ~ "Millenial"      
+    )
+  )
+
+social %>% count(gen)
+```
+
+
+### Calculating the mean within groups 
+
+We often need to calculate the means of a variable (usually the outcome) within levels of another variable. To do this, we can use the same `group_by()` and `summarize()` approach along with the `across()` function:
+
+
+```{r}
+social %>%
+  group_by(messages) %>%
+  summarize(across(primary2006, mean))
+```
+
+# Week 3
+
+## Visualization
+
+### Barplot
+
+First we create a basic barplot with defaults:
+
+```{r barplot-plain}
+ggplot(social, aes(x = primary2006)) +
+  geom_bar()
+```
+
+Notice that this gives these barplots in counts and automatically does that counting for us, but we might actually want to plot the proportions. To do this, we actually want to calculate the proportions using our tools above and then pass those `geom_col` (col for columns, I think??) which plots barplots when the heights of the bars are in the data itself:
+
+```{r colplot}
+social %>%
+  group_by(primary2006) %>%
+  summarize(prop = n() / nrow(social)) %>%
+  ggplot(aes(x = primary2006, y = prop)) +
+  geom_col()
+```
+
+
+
+Now, notice that R seems to think the primary variable is a regular number and give us fractions on the x-axis. Now we can clean this up a bit by converting the variable of interest to a factor with informative labels  and then adding our own axis labels:
+
+```{r barplot}
+social %>%
+  mutate(
+    p2006_fct = ifelse(primary2006 == 1, "Voted", "Abstained")
+  ) %>%
+  group_by(p2006_fct) %>%
+  summarize(prop = n() / nrow(social)) %>%
+  ggplot(aes(x = p2006_fct, y = prop)) +
+  geom_col() +
+  labs(x = "Voted in 2006 Primary", y = "Number of Respondents")
+```
+
+
+### Histograms
+
+We can make histograms with `geom_histogram()`
+
+```{r hist-plain}
+social$age <- 2006 - social$yearofbirth
+ggplot(social, aes(x = age)) +
+  geom_histogram()
+```
+
+By default, `geom_histogram()` gives counts on the x-axis, but in QSS and in many applications it is easier to work with densities. This is because density histograms have a coherent interpretation in that the area of any particular bar in the histogram is the proportion of units in that bin of the variable. We can implement a density histogram using the following:
+
+```{r hist-density}
+ggplot(social, aes(x = age)) +
+  geom_histogram(aes(y = ..density..))
+```
+
+
+We can also make it fancy using various arguments. You may only want to use some of these. 
+
+```{r hist-fancy}
+ggplot(social, aes(x = age)) +
+  geom_histogram(aes(y = ..density..), fill = "steelblue2", color = "white") +
+  labs(x = "Age", y = "Density")
+```
+
+### Boxplots
+
+Here is the basic boxplot code with the defaults:
+
+```{r boxplot-plain}
+ggplot(social, aes(y = age)) +
+  geom_boxplot()
+```
+
+Wow, ugly! In order to get ggplot to ignore the x-axis and not plot random axis numbers, we can supply a dummy x variable which is just an empty string (`""`). Then, we can change the width to make it less fat and set the limits of the x-axis:
+
+```{r}
+ggplot(social, aes(x = "", y = age)) +
+  geom_boxplot(width = 0.2)
+```
+
+
+## Missing data
+
+### Calculating means of vectors with missing values
+
+To calculate the mean or sum of a vector with missing elements, using `na.rm = TRUE` as the final argument. 
+
+```{r}
+x <- c(1:5, NA)
+x
+
+mean(x)
+
+mean(x, na.rm = TRUE)
+
+sum(x)
+
+sum(x, na.rm = TRUE)
+```
+
+### Testing if vector entries are missing or not
+
+You can test if the entries of a vector are missing using the `is.na()` function:
+
+```{r isna}
+x
+is.na(x)
+```
+
+You can use the NOT operator `!` to give you a vector that is `TRUE` when the vector is not missing:
+
+```{r notna}
+!is.na(x)
+```
+
+
+### Removing `NA` values from a vector or data frame
+
+There are a couple of ways to subset to a vector without the missing values. 
+
+```{r remove-na}
+x
+
+na.omit(x)
+
+x[!is.na(x)]
+```
+
+When applied to a data frame `na.omit()` removes any rows of the data frame that contain any missing values. 
+
+# Week 4
+
+## Summarizing bivariate relationships
+
+For this week, we'll load the `STAR` data from the QSS package:
+
+```{r}
+data(STAR, package = "qss")
+```
+
+### Scatterplots
+
+To create a basic scatterplot, simply provide the variables corresponding the x and y axes:
+
+```{r}
+ggplot(STAR, aes(x = g4math, g4reading)) +
+  geom_point()
+```
+
+Of course, we can make these look quite a bit nicer:
+
+```{r}
+ggplot(STAR, aes(x = g4math, g4reading)) +
+  geom_point(color = "steelblue2") +
+  labs(x = "Grade 4 Math Score", y = "Grade 4 Reading Score",
+       title = "Reading and Math Score Relationship")
+```
+
+### Making points more transparent in scatterplots
+
+One thing to note is that when points are plotted over one another, solid points can look like a blob. In those cases, it might be reasonable to make the points more transparent. You can achieve this by using `alpha` argument in `geom_point`:
+
+```{r}
+ggplot(STAR, aes(x = g4math, g4reading)) +
+  geom_point(color = "steelblue2", alpha = 0.5) +
+  labs(x = "Grade 4 Math Score", y = "Grade 4 Reading Score",
+       title = "Reading and Math Score Relationship")
+```
+
+Here, setting the value of `alpha` in `adjustcolor` will change how transparent (0 being non-visible and 1 being full opaque). But now we can tell when points are plotted over one another more clearly. 
+
+
+### Correlation
+
+To take the correlation between two vectors of the same length, use the `cor()` function. 
+
+```{r}
+cor(STAR$g4math, STAR$g4reading)
+```
+
+Oops, there are missing values. Unlike other functions, you can't use `na.rm = TRUE` here and instead you want to use `use="pairwise"`:
+
+```{r}
+cor(STAR$g4math, STAR$g4reading, use = "pairwise")
+```
+
+### Testing if entries of a vectors are equal to one of several values
+
+In the `STAR` data, there is a variable `yearssmall` that describes how many years a student was in a small class type. This can take on 5 different values:
+
+```{r}
+head(STAR$yearssmall)
+STAR %>% count(yearssmall)
+```
+
+Maybe we want to compare units who are only have 0 or 1 year of small classes. We could do this with an OR statement:
+
+```{r}
+STAR <- STAR %>%
+  mutate(
+    zero_or_one = ifelse(yearssmall == 0 | yearssmall == 1, 1, 0)
+  )
+head(STAR$zero_or_one)
+```
+
+This is a bit clunky, especially if we want to test for multiple categories. It is slightly easier to use the `a %in% b` syntax, which will check every entry of `a` to see if it is in `b` and give `TRUE`, otherwise it will give `FALSE`:
+
+```{r}
+STAR <- STAR %>%
+  mutate(
+    zero_or_one = ifelse(yearssmall %in% c(0, 1), 1, 0)
+  )
+head(STAR$zero_or_one)
+```
+
+### Boxplots by group
+
+You might thin create boxplots by group in ggplot easiest by passing it as the `group` aesthetic:
+
+```{r}
+ggplot(STAR, aes(group = classtype, y = g4math)) +
+  geom_boxplot()
+```
+
+Of course, we can make this much nicer in appearance using the usual tricks. Note that the class size variable measures type of kindergarten class and takes on these values: small = 1, regular = 2, regular with aid = 3. One way to make this nicer is to first create a factor/character variable that has these labels and then pass this variable to the `x` aesthetic instead of groups:
+
+
+```{r}
+STAR %>%
+  mutate(
+    class_fact = case_when(
+      classtype == 1 ~ "Small",
+      classtype == 2 ~ "Regular",
+      classtype == 3 ~ "Regular w/ Aid"
+    )
+  ) %>%
+ggplot(aes(x = class_fact, y = g4math)) +
+  geom_boxplot() +
+  labs(x = "Class type", y = "Grade 4 Math Scores")
+```
+
+
+### Q-Q plots
+
+We can use the output from  the `qqplot()` function to produce Q-Q plots. Note that we have to convert it to a data frame when passing to ggplot. You can also just plot with the `qqplot()` function
+
+```{r}
+star_qq <- qqplot(x = STAR$g4math, y = STAR$g4reading, plot.it = FALSE)
+ggplot(as.data.frame(star_qq), aes(x = x, y = y)) +
+  geom_point()
+```
+
+
+### Producing lines on plots
+
+You can produce straight lines on plots using the `abline()` command. There are three different ways to use it:
+
+- `geom_vline(xintercept = 0)`: this will draw a vertical line at x = 0. 
+- `geom_hline(yintercept = 0)`: this will draw a horizontal line at y = 0. 
+- `geom_abline(intercept = 0, slope = 1)`: this will draw a straight line with y-intercept 0 and slope 1 (`y = x`). 
+
+We can use this in the Q-Q plot to draw a reference line:
+
+```{r}
+star_qq <- qqplot(x = STAR$g4math, y = STAR$g4reading, plot.it = FALSE)
+ggplot(as.data.frame(star_qq), aes(x = x, y = y)) +
+  geom_point() + 
+  geom_abline(intercept = 0, slope = 1)
+```
+ 

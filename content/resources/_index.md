@@ -3,12 +3,14 @@ title: "Resources"
 ---
 
 
-### Gov 51 Resources tyest
+### Gov 51 Resources
 
 - [Gov 51 R Cheatsheet](/resources/gov51-r-cheatsheet/)
+- [Gov 51 R Cheatsheet (tidyverse version)](/resources/gov51-r-cheatsheet-tidy/)
 - [Getting Software Set Up](/assignments/00-r-intro/)
 - [QSS R Tutorials Instructions](/assignments/tutorials/)
 - [Problem Sets and Exams Instructions](/assignments/problem-sets/)
+- [Final Project Information](/assignments/final-project/)
 
 ## R Tutorials
 

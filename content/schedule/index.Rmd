@@ -18,6 +18,8 @@ Below is the schedule for the semester with the reading, tutorials, and problem 
 
 ## Final project dates
 
+[Final project information](/assignments/final-project/)
+
 | Milestone      | Due Date                 |
 |:---------------|:-------------------------|
 | Proposal       | Wed, Oct 28th 11:59pm ET |
