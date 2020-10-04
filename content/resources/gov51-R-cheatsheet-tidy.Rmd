@@ -877,3 +877,151 @@ ggplot(as.data.frame(star_qq), aes(x = x, y = y)) +
   geom_abline(intercept = 0, slope = 1)
 ```
  
+
+# Week 5
+
+## Loops and conditionals
+
+### For loops
+
+When coding for data analysis, we often have to perform repetitive tasks that change only in small ways. You could simply copy and paste the code for one of these task and manually change the code as needed, but this will get tedious very quickly. It will also make the code easier to read. 
+
+For example, suppose we wanted to calculate the mean of each column of the `STAR` data. We could achieve this by simply creating the vector by hand:
+
+```{r}
+star_means <- c(mean(STAR$race, na.rm = TRUE),
+                mean(STAR$classtype, na.rm = TRUE),
+                mean(STAR$yearssmall, na.rm = TRUE),
+                mean(STAR$hsgrad, na.rm = TRUE),
+                mean(STAR$g4math, na.rm = TRUE),
+                mean(STAR$g4reading, na.rm = TRUE))
+star_means
+```
+
+This is a lot of code that does the same thing over and over again. Instead, we can use a loop to perform the same calculate *applied* to each column. To do this, we first need to create the placeholder vector where we will put all of the means, for which we use the `rep` function that creates a vector of a certain (or values) repeated some number of times. Then we start the loop using the `for (i in X)` construction. The `X` is a vector of values to iterate over and the `i` is the name of the iterator, a local variable in the loop that will give back current value of `X` in this iteration of the loop. Usually, `X` is of the form `1:n`. 
+
+```{r}
+star_means <- rep(NA, times = ncol(STAR))
+for (i in 1:ncol(STAR)) {
+  star_means[i] <-  mean(STAR %>% pull(i), na.rm = TRUE)
+}
+
+star_means
+```
+
+We iterate over the columns of `STAR` so we use `1:ncol(STAR)` in the setup of the loop and iterate through the column numbers/positions. We then subset the STAR data to that column and take its mean, assigning it to the `i`th position in the holder. 
+
+### Printing output to the R console
+
+You can print something to the R console using the `cat()` command. Note that you need to add at least one `\n` at the end of the string so that the next thing to print will be on the next line. 
+
+```{r}
+cat("hello world!\n")
+```
+
+
+### if statements
+
+If statements are a powerful computing tool that allow us to execute code only if some conditions hold.  We might implement it like this:
+
+```{r, eval = FALSE}
+if (condition) {
+  [code to evaluate]
+}
+```
+
+For instance, let's have R tell us if we have a negative number:
+
+```{r if, echo = -1}
+x <- -4
+if (x < 0) {
+  cat("Hey! That's a negative!\n")
+}
+cat("Wow, we've reached the end!\n")
+```
+
+Compare this to the same code, but given a positive number:
+
+```{r}
+x <- 4
+if (x < 0) {
+  cat("Hey! That's a negative!\n")
+}
+cat("Wow, we've reached the end!\n")
+```
+
+
+### if/else statements
+
+You can use the `if {} else {}` construct to have a set of fallback code that executes if the condition is not met. Continuing our theme:
+
+```{r}
+x <- -4
+if (x < 0) {
+  cat("Hey! That's a negative!\n")
+} else {
+  cat("Whoa! It's positive!\n")
+}
+```
+
+
+```{r}
+x <- 4
+if (x < 0) {
+  cat("Hey! That's a negative!\n")
+} else {
+  cat("Whoa! It's positive!\n")
+}
+```
+
+
+## Linear regression
+
+We'll use the leader assassinations data from the QSS book and the lectures.
+
+```{r}
+data(leaders, package = "qss")
+```
+
+
+### Fitting a linear regression model
+
+First, we'll regress the polity (aka democracy) score after the assassination attempt on the same score before:
+
+```{r}
+fit <- lm(polityafter ~ politybefore, data = leaders)
+fit
+```
+
+
+### Obtaining the vector of estimated regression coefficients
+
+```{r}
+coef(fit)
+```
+
+
+### Obtaining a vector of fitted/predicted values from the regression
+
+```{r}
+head(fitted(fit))
+```
+
+
+### Adding a regression line to a plot
+
+You can use the `abline()` function with the `lm()` output to add a regression line to a plot:
+
+```{r}
+ggplot(leaders, aes(x = politybefore, y = polityafter)) +
+  geom_point(color = "steelblue2", alpha = 0.5) +
+  labs(x = "Polity Before", y = "Polity After") +
+  geom_smooth(method = "lm", color = "indianred")
+```
+
+
+### Obtaining the vector of residuals
+
+```{r}
+head(residuals(fit))
+```
