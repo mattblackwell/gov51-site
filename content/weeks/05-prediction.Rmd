@@ -39,3 +39,9 @@ type: docs
 
 - [Slides](/slides/04-prediction/03-regression-ols.pdf)
 
+## Live Meeting
+
+- Data: [`pres_data.csv`](/data/pres_data.csv)
+- Slides with solutions: [Slides](/slides/week-05-slides.pdf)
+- [Zoom Recording](https://canvas.harvard.edu/courses/74805/external_tools/53531) (Go to "Cloud Recordings" Tab)
+- [Video of Prof Blackwell's solutions](https://youtu.be/s23zy0AVHVQ)
