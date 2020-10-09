@@ -1,0 +1,40 @@
+---
+title: "Week 6: More Regression"
+linktitle: "6: More Regression"
+summary: "Materials for week 6 of Gov 51"
+date: 2020-10-12
+menu:
+  weeks:
+    parent: Weeks
+    weight: 6
+type: docs
+---
+
+## Reading
+
+- Sections 4.2.4-4.2.6 of Quantitative Social Science.
+
+## Tutorials
+
+- No tutorial this week. Next week we will complete Tutorial 6. 
+
+
+## Lecture Video 13: Model Fit
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/KZIyVUg9wRQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+- [Slides](/slides/04-prediction/04-model-fit.pdf)
+- [Data](/data/midterms.csv)
+
+## Lecture Video 14: Multiple Regression
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/dYYcFYNCe8o" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+- [Slides](/slides/04-prediction/05-multiple-predictors.pdf)
+
+## Lecture Video 15: Binary and Categorical Predictors
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ELrKCdJr9pg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+- [Slides](/slides/04-prediction/06-binary-categorical.pdf)
+- [Data](/data/progresa.csv)

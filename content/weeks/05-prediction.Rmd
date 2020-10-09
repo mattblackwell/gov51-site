@@ -45,3 +45,9 @@ type: docs
 - Slides with solutions: [Slides](/slides/week-05-slides.pdf)
 - [Zoom Recording](https://canvas.harvard.edu/courses/74805/external_tools/53531) (Go to "Cloud Recordings" Tab)
 - [Video of Prof Blackwell's solutions](https://youtu.be/s23zy0AVHVQ)
+
+## Tidy Live Meeting
+
+- Data: [`newspapers.csv`](/data/newspapers.csv)
+- Slides with solutions: [Slides](/slides/week-05-tidy-slides.pdf)
+- [Panopto Recording](https://harvard.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=21b882f9-23f9-411d-ad75-ac4f00367c75)
