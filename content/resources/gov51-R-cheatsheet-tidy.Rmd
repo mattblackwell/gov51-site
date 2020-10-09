@@ -1025,3 +1025,33 @@ ggplot(leaders, aes(x = politybefore, y = polityafter)) +
 ```{r}
 head(residuals(fit))
 ```
+
+# Week 6
+
+## Multiple regression
+
+### Fitting a linear model with multiple predictors
+
+We can have multiple predictors in our regression by separating them on the right-hand side by the `+` symbol:
+
+```{r}
+mult_fit <- lm(polityafter ~ politybefore + interwarbefore + civilwarbefore,
+               data = leaders)
+mult_fit
+```
+
+## Model fit
+
+### Accessing the R squared
+
+You can access the $R^2$ of the regression using the `summary()` function:
+
+```{r}
+summary(mult_fit)$r.squared
+```
+
+### Accessing the adjusted R squared
+
+```{r}
+summary(mult_fit)$adj.r.squared
+```
