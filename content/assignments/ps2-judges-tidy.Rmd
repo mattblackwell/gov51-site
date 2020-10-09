@@ -1,6 +1,6 @@
 ---
 title: "Problem Set 2: Sources of Empathy in the Circuit Court, Tidy Version"
-due_date: 2020-09-30
+due_date: 2020-10-14
 summary: >-
   Second Gov 51 problem set exploring an observational study of 
   how having daughters affects a judge's rulings.
