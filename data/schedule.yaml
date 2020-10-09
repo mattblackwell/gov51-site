@@ -54,8 +54,8 @@ lessons:
     weeknum: 6
     date: 2020-10-12
     reading: "QSS 4.2.4-4.2.6"
-    assignment: ""
-    tutorial: "QSS Tutorial 6"
+    assignment: "ps2-judges-tidy"
+    assignment_label: "PS 2 (Tidy)"
 
   - title: "Prediction: Interactions & Nonlinearities"
     weeknum: 7
@@ -63,6 +63,7 @@ lessons:
     reading: "QSS 4.3"
     assignment: ""
     assignment_label: "Exam 1"
+    tutorial: "QSS Tutorial 6"
 
     
 
