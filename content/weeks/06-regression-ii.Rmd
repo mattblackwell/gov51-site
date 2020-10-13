@@ -38,3 +38,10 @@ type: docs
 
 - [Slides](/slides/04-prediction/06-binary-categorical.pdf)
 - [Data](/data/progresa.csv)
+
+
+## Tuesday Live Meeting
+
+- Data: [`blackturnout.csv`](/data/blackturnout.csv)
+- Slides with solutions: [Slides](/slides/week-06-slides.pdf)
+- [Zoom Recording](https://canvas.harvard.edu/courses/74805/external_tools/53531) (Go to "Cloud Recordings" Tab)
