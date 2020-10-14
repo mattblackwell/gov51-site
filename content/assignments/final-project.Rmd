@@ -15,7 +15,7 @@ The biggest part of the final project in Gov 51 is finding a data source. You ar
 - [List of links to political science data sets](https://github.com/erikgahner/PolData) 
 - [Harvard Dataverse - Social Science](https://dataverse.harvard.edu/dataverse/harvard?q=&fq0=subject_ss%3A%22Social+Sciences%22&types=dataverses%3Adatasets&sort=dateSort&order=desc)
 - [Data.gov - Data sets released by the US government](https://catalog.data.gov/dataset) 
-- [Data published by FiveThirtyEight](Data published by FiveThirtyEight (Links to an external site.)) 
+- [Data published by FiveThirtyEight](https://data.fivethirtyeight.com/) 
 - [Harvard OpenData Group Directory](https://github.com/HarvardOpenData/harvard-data)
 - [Harvard Program on Survey Research Data Collections](https://psr.iq.harvard.edu/book/survey-data-collections)
 - [Roper Center : Public Opinion in the US](https://psr.iq.harvard.edu/roper_center_public_opinion_research)
