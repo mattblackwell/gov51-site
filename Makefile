@@ -23,6 +23,9 @@ clean:
 build:
 	Rscript -e "blogdown::build_site()"
 
+build-rmd:
+	Rscript -e "blogdown::build_site(build_rmd = TRUE)"
+
 serve: build
 	Rscript -e "blogdown::serve_site()"
 
