@@ -45,3 +45,9 @@ type: docs
 - Data: [`blackturnout.csv`](/data/blackturnout.csv)
 - Slides with solutions: [Slides](/slides/week-06-slides.pdf)
 - [Zoom Recording](https://canvas.harvard.edu/courses/74805/external_tools/53531) (Go to "Cloud Recordings" Tab)
+
+## Thursday Tidy Live Meeting
+
+- Data: [`pres_data.csv`](/data/pres_data.csv)
+- Slides with solutions: [Slides](/slides/week-06-tidy-slides.pdf)
+- [Zoom Recording](https://canvas.harvard.edu/courses/74805/external_tools/53531) (Go to "Cloud Recordings" Tab)
