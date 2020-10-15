@@ -34,13 +34,13 @@ remotes::install_github("mattblackwell/qsslearnr")
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/bvaa7FN1_30" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-- [Slides](/slides/03-measurement/02-visual-dist.pdf)
+- [Slides](/slides/videos/05-visual-dist.pdf)
 
 ## Lecture Video 6: Missing Data in R
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/SMF-BhDQ6aE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-- [Slides](/slides/03-measurement/03-missing-data.pdf)
+- [Slides](/slides/videos/06-missing-data.pdf)
 
 
 ## Live Meeting 

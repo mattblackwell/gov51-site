@@ -23,20 +23,20 @@ type: docs
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/KZIyVUg9wRQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-- [Slides](/slides/04-prediction/04-model-fit.pdf)
+- [Slides](/slides/videos/13-model-fit.pdf)
 - [Data](/data/midterms.csv)
 
 ## Lecture Video 14: Multiple Regression
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/dYYcFYNCe8o" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-- [Slides](/slides/04-prediction/05-multiple-predictors.pdf)
+- [Slides](/slides/videos/14-multiple-predictors.pdf)
 
 ## Lecture Video 15: Binary and Categorical Predictors
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ELrKCdJr9pg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-- [Slides](/slides/04-prediction/06-binary-categorical.pdf)
+- [Slides](/slides/videos/15-binary-categorical.pdf)
 - [Data](/data/progresa.csv)
 
 

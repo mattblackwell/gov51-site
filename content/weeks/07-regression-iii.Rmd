@@ -1,0 +1,38 @@
+---
+title: "Week 7: Interactions and Nonlinearities in Regression"
+linktitle: "7: Interactions and Nonlinearities"
+summary: "Materials for week 7 of Gov 51"
+date: 2020-10-19
+menu:
+  weeks:
+    parent: Weeks
+    weight: 7
+type: docs
+---
+
+## Reading
+
+- Sections 4.3 of Quantitative Social Science.
+
+## Tutorials
+
+- Complete "QSS Tutorial 6: Prediction II" and upload the PDF report you produce at the end of the tutorial to Gradescope (see link at the top of this page) by Monday, October 19th 11:59pm ET. 
+- If you have any issues opening the tutorial, please see the instructions on [how to install the tutorials](/assignments/tutorials/).
+
+## Exam 1
+
+- [Exam 1](/assignments/exam-01/) is due at 11:59pm ET on Wednesday, October 21, 2020. 
+
+## Lecture Video 16: Varying Effects by Groups
+
+- [Slides](/slides/videos/16-interactions-binary.pdf)
+
+## Lecture Video 17: Interactions with Continuous Variables
+
+
+- [Slides](/slides/videos/17-interactions-continuous.pdf)
+
+## Lecture Video 18: Nonlinear Relationships 
+
+- [Slides](/slides/videos/18-nonlinearities.pdf)
+

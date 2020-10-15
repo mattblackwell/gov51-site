@@ -24,22 +24,18 @@ type: docs
 - [Problem Set 1](/assignments/ps1-trains/) is due on Wednesday 9/16 at 11:59pm. 
 
 
-## Topic 1: Introduction to Causality
+## Lecture Video 1: Introduction to Causality
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/gyRZSzCtU_o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
-### Materials
+- [Slides](/slides/videos/01-potential-outcomes.pdf)
 
-- [Slides](/slides/02-causality/01-potential-outcomes.pdf)
-
-## Topic 2: Randomized Experiments
+## Lecture Video 2: Randomized Experiments
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/cBYUuD2aVkA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-### Materials
-
-- [Slides](/slides/02-causality/02-rand-exp.pdf)
+- [Slides](/slides/videos/02-rand-exp.pdf)
 
 
 ## Live Meeting 

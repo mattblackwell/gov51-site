@@ -24,20 +24,20 @@ type: docs
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/N63KShR1sMw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-- [Slides](/slides/04-prediction/01-loops.pdf)
+- [Slides](/slides/videos/10-loops.pdf)
 
 ## Lecture Video 11: Linear Regression
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/VORnNGIbDrs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-- [Slides](/slides/04-prediction/02-regression-i.pdf)
+- [Slides](/slides/videos/11-regression-i.pdf)
 - [Data](/data/health.csv)
 
 ## Lecture Video 12: Least Squares for Linear Regression
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Z-RYne-9UxI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-- [Slides](/slides/04-prediction/03-regression-ols.pdf)
+- [Slides](/slides/videos/12-regression-ols.pdf)
 
 ## Live Meeting
 
