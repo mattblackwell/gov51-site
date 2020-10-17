@@ -25,14 +25,22 @@ type: docs
 
 ## Lecture Video 16: Varying Effects by Groups
 
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/0M4iiM5aaiE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 - [Slides](/slides/videos/16-interactions-binary.pdf)
 
 ## Lecture Video 17: Interactions with Continuous Variables
 
 
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Re2t0DRbR_o" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
 - [Slides](/slides/videos/17-interactions-continuous.pdf)
 
 ## Lecture Video 18: Nonlinear Relationships 
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/9-D9TOEvV9g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 - [Slides](/slides/videos/18-nonlinearities.pdf)
 
