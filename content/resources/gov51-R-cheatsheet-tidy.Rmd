@@ -1055,3 +1055,41 @@ summary(mult_fit)$r.squared
 ```{r}
 summary(mult_fit)$adj.r.squared
 ```
+
+# Week 7 
+
+### Interactions
+
+We can see if the relationship between `polityafter` and `politybefore` is different when there is a civil war before or not with an interaction. Interactions between two independent variable can be specified by putting a `*` between them:
+
+```{r interaction}
+int_fit <- lm(polityafter ~ politybefore * civilwarbefore, data = leaders)
+int_fit
+```
+
+### Nonlinear relationships
+
+To demonstrate the nonlinear relationships, let's look at the relationship between democracy scores after the assassination attempt and the age of the leader. We'll fit a parabola using `I()` to wrap the squared term, indicating to R to interpret the math expression literally. 
+
+```{r square}
+nonlin_fit <- lm(polityafter ~ age + I(age ^ 2), data = leaders)
+nonlin_fit
+```
+
+
+### Predicted values from a regression
+
+We can get predicted values from a regression output by passing a new data frame with the values of the independent variables we want a predictor for. For example, suppose we wanted to get the predicted values of the polity score after for each leader age between 18 and 81. We could do the following:
+
+```{r predicted}
+age_vals <- 18:81
+age_preds <- predict(nonlin_fit, newdata = data.frame(age = age_vals))
+```
+
+We can plot predicted values a bit easier using `ggplot` and `geom_smooth` where now we give a formula that indicates that we want the squared term along with the linear term. 
+
+```{r ggplot-nonlin-fit}
+ggplot(leaders, aes(x = age, y = polityafter)) +
+  geom_smooth(method = "lm", formula = y ~ x + I(x ^ 2))
+```
+
