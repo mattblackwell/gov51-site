@@ -1093,3 +1093,27 @@ ggplot(leaders, aes(x = age, y = polityafter)) +
   geom_smooth(method = "lm", formula = y ~ x + I(x ^ 2))
 ```
 
+
+# Week 8
+
+### Sampling from a vector without replacement
+
+You can randomly draw from a vector of objects using the `sample()` function. For example, to randomly select four from the years 2000 to 2020, we can do the following:
+
+```{r sample-without}
+sample(x = 2000:2020, size = 4, replace = FALSE)
+```
+
+By default, `sample` will sample each item with equal probability. 
+
+### Sampling from a vector with replacement
+
+Suppose we wanted to use R to randomly generate a 10-letter word. There is a built-in vector in R called `letters` that is just a vector of the alphabet. Here we want to be able to reuse letters so we set `replace = TRUE`:
+
+```{r sample-with, echo = -1}
+set.seed(02140)
+letters
+sample(letters, size = 10, replace = TRUE)
+```
+
+Here you can see that both k and s are repeated, though this word doesn't make any sense!

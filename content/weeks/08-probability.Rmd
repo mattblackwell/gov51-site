@@ -1,0 +1,42 @@
+---
+title: "Week 8: Probability"
+linktitle: "8: Probability"
+summary: "Materials for week 8 of Gov 51"
+date: 2020-10-26
+menu:
+  weeks:
+    parent: Weeks
+    weight: 8
+type: docs
+---
+
+## Reading
+
+- Sections 6.1 of Quantitative Social Science.
+
+## Tutorials
+
+- Complete "QSS Tutorial 7: Probability I" and upload the PDF report you produce at the end of the tutorial to Gradescope (see link at the top of this page) by Monday, October 26th 11:59pm ET. 
+- If you have any issues opening the tutorial, please see the instructions on [how to install the tutorials](/assignments/tutorials/).
+
+## Exam 1
+
+- Problem Set 3 will go out on Thursday, October 29th. 
+
+## Lecture Video 19: Probability
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ej-IhL-IzPk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+- [Slides](/slides/videos/19-prob.pdf)
+
+## Lecture Video 20: Conditional Probability and Independence
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ArLE7BcmaEs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+- [Slides](/slides/videos/20-cond-prob.pdf)
+
+## Lecture Video 21: Bayes' Rule
+
+
+- [Slides]()
