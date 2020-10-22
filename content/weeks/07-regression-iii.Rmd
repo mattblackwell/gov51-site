@@ -45,9 +45,10 @@ type: docs
 - [Slides](/slides/videos/18-nonlinearities.pdf)
 
 
-## Thursday Live Meeting
+## Live Meeting
 
 - Data: [`transphobia_all.csv`](/data/transphobia_all.csv)
-- Slides with solutions: [Slides](/slides/week-07-slides.pdf)
+- Slides with base R solutions: [Slides](/slides/week-07-slides.pdf)
+- Slides with tidyverse solutions: [Slides](/slides/week-07-tidy-slides.pdf)
 - [Zoom Recording](https://canvas.harvard.edu/courses/74805/external_tools/53531) (Go to "Cloud Recordings" Tab)
-- [Video of Prof Blackwell's solutions](https://youtu.be/Jo_wsN7JRYE): Note that in the Zoom recording, I forgot to begin recording again for Question 3, so definitely look at this link for how to complete that question. 
+- [Video of Prof Blackwell's base R solutions](https://youtu.be/Jo_wsN7JRYE): Note that in the Zoom recording for the Tuesday base R meeting, I forgot to begin recording again for Question 3, so definitely look at this link for how to complete that question. 
