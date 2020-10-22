@@ -58,7 +58,10 @@ For instance, this would be a comprehensive paragraph that address each of these
 
 Your group's paragraph might be less detailed and may not refer to the political science literature, but it should address the above items. 
 
-Note that you are not fully committing to any specific question or data in this exercise. If you want to change data or questions later, that is fine. This is just a milestone to keep you on track. **This proposal is due on Wednesday, October 28th, 2020 at 11:59pm ET.** 
+Note that you are not fully committing to any specific question or data in this exercise. If you want to change data or questions later, that is fine. This is just a milestone to keep you on track. **This proposal is due on Wednesday, October 28th, 2020 at 11:59pm ET.** You should upload the PDF of your proposal to Gradescope, where you can indicate your group. 
+
+You can find a template Rmd file for the proposal here: [final-project-proposal.Rmd](/resources/final-project-proposal.Rmd)
+
 
 
 ## Step 3: Produce analyses
