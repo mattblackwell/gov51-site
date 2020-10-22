@@ -75,6 +75,7 @@ lessons:
     reading: "QSS 6.1-6.2"
     assignment: ""
     tutorial: "QSS Tutorial 7"
+    week: "08-probability"
 
   - title: "Probability: Random Variables & Large Samples"
     weeknum: 9
