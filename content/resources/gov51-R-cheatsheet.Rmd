@@ -1067,3 +1067,41 @@ sample(letters, size = 10, replace = TRUE)
 ```
 
 Here you can see that both k and s are repeated, though this word doesn't make any sense!
+
+# Week 9
+
+## Probability Distributions
+
+### Drawing binomial random variables
+
+You can sample from the binomial distribution with a specific set of parameters using the `rbinom()` function. Suppose we wanted to sample the number of heads in 15 draws of an unfair coin with probability 0.25 of landing heads. 
+
+```{r rbinom}
+rbinom(n = 5, size = 15, prob = 0.25)
+```
+
+If we call the same function again, we will get a different set of random draws:
+
+```{r rbinom_2}
+rbinom(n = 5, size = 15, prob = 0.25)
+```
+
+### Drawing a Bernoulli random variable
+
+To draw a Bernoulli random, simply use `rbinom()` with `size = 1`. 
+
+### Calculating the probability mass function of a binomial
+
+You can calculate the probability of any possible value of a binomial random variable using the `dbinom()` function:
+
+```{r dbinom}
+dbinom(x = 8, size = 15, prob = 0.25)
+```
+
+### Drawing a normal random variable
+
+You can use the `rnorm()` function to draw from a normal random variable. Note that you pass it the standard deviation, not the variance of the distribution you want.
+
+```{r rnorm}
+rnorm(n = 5, mean = 4, sd = 3)
+```
