@@ -84,6 +84,7 @@ lessons:
     assignment: ""
     assignment_label: "PS 3"
     tutorial: "QSS Tutorial 8"
+    week: "09-random-variables"
 
   - title: "Inference: Estimation"
     weeknum: 10

@@ -1,0 +1,49 @@
+---
+title: "Week 9: Random Variables & Large Samples"
+linktitle: "9: Random Variables & Large Samples"
+summary: "Materials for week 9 of Gov 51"
+date: 2020-11-02
+menu:
+  weeks:
+    parent: Weeks
+    weight: 9
+type: docs
+---
+
+## Reading
+
+- Sections 6.3-6.4 of Quantitative Social Science.
+
+## Tutorials
+
+- Complete "QSS Tutorial 8: Probability II" and upload the PDF report you produce at the end of the tutorial to Gradescope (see link at the top of this page) by Monday, November 2nd 11:59pm ET. 
+- If you have any issues opening the tutorial, please see the instructions on [how to install the tutorials](/assignments/tutorials/).
+
+## Exam 1
+
+- Problem Set 3 is due on Wednesday, November 4th at 11:59pm ET. 
+
+## Lecture Video 22: Random Variables
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/biZmmBBToRU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+- [Slides](/slides/videos/22-rand-var.pdf)
+
+## Lecture Video 23: Probability Distributions 
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/se-JGnAU_Yo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+- [Slides](/slides/videos/23-prob-dist.pdf)
+
+## Lecture Video 24: Expectations, Variances, and Sample Means
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/nCvsCHmaVLs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+- [Slides](/slides/videos/24-mean-var.pdf)
+
+## Lecture Video 25: Large Samples and the Normal Distribution
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/X2PEvrm-ij8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+- [Slides](/slides/videos/25-large-sample.pdf)
