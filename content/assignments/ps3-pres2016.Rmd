@@ -1,0 +1,112 @@
+---
+title: "Problem Set 3: Analyzing the 2016 Presidential Election"
+due_date: 2020-11-04
+summary: >-
+  Third Gov 51 problem set exploring the outcome of the 2016 election. 
+---
+
+You can find instructions for obtaining and submitting problem sets [here](/assignments/problem-sets/).
+
+For Gov 51 students, you can find the GitHub Classroom link to download the template repository [here](https://canvas.harvard.edu/courses/74805/pages/github-classroom-links).
+
+For Gov E-1005 students, you can find the GitHub Classroom link to download the template repository [here](https://canvas.harvard.edu/courses/79867/pages/github-classroom-links).
+
+
+## Background
+
+The outcome of the 2016 U.S. presidential election was surprising to most observers. To get a better sense of what happened, we will analyze a data set that compiles various sources from the Census, election outcomes, and Bureau of Labor Statistics.  
+
+
+| Name                | Description                                            |
+|---------------------|--------------------------------------------------------|
+| `fips`              | FIPS county identifier                                 |
+| `county`            | Name of the county                                     |
+| `state`             | State abbreviation                                     |
+| `total_vote_2016`   | Total number of votes in the general election, 2016    |
+| `total_vote_2012`   | Total number of votes in the general election, 2012    |
+| `dem_votes_2016`    | Number of votes for Hillary Clinton, 2016              |
+| `dem_votes_2012`    | Number of votes for Barack Obama, 2012                 |
+| `rep_votes_2016`    | Number of votes for Donald Trump, 2016                 |
+| `rep_votes_2012`    | Number of votes for Mitt Romney, 2012                  |
+| `dem_share_2016`    | Clinton share of the vote, 2016                        |
+| `dem_share_2012`    | Obama share of the vote, 2012                          |
+| `rep_share_2016`    | Trump share of the vote, 2016                          |
+| `rep_share_2012`    | Romney share of the vote, 2012                         |
+| `whprop_2010`       | Proportion of county identifying as white, 2010 Census |
+| `totpop_2010`       | Total county population, 2010 Census                   |
+| `w_med_income_2009` | Median income for whites in county, 2009               |
+| `w_med_income_2014` | Median income for whites in county, 2014               |
+| `w_unemp_rate_2009` | Unemployment rate for whites in county, 2009           |
+| `w_unemp_rate_2014` | Unemployment rate for whites in county, 2014           |
+| `unemp_rate_2016`   | Overall unemployment rate in 1990                      |
+| `unemp_rate_1997`   | Unemployment rate in 1990                              |
+| `unemp_rate_1990`   | Unemployment rate in 1990                              |
+ 
+## Question 1 (4 points)
+
+You've been hired by a political consultant to figure out what happened in the 2016 election. The first task is to see where the losses occurred in terms of the outcome of the 2012 election. 
+
+Load the `pres2016.csv` file into a data frame called `pres2016`. Create a new variable in the data frame called `dem_change` that is the difference between Clinton's vote share in 2016 (`dem_share_2016`) and Obama's vote share in 2012 (`dem_share_2012`). Use this new variable to create a scatter plot of the Obama-Clinton vote share change on the share of Obama's vote in 2012. Be sure to use informative axis labels.  
+
+Did the largest losses for Clinton relative to Obama occur in Obama strongholds, Romney strongholds, or in counties that were relatively competitive in 2012?
+
+Rubric: 1 autograder point for calculating `dem_change`, 2 pdf points for plot, 1 pdf point for explanation. 
+
+## Question 2 (4 points)
+
+Your boss asks you to create a prediction model for the change in Democratic vote share, but says you can only use Obama vote share as an independent variable. Your boss wants a linear relationship, but you think a nonlinear fit might be better. 
+
+Fit two regression models to the data both using `dem_change` as the dependent variable. First, save a model called `obama_fit` that uses `obama.share2012` as the independent variable. Second, save a model called `obama_sq_fit` that includes `obama.share2012` and its square as independent variables. 
+
+Compare the adjusted $R^2$ of these two regressions. Interpret these two values and say which is the more predictive model.
+
+
+Rubric: 1 autograder point for `obama_fit`; 1 autograder point for `obama_sq_fit`; 1 PDF point for $R^2$ presentation in text; 1 point for description/interpretation. 
+
+## Question 3 (5 points)
+
+Now, your boss actually can't read regression coefficients and certainly doesn't understand a nonlinear term. Thus, you need to create a plot to show the predictions from each model over the scatter plot you created earlier. 
+
+Recreate the scatter plot from Question 1, but now add the two fitted value lines/curves from the `obama_fit` and `obama_sq_fit` models. For the linear fit, use the `abline()` function for base R or the `geom_abline()` function for `ggplot`. For the nonlinear fit, use the `predict()` function to get predicted values for the model and then plot them using the `points()` function in base R or the `geom_line()` function for `ggplot`.  
+
+Rubric: 2 PDF points for correct linear fit on plot,  3 PDF points for correct nonlinear fit on plot. 
+
+## Question 4 (6 points)
+
+Another of your bosses correctly identified that the close races in Wisconsin, Michigan, and Pennsylvania tipped the election to Trump, so he wants to identify the relationship between Rust Belt counties and the change in Democratic vote share. But you worry that the demographics of those counties might be different than the rest of the country. So you prepare two regressions. 
+
+Create a new variable called `rust_belt` that is 1 if the county is in the following states: Ohio (OH), Michigan (MI), Pennsylvania (PA), Wisconsin (WI), Indiana (IN), or Illinois (IL). The variable should be 0 for all other counties. Run two regressions:
+
+* Save a regression of `dem_change` as the dependent variable on `rust_blue` as the independent variable as `fit_1`.
+* Save a regression of `dem_change` as the dependent variable on `rust_blue` and `whprop_2010` as the independent variables as `fit_2`.
+
+This boss prefers to see regression tables. Pass these tables to the function `stargazer::stargazer()` to make a nicely formatted regression table. **NOTE: For the R chunk that calls stargazer, please use the option `results = 'asis'` or else the formatting will be off.** When calling `stargazer::stargazer()`, use the following format:
+
+```{r, eval = FALSE}
+stargazer::stargazer(fit_1, fit_2, tile = "An Informative Title",
+                     covariate.labels = c("Covariate 1", "Covariate 2"),
+                     dep.var.labels = "Informative name of the dependent variable",
+                     header = FALSE)
+```
+
+The last line suppresses some ugly output from the function. Finally, answer these questions about the resulting models:
+
+1. Interpret the coefficient on `rust_belt` from `fit_1` in the substantive context of this example. 
+2. Interpret the coefficient on `rust_belt` from `fit_2` in the substantive context of this example. 
+3. In a sentence, describe why the relationship between `rust_belt` and `dem_change` might be different between these two models. 
+
+
+Rubric: 1 autograder point for `fit_1`; 1 autograder point for `fit_2`; 1 PDF point for regression table; 3 PDF points for interpretations/discussion. 
+
+## Question 5 (4 points)
+
+Now we will see if the relationship between demographics and the change in the Democratic vote share is the same for the Rust Belt and non-Rust Belt states. Create two subsets of the data, one called `rb` for the rust belt states and one called `non_rb` for the non-Rust belt states. Run a regression of `dem_change` on `whprop_2010` in each of these subsets, saving them as `rb_fit` and `non_rb_fit`, respectively. Make a plot of the two regression lines, distinguishing them by color. In the text, describe which line corresponds to which group and briefly describe which group of states has a stronger relationship with the outcome (that is, steeper regression line). 
+
+Rubric: 1 autograder point for `rb_fit`; 1 autograder point for `non_rb_fit`; 2 PDF points for plot and discussion. 
+
+## Question 6 (2 points)
+
+Let's investigate how this subset approach relates to interaction terms. In the entire `pres2016` data, run a regression of `dem_change` on `rust_belt`, `whprop_2010`, and the interaction between these two variables. Save this model as `int_fit`. In the text, interpret the coefficient on the interaction in the context of the plot from Question 5: how does this coefficient relate to the two lines you plotted there?
+
+Rubric: 1 autograder point for `int_fit`; 1 PDF point for interpretation/discussion. 
+
