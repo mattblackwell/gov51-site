@@ -41,3 +41,10 @@ type: docs
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/3M-GOSnXiAw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 - [Slides](/slides/videos/21-bayes.pdf)
+
+
+## Live Meetings
+
+- Data: [`covid_data.csv`](/data/covid_data.csv)
+- Slides with solutions (both Tuesday and Thursday): [Slides](/slides/week-08-slides.pdf)
+- [Zoom Recording](https://canvas.harvard.edu/courses/74805/external_tools/53531) (Go to "Cloud Recordings" Tab)
