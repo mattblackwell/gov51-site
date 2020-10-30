@@ -77,8 +77,8 @@ Another of your bosses correctly identified that the close races in Wisconsin, M
 
 Create a new variable called `rust_belt` that is 1 if the county is in the following states: Ohio (OH), Michigan (MI), Pennsylvania (PA), Wisconsin (WI), Indiana (IN), or Illinois (IL). The variable should be 0 for all other counties. Run two regressions:
 
-* Save a regression of `dem_change` as the dependent variable on `rust_blue` as the independent variable as `fit_1`.
-* Save a regression of `dem_change` as the dependent variable on `rust_blue` and `whprop_2010` as the independent variables as `fit_2`.
+* Save a regression of `dem_change` as the dependent variable on `rust_belt` as the independent variable as `fit_1`.
+* Save a regression of `dem_change` as the dependent variable on `rust_belt` and `whprop_2010` as the independent variables as `fit_2`.
 
 This boss prefers to see regression tables. Pass these tables to the function `stargazer::stargazer()` to make a nicely formatted regression table. **NOTE: For the R chunk that calls stargazer, please use the option `results = 'asis'` or else the formatting will be off.** When calling `stargazer::stargazer()`, use the following format:
 
