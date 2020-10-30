@@ -38,8 +38,8 @@ The outcome of the 2016 U.S. presidential election was surprising to most observ
 | `w_med_income_2014` | Median income for whites in county, 2014               |
 | `w_unemp_rate_2009` | Unemployment rate for whites in county, 2009           |
 | `w_unemp_rate_2014` | Unemployment rate for whites in county, 2014           |
-| `unemp_rate_2016`   | Overall unemployment rate in 1990                      |
-| `unemp_rate_1997`   | Unemployment rate in 1990                              |
+| `unemp_rate_2016`   | Overall unemployment rate in 2016                      |
+| `unemp_rate_1997`   | Unemployment rate in 1997                              |
 | `unemp_rate_1990`   | Unemployment rate in 1990                              |
  
 ## Question 1 (4 points)
@@ -56,7 +56,7 @@ Rubric: 1 autograder point for calculating `dem_change`, 2 pdf points for plot, 
 
 Your boss asks you to create a prediction model for the change in Democratic vote share, but says you can only use Obama vote share as an independent variable. Your boss wants a linear relationship, but you think a nonlinear fit might be better. 
 
-Fit two regression models to the data both using `dem_change` as the dependent variable. First, save a model called `obama_fit` that uses `obama.share2012` as the independent variable. Second, save a model called `obama_sq_fit` that includes `obama.share2012` and its square as independent variables. 
+Fit two regression models to the data both using `dem_change` as the dependent variable. First, save a model called `obama_fit` that uses `dem_share_2012` as the independent variable. Second, save a model called `obama_sq_fit` that includes `dem_share_2012` and its square as independent variables. 
 
 Compare the adjusted $R^2$ of these two regressions. Interpret these two values and say which is the more predictive model.
 
