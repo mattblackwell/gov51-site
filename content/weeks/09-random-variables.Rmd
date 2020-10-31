@@ -31,7 +31,7 @@ type: docs
 
 ## Lecture Video 23: Probability Distributions 
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/se-JGnAU_Yo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/guyIEMyOtqE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 - [Slides](/slides/videos/23-prob-dist.pdf)
