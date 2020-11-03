@@ -1,6 +1,6 @@
 ---
 title: "Problem Set 3: Analyzing the 2016 Presidential Election"
-due_date: 2020-11-04
+due_date: 2020-11-06
 summary: >-
   Third Gov 51 problem set exploring the outcome of the 2016 election. 
 ---

@@ -21,7 +21,7 @@ type: docs
 
 ## Exam 1
 
-- Problem Set 3 is due on Wednesday, November 4th at 11:59pm ET. 
+- Problem Set 3 is due on Wednesday, November 6th at 11:59pm ET. 
 
 ## Lecture Video 22: Random Variables
 
