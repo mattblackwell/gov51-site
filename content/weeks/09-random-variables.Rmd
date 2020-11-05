@@ -47,3 +47,10 @@ type: docs
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/X2PEvrm-ij8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 - [Slides](/slides/videos/25-large-sample.pdf)
+
+## Live Meeting
+
+- Polling data: [`polls_2020.csv`](/data/polls_2020.csv) (note that I updated the data to include the actual results so some of the variable names have changed. See the tidy solution slides for the new variable names.)
+- Slides with base R solutions: [Slides](/slides/week-09-slides.pdf)
+- Slides with tidy solutions: [Slides](/slides/week-09-tidy-slides.pdf)
+- [Zoom Recording](https://canvas.harvard.edu/courses/74805/external_tools/53531) (Go to "Cloud Recordings" Tab)
