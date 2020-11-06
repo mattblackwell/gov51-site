@@ -90,6 +90,7 @@ lessons:
     reading: "QSS 7.1"
     assignment: ""
     tutorial: "QSS Tutorial 9"
+    week: "10-estimation"
 
   - title: "Inference: Hypothesis Testing"
     weeknum: 11
