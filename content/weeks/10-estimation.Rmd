@@ -38,3 +38,11 @@ type: docs
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/CcbiQGje0vg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 - [Slides](/slides/videos/28-experiment-inference.pdf)
+
+
+## Live Meeting
+
+- Data: [`minwage.csv`](/data/minwage.csv)
+- Tuesday slides with solutions: [Slides](/slides/week-10-slides.pdf)
+- Thursday slides with tidy solutions: [Slides](/slides/week-10-tidy-slides.pdf)
+- [Zoom Recording](https://canvas.harvard.edu/courses/74805/external_tools/53531) (Go to "Cloud Recordings" Tab)
