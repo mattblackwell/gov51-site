@@ -1155,3 +1155,74 @@ You can use the `rnorm()` function to draw from a normal random variable. Note t
 ```{r rnorm}
 rnorm(n = 5, mean = 4, sd = 3)
 ```
+
+# Week 11
+
+## Hypothesis tests
+
+### Proportion test
+
+Suppose we had a sample where 440 out of 1000 said they would support Trump  and we wanted to see if that sample proportion of 0.44 was significantly different than the true support among voters (0.475). We can do this by hand as or with the `prop.test()` function:
+
+```{r}
+prop.test(440, n = 1000, p = 0.475)
+```
+
+This also gives a confidence interval as well:
+
+```{r}
+prop.test(440, n = 1000, p = 0.475)$conf.int
+```
+
+Both of these use the normal approximation, but you can also do a test leveraging the exact binomial distribution:
+
+```{r}
+binom.test(440, n = 1000, p = 0.475)
+```
+
+### Tests of a single mean
+
+Any time we want to test a sample mean, the standard practice is to conduct a t-test, even though a z-test might be justified by the central limit theorem. Thus, the common way to do a one-sample test is with `t.test`. For example, in the `STAR` data on small class sizes, we might want to test if the reading scores in our data have the same mean as the national average of 710. We can do that with the following:
+
+```{r}
+t.test(STAR$g4reading, mu = 710)
+```
+
+And we can also get confidence intervals from this procedure as well:
+
+```{r}
+t.test(STAR$g4reading, mu = 710)$conf.int
+```
+
+### Tests comparing two sample means
+
+If we want to compare the means of a continuous variable as a function of some binary variable, we can use a formula in the `t.test` function. In particular, we can compare the `STAR` reading scores by class type (subsetting to the small `1` and regular `2` class types). The formula should be `y ~ x` where `y` the variable whose mean we want and `x` is a variable that defines the groups. 
+
+```{r}
+t.test(g4reading ~ classtype, data = STAR,
+       subset = classtype %in% c(1,2))
+```
+
+We can perform the same test using a different set of arguments:
+
+```{r}
+t.test(STAR$g4reading[STAR$classtype == 1],
+       STAR$g4reading[STAR$classtype == 2])
+```
+
+### Tests comparing two sample proportions
+
+You can also use the `prop.test` function to test differences in proportions. In the social pressure mailer example, we can subset to just the Neighbors arm and then create a cross-tab with the treatment on the rows and the outcome of interest in the columns. When we pass this to the `prop.test` function, it will perform the test of the differences in proportions. 
+
+```{r}
+test_tab <- social %>%
+  filter(messages %in% c("Neighbors", "Control")) %>%
+  group_by(messages, primary2006) %>%
+  summarize(count = n()) %>%
+  pivot_wider(names_from = primary2006, values_from = count) %>%
+  ungroup() %>%
+  select(`1`, `0`)
+test_tab
+
+prop.test(as.matrix(test_tab))
+```
