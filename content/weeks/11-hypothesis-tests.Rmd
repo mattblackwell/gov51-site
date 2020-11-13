@@ -1,0 +1,41 @@
+---
+title: "Week 11: Hypothesis Tests"
+linktitle: "11: Hypothesis Tests"
+summary: "Materials for week 11 of Gov 51"
+date: 2020-11-16
+menu:
+  weeks:
+    parent: Weeks
+    weight: 11
+type: docs
+---
+
+## Reading
+
+- Sections 7.2 of Quantitative Social Science.
+
+## Tutorials
+
+- Complete "QSS Tutorial 10: Uncertainty II" and upload the PDF report you produce at the end of the tutorial to Gradescope (see link at the top of this page) by Monday, November 16th 11:59pm ET. 
+- If you have any issues opening the tutorial, please see the instructions on [how to install the tutorials](/assignments/tutorials/).
+
+
+## Lecture Video 29: What Are Hypothesis Tests?
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/s_7NOU4tEDY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+- [Slides](/slides/videos/29-hyp-test.pdf)
+
+## Lecture Video 30: Tests of a Single Mean
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/wHED4phBnwo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+- [Slides](/slides/videos/30-one-sample-test.pdf)
+
+## Lecture Video 31: Two-sample Tests
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/wVvhRMHtHOE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+- [Slides](/slides/videos/31-two-sample-test.pdf)
+

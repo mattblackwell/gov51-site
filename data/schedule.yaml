@@ -98,6 +98,7 @@ lessons:
     reading: "QSS 7.2"
     assignment: ""
     tutorial: "QSS Tutorial 10"
+    week: "11-hypothesis-tests"
 
   - title: "Inference: Uncertainty in Regression"
     weeknum: 12

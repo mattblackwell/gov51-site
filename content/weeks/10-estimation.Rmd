@@ -1,6 +1,6 @@
 ---
-title: "Week 9: Inference and Estimation"
-linktitle: "9: Inference and Estimation"
+title: "Week 10: Inference and Estimation"
+linktitle: "10: Inference and Estimation"
 summary: "Materials for week 10 of Gov 51"
 date: 2020-11-09
 menu:
