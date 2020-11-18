@@ -41,6 +41,6 @@ type: docs
 
 ## Live Meeting
 
-- Data: [`minwage.csv`](/data/transphobia_all.csv)
+- Data: [`transphobia_all`](/data/transphobia_all.csv)
 - Tuesday slides with solutions: [Slides](/slides/week-11-slides.pdf)
 - [Zoom Recording](https://canvas.harvard.edu/courses/74805/external_tools/53531) (Go to "Cloud Recordings" Tab)
