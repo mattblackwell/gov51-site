@@ -44,3 +44,4 @@ type: docs
 - Data: [`transphobia_all.csv`](/data/transphobia_all.csv)
 - Tuesday slides with solutions: [Slides](/slides/week-11-slides.pdf)
 - [Zoom Recording](https://canvas.harvard.edu/courses/74805/external_tools/53531) (Go to "Cloud Recordings" Tab)
+- Thursday slides with solutions: [Slides](/slides/week-11-tidy-slides.pdf)
