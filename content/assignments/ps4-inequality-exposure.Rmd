@@ -1,0 +1,129 @@
+---
+title: "Problem Set 4: Exposure to Inequality and Support for Redistribution"
+due_date: 2020-11-25
+summary: >-
+  Fourth Gov 51 problem set exploring an experiment on exposure to inequality. 
+---
+
+You can find instructions for obtaining and submitting problem sets [here](/assignments/problem-sets/).
+
+For Gov 51 students, you can find the GitHub Classroom link to download the template repository [here](https://canvas.harvard.edu/courses/74805/pages/github-classroom-links).
+
+For Gov E-1005 students, you can find the GitHub Classroom link to download the template repository [here](https://canvas.harvard.edu/courses/79867/pages/github-classroom-links).
+
+
+## Background 
+
+Does exposure to inequality affect our support for redistributive policies such as taxes on higher income earners? A recent paper explored the effect of brief exposure to socioeconomic inequality in an everyday setting on support for a millionaire's tax. This exercise is based on:
+
+> Sands, Melissa L. 2017. "[Exposure to inequality affects redistribution.](http://dx.doi.org/10.1073/pnas.1615010113)" *Proceedings of the National Academy of Sciences*, 114(4): 663-668.
+
+In this experiment, the author hired actors to stand in affluent, predominantly white, commercial areas around Boston, MA that have high pedestrian traffic. These actors were either white or Black, and each actor dressed in attire that indicated either affluence (well-dressed, well-groomed) or poverty (unkempt, shabby clothing). The author randomly assigned shifts to each actor with randomly chosen attire to stand on a city street within 20 feet of a petitioner hired by the researcher. This petitioner would stop every third adult that walked past the actor and ask them to sign a petition for the millionaire's tax (a measure in MA to impose an additional tax of 4% on individuals with annual incomes of \$1 million or more) or to sign a petition about reducing the use of plastic bags in local stores. The type of petition was randomly assigned as well. The outcome of interest is whether the respondent agreed to sign the petition on the millionaire's tax (the plastic bag petition is used as a placebo).
+
+A total of 2,591 respondents were petitioned with 1,335 being petitioned about the millionaire's tax. Petitioners also collected their "best guess" about the gender, age, and race/ethnicity of each person approached. The data file for this study is `inequality-exposure.csv` and contains the following variables:
+
+| Name         | Description                                                              |
+|:-------------|:-------------------------------------------------------------------------|
+| `signed`     | 1 if the respondent signed the petition, 0 otherwise                     |
+| `mill_tax`   | 1 if petitioned about the millionaire's tax, 0 for plastic bag petition. |
+| `blackactor` | 1 if actor was Black for this respondent, 0 for white                    |
+| `pooractor`  | 1 if actor was in poverty condition, 0 for affluent condition            |
+| `black`      | 1 if petitioner guessed respondent was Black                             |
+| `white`      | 1 if petitioner guessed respondent was non-Hispanic white                |
+| `asian`      | 1 if petitioner guessed respondent was Asian                             |
+| `hisp`       | 1 if petitioner guessed respondent was Hispanic                          |
+| `young`      | 1 if petitioner guessed respondent was 18-35 years old                   |
+| `middle`     | 1 if petitioner guessed respondent was 36-65 years old                   |
+| `old`        | 1 if petitioner guessed respondent was >65 years old                     |
+| `female`     | 1 if petitioner guessed respondent was female                            |
+| `clust`      | Cluster number of respondent (see question 6)                            |
+
+
+**Note**: the outcome in this study is a binary variable, so there are two different ways to calculate standard deviations: either with the standard `sd()` applied to the data or by using the sample mean such as `sqrt(xbar * (1 - xbar))`. You may use either in the problems below and the autograder will accept them. 
+
+## Question 1 (5 points)
+
+Load the data into R and name it `ineq`. Create a subset called `mill_df` that is respondents petitioned about the millionaire's tax. We will use this data throughout the exercise. Calculate the following, saving them with the names indicated:
+
+-  `ineq_diff`: The difference in means in petition signing (`signed`) between seeing the actor in the poor and affluent conditions (`pooractor`) for those who were petitioned about the millionaire's tax. 
+- `ineq_diff_se`: The estimated standard error for that differences in means.
+- `ineq_diff_ci`: A vector of length 2 with the 95% confidence interval for the difference in means. 
+
+Report these values in the text of your write up and briefly interpret the each of these values. 
+
+**Rubric**: 3 autograder points for each object above; 2 PDF points for write-up.
+
+## Question 2 (3 Points)
+
+Use the values you computed from the previous question to conduct a
+  two-sided hypothesis test where the null hypothesis is that the
+  population average treatment effect of inequality is zero **without using `t.test`**. Calculate the following for the autograder:
+
+- `ineq_diff_z`: The z-score for this test.
+- `ineq_diff_p_val`: The associated two-sided $p$-value based on the normal distribution. 
+
+You can  use `t.test` to compare your answer, but note that `t.test` uses the t distribution instead of the normal, so the p-values and confidence intervals will be slightly different. 
+
+Finally, conduct the hypothesis test using 0.05
+  as the statistical significance threshold (that is, decide if you should reject the null or not). How can we justify the use of the normal distribution in calculating the p-value?
+
+**Rubric:** 2 autograder points for the objects; 1 point for write up answer. 
+
+## Question 3 (3 points)
+
+In the context of the hypothesis test in the previous question, what would it mean to commit a type I error?  In the context of this problem, what would it mean to commit a type II error?  If we set $\alpha = 0.05$ for a two-tailed test are we specifying the probability of type I error or type II error?
+
+**Rubric:** 1 point for each of these questions. 
+
+## Question 4 (8 points)
+
+
+Next, let's see if the effect of the exposure to poverty depends on the race of the actor. Conduct the test of no effect of `pooractor` from the last part within levels of whether the actor was Black or white (`blackactor`). You should create the following values:
+
+- `w_ineq_diff`: the difference in means of `signed` for millionaire's tax petitions between poor and affluent conditions with white actors. 
+- `w_ineq_diff_se`: the estimated standard error for that difference in means. 
+- `w_ineq_diff_p`: two-sided p-value from the associated test of no effect of `pooractor` for white actors. 
+- `b_ineq_diff`: the difference in means of `signed` for millionaire's tax petitions between poor and affluent conditions with Black actors. 
+- `b_ineq_diff_se`: the estimated standard error for that difference in means. 
+- `b_ineq_diff_p`: two-sided p-value from the associated test of no effect of `pooractor` for Black actors. 
+
+In the write-up, briefly report and interpret the estimated effects in the context of the study and describe the results of these tests, interpreting the p-values. 
+
+**Rubric**: 1 autograder point for each of the objects described above for 6 points total; 2 points for write up. 
+
+## Question 5 (6 points)
+
+Now, let's see if the difference between the effect for white and Black actors could occur by chance alone. Calculate the following:
+
+- `ineq_race_diff`: The difference between the estimated effect of `pooractor` for white actors versus Black actors. 
+- `ineq_race_diff_se`: The estimated standard error of that difference. You can calculate this in the same way you would calculate the SE for a difference in means. 
+- `ineq_race_diff_ci`: A vector of length 2 with the 95% confidence interval for the difference in estimated effects. 
+
+Report each of these values in the main text of your write up and interpret the difference in the context of the study. Based on this confidence interval, can you reject the null hypothesis that there is no difference between the effect of exposure to poverty between white and Black actors at the $\alpha = 0.05$ level? How can you tell? 
+
+**Rubric**: 3 autograder points for the above objects; 1 point for interpretation of the difference; 2 points for confidence interval question. 
+
+## Question 6 (5 Extra Credit Points, Challenging!)
+
+**This problem is optional. Any points earned on this problem can be applied to lost points on other parts of the problem set. You cannot earn more than the maximum score on the problem set. There will be no autograder for this question.**
+
+The original experiment did not randomly assign each respondent to a different actor condition. Instead, the experiment was conducted over several shifts and the actor and his costume were randomly assigned to the shifts. This means that everyone, say, on Monday morning was exposed to same actor. This is called a *clustered* treatment assignment. 
+
+In this part, you will conduct a randomization test of the so-called "sharp null" of no treatment effect under this clustered design. The sharp null implies that the potential outcomes for treatment and control are exactly the same for all units; in other words, every one has exactly 0 treatment effect. Under that null, we can rerandomize the treatment (using the same randomization procedure) and see what treatment effect we would have received under that randomization by taking the difference in the observed outcomes (`signed`) between the treatment and control groups in the rerandomization. In this part, we will take into consideration the clustering and calculate a p-value under the sharp null of no treatment effects of `pooractor` on signing the millionaire's tax petition. 
+
+To complete this question, follow these steps:
+
+- Set the number of simulations to 1000 and set the seed in your cluster to 1234. 
+- Save the number of clusters in the data using `n_clust <- length(unique(mill_df$clust))`. 
+- Create a holder vector for the rerandomized effects called `ineq_diff_null` that is the same length as the number of simulations. 
+- Create a loop that loops over the number of simulations. In each iteration, create a rerandomized version of the `pooractor` treatment that randomly assigns every respondent in each cluster to either 0 or 1 with probability 0.5. That is, everyone in cluster 1 should either be a 0 or 1. (With base R, you may need another loop for this. With `tidyverse`, you can create a new variable on the data frame grouped by `clust` that draws a single 0 or 1. This will recycle the same draw for all units in the cluster.)
+- In each iteration `i`, calculate the difference in averages in `mill_df$signed` between the rerandomized treatment and control groups and save this difference in `ineq_diff_null[i]`.
+- Finally, calculate the p-value of a two-sided test based on this randomization distribution and save it as `ineq_clust_p_val`.
+
+In the write-up, produce a histogram of the distribution of the difference in means under the null (`ineq_diff_null`) and plot a vertical line at the value of the observed.
+
+
+**Rubric:** 5 points for the plot. 
+
+(Not for points, but for understanding: compare the clustered p-value here to the p-value you calculated in question 2. Does the clustering make the evidence against the null stronger or weaker?)
+
