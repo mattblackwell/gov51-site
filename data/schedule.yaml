@@ -106,6 +106,7 @@ lessons:
     reading: "QSS 7.3"
     assignment: "ps4-inequality-exposure"
     assignment_label: "PS 4"
+    week: "12-regression-uncertainty"
 
   - title: "Review and Wrap-up"
     weeknum: 13

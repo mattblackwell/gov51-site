@@ -1,0 +1,31 @@
+---
+title: "Week 12: Uncertainty in Regression"
+linktitle: "12: Uncertainty in Regression"
+summary: "Materials for week 12 of Gov 51"
+date: 2020-11-23
+menu:
+  weeks:
+    parent: Weeks
+    weight: 12
+type: docs
+---
+
+## Reading
+
+- Sections 7.3 of Quantitative Social Science.
+
+## Tutorials
+
+- You're all done with tutorials!!
+- And just one video this week!
+
+## Problem Set 4
+
+- [Problem Set 4](/assignments/ps4-inequality-exposure) is due on Wednesday, November 25th at 11:59pm, ET. 
+
+## Lecture Video 32: Uncertainty in Regression
+
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/IwJIWFy770c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+- [Slides](/slides/videos/32-regression-uncertainty.pdf)
