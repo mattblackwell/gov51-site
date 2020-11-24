@@ -29,3 +29,10 @@ type: docs
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/IwJIWFy770c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 - [Slides](/slides/videos/32-regression-uncertainty.pdf)
+
+## Live Meeting
+
+- Data: [`stokes_electoral_2015.csv`](/data/stokes_electoral_2015.csv)
+- Base R slides with solutions: [Slides](/slides/week-12-slides.pdf)
+- Tidy slides with solutions: [Slides](/slides/week-12-tidy-slides.pdf)
+- [Zoom Recording](https://canvas.harvard.edu/courses/74805/external_tools/53531) (Go to "Cloud Recordings" Tab)
