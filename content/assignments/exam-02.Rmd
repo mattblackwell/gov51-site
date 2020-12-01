@@ -1,0 +1,111 @@
+---
+title: "Exam 2: Labor Unions and White Racial Politics "
+due_date: 2020-12-07
+summary: >-
+  Second Gov 51 exam on the relationship betwen labor unions and white racial attitudes. 
+---
+
+You can find instructions for obtaining and submitting problem sets [here](/assignments/problem-sets/).
+
+For Gov 51 students, you can find the GitHub Classroom link to download the template repository [here](https://canvas.harvard.edu/courses/74805/pages/github-classroom-links).
+
+For Gov E-1005 students, you can find the GitHub Classroom link to download the template repository [here](https://canvas.harvard.edu/courses/79867/pages/github-classroom-links).
+
+## Instructions
+
+- Total possible points: 5 autograder points plus 11 write-up points, so 16 overall.
+
+- This exam is open-book, open-note, and open-internet. However, you are forbidden from communicating with other humans about the exam. This includes, but is not limited to: exchanging texts/emails/chats/DMs etc about the exam; sharing notes about the exam or the course; posting material on the internet about the exam; asking for help with a question on the exam from online forums; requesting that someone produce materials that could be helpful for the exam. Basically, use your common sense and complete this assignment on your own. 
+
+- You may submit to the autograder as many times as you would like, just like a normal problem set. 
+
+- Please write any written, non-code responses in the main text and not in the R code chunks. Also, do not include hastags `#` in the main text except on the lines indicating `## Question` or `## Answer`. 
+
+- Please check your final PDF before uploading it and ensure that your written answers and plots are visible and correctly reflect your final answers. 
+
+- If you have a clarification question or you think there is an issue with the autograder, please email myself and your TF with your question. We will either say that we cannot answer the question or we will send a note to the entire class with the answer. 
+
+- Please do not post anything about the exam on Slack or Ed. 
+
+- You may use base R or tidyverse throughout. 
+
+
+
+## Background
+
+Social scientists have observed two trends in American society that have reshape politics in the last several decades. On the one hand, labor unions have been in decline, and the other hand, many scholars have pointed to a rise in what is sometimes called "white identity politics." Given the temporal connection between these two topics, can we establish any statistical or causal connection between them? Does union membership affect white racial attitudes? The data from this exercise comes from the following paper:
+
+Frymer, Paul and Jacob M. Grumbach (2020), "[Labor Unions and White Racial Politics](https://doi.org/10.1111/ajps.12537)". *American Journal of Political Science*. 
+
+The data to answer this question comes from the Cooperative Congressional Elections Survey (CCES), which surveys tens of thousands of U.S. citizens in each federal election cycle. We will focus on a smaller subset of respondents that were interviewed during three election cycles: 2010, 2012, and 2014. This is called **panel data** because we are measuring variables for the same units at multiple points in time. 
+
+
+| Name           | Description                                                                                                                                                                 |
+|:---------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `caseid`       | Unique identifier for each respondent                                                                                                                                       |
+| `year`         | Year of survey                                                                                                                                                              |
+| `rr`           | Racial resentment scale                                                                                                                                                     |
+| `rr_lag`       | Racial resentment scale measured in previous survey wave (only measured in 2012 and 2014)                                                                                                                   |
+| `union_now`    | 1 if currently a member of a union, 0 otherwise                                                                                                                             |
+| `union_past`   | 1 if previously a member of a union, 0 otherwise                                                                                                                            |
+| `union_gained` | 1 if respondent joined union between this wave and previous wave, 0 otherwise                                                                                               |
+| `union_lost`   | 1 if respondent left union between this wave and previous wave, 0 otherwise                                                                                                 |
+| `age`          | Age of respondent in 2010                                                                                                                                                   |
+| `female`       | 1 if respondent identifies as female, 0 otherwise                                                                                                                           |
+| `educ`         | Education level (1 = No High School, 2 = HS Grad, 3 = Some college, 4 = 2-year degree, 5 = 4-year degree, 6 = Post-grad degree)                                             |
+| `faminc`       | Household income category (1= less than \$10k, 2 = \$10k-\$15k, ...)                                                                                                           |
+| `pid7`         | Party ID (1 = Strong Democrat, 2 = Not very strong Democrat, 3 = Lean Democrat, 4 = Independent, 5 = Lean Republican, 6= Not very strong Republican, 7=Strong Republican) ) |
+
+
+
+## Question 1 (2 points)
+
+Load the data and save it as a data frame called `union`. Create a plot with boxplots for the distribution of racial resentment (`rr`) for those currently in a union and those not currently in a union (`union_now`). Make sure that the plot has informative labels and that the two boxplots are labelled on the x-axis as "Union" and "Non-union" (that is, not 0 and 1). Does racial resentment appear to be higher or lower among the unionized?
+
+**Rubric:** 2 write-up points (1pt boxplot, 0.5pt labeling, 0.5pt interpretation)
+
+## Question 2 (2 points)
+
+Let's investigate this difference more closely. Use a linear regression to estimate the difference in means of racial resentment (`rr`) between those currently in a union versus not (`union_now`). Save this regression output as `rr_diff_union`. In the main text, report the difference in means. Can you reject the null hypothesis of no difference in means with a t-test at the 0.05 level? 
+
+**Rubric:** 1 autograder point (regression output); 1 write-up point (0.5pt for reporting difference/interpretation, 0.5pt for statistical significance)
+
+## Question 3 (2 points)
+
+The data contains both racial resentment measured in the survey-year for that row (`rr`) and also the value for that respondent in the previous survey (`rr_lag`). Calculate the correlation between these two variables and save this correlation as `cor_rr`. In the main text, describe if this correlation implies the relationship is positive or negative and if the linear relationship is strong or weak. 
+
+**Rubric:** 1 autograder point (for `cor_rr`); 1 write-up point (for interpretation)
+
+## Question 4 (3 points)
+
+Now we attempt to replicate what Frymer and Grumbach found in their paper. Instead of looking at whether or not a person is in a union, they instead looked at how *changes* in union status are related to racial resentment. Follow their lead and create a regression called `rr_union_change` that has racial resentment (`rr`) as the dependent variable and the following independent variables: a person joined a union (`union_gained`), a person left a union (`union_lost`), and the previous measurement of racial resentment (`rr_lag`). Answer the following questions in the write-up:
+
+- Interpret the coefficients on `union_gained` and `union_lost` in the context of this study. Is the substantive conclusion of these effects the same or different than what you found in question 1?
+- Assess whether either of those estimated coefficients are statistically significant at the 0.05 level. 
+- Describe why the sample size changes between this regression and those in question 1. 
+
+**Rubric:** 1 autograder points (for regression output); 2 write-up points (1pt interpretation, 0.5pt significance, 0.5pt sample size)
+
+## Question 5 (1pt)
+
+Compare the regression from question 1 to the regression from question 3. Which of these estimates of the effects of unions is more plausibly interpreted as causal? Why? 
+
+**Rubric:** 1pt write-up for response.
+
+## Question 6 (2 points)
+
+Calculate the confidence interval for the coefficients on `union_gained` and `union_lost` from the regression in question 3 and save them as `ci_gained` and `ci_lost`, respectively. Present these confidence intervals in the main text. 
+
+Bobby Boxplot is back and claims that if you were to double your sample size, it would cut the width of these confidence intervals in half. Is Bobby correct? Why or why not?
+
+**Rubric:** 2 write up points (1pt confidence intervals presented, 1pt Bobby Boxplot question)
+
+## Question 7 (4 points)
+
+Finally, let's check to see if there is any evidence of effect heterogeneity in the effects of unions. Run a similar regression to question 3, but add the indicator for whether a respondent is a female (`female`) along with interactions between female and the two union change variables. Save this regression as `union_fem_int` and use `modelsummary::modelsummary()` on it to produce a regression table for the write-up. 
+
+
+In the write-up answer the following questions: Does there appear to be a statistically significant (at the 0.05 level) interactions for either of those two variables? Substantively interpret any significant interactions in terms of the substantive context. 
+
+**Rubric:** 2 autograder points for regression model. 2 write-up points (0.5pt regression table, 0.5pt identifying statistical significance, 1pt correct interpretation)
+
